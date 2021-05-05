@@ -2,7 +2,7 @@
 @section('title','Industri')
 @section('content')
   <div class="col-lg-6 col-5 text-right">
-      <a href="/industri/add" class="btn btn-sm btn-neutral">Add</a>
+      <a href="/industri/add" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal">Add</a>
       <a href="#" class="btn btn-sm btn-neutral">Filters</a>
     </div>
   </div>
@@ -48,8 +48,8 @@
                             <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-1.jpg">
                         </a>
                     <td>
-                        <button class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
                     </td>
                   </tr>
                 </tbody>
@@ -84,5 +84,107 @@
           </div>
         </div>
       </div>
-        
+    
+  {{-- modal add --}}
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST">
+          @csrf
+          <div class="form-group">
+            <label >Nama Industri</label>
+            <input class="form-control" type="text" name="" id="">
+          </div>
+          <div class="form-group">
+            <label >Logo Industri</label>
+            <input class="form-control" type="file" name="" id="">
+          </div>
+          <div class="form-group">
+            <label >Deskripsi Industri</label>
+            <textarea name="" class="form-control" cols="30" rows="3"></textarea>
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  {{-- close modal add --}}
+  {{-- modal edit --}}
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit  Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            @csrf
+            <div class="form-group">
+              <label >Nama Industri</label>
+              <input class="form-control" type="text" name="" id="">
+            </div>
+            <div class="form-group">
+              <label >Logo Industri</label>
+              <input class="form-control" type="file" name="" id="">
+            </div>
+            <div class="form-group">
+              <label >Deskripsi Industri</label>
+              <textarea name="" class="form-control" cols="30" rows="3"></textarea>
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- close modal edit --}}
+  {{-- modal delete --}}
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content bg-gradient-danger">
+        	
+            <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+            	
+                <div class="py-3 text-center">
+                    <i class="ni ni-bell-55 ni-3x"></i>
+                    <h4 class="heading mt-4">You should read this!</h4>
+                    <p>Are you sure for delete this item ?</p>
+                </div>
+                
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white">Ok, Got it</button>
+                <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+            </div>
+            
+        </div>
+    </div>
+  {{-- close modal delete --}}
 @endsection

@@ -1,5 +1,5 @@
 @extends('Admin/components/v_wrapperDetail')
-@section('title','Detail Dosen')
+@section('title','Tambah Dosen')
 @section('content')
 <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url({{asset('template')}}/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
   <!-- Mask -->
@@ -15,7 +15,7 @@
   </div>
 </div>
 <!-- Page content -->
-<div class="container-fluid mt--6">
+<div class="container-fluid mt--8">
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
@@ -76,10 +76,7 @@
         <div class="card-header">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">Detail</h3>
-            </div>
-            <div class="col-4 text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Edit</a>
+              <h3 class="mb-0">Tambah Dosen</h3>
             </div>
           </div>
         </div>
