@@ -11,6 +11,9 @@ Route::view('/dosen/edit', 'Admin/dosen/v_edit_dosen');
 Route::view('/dosen/add', 'Admin/dosen/v_add_dosen');
 //mahasiswa
 Route::view('/mahasiswa', 'Admin/mahasiswa/v_mahasiswa');
+Route::view('/mahasiswa/add', 'Admin/mahasiswa/v__add_amahasiswa');
+Route::view('/mahasiswa/edit', 'Admin/mahasiswa/v_edit_mahasiswa');
+Route::view('/mahasiswa/detail', 'Admin/mahasiswa/v_detail_mahasiswa');
 //judulpa
 Route::view('/judulpa', 'Admin/judulpa/v_judulpa');
 Route::view('/judulpa/edit', 'Admin/judulpa/v_edit_judulpa');
