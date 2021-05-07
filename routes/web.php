@@ -11,8 +11,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 // custom route
-Route::view('/main', 'main');
-Route::view('/', 'Admin/v_home');
+// Route::view('/main', 'main');
+Route::view('/main', 'Admin/v_home');
 
 //dosen
 Route::view('/dosen', 'Admin/dosen/v_dosen');
