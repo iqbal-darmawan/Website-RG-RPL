@@ -2,7 +2,7 @@
 @section('title','User')
 @section('content')
 <div class="col-lg-6 col-5 text-right">
-      <a href="#" class="btn btn-sm btn-neutral">New</a>
+      <a href="/industri/add" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal">Add</a>
       <a href="#" class="btn btn-sm btn-neutral">Filters</a>
     </div>
   </div>
@@ -23,10 +23,11 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" class="sort" data-sort="completion">Nomor</th>
-                    <th scope="col" class="sort" data-sort="name">Nama User</th>
-                    <th scope="col" class="sort" data-sort="budget">Status</th>
-                    <th scope="col" class="sort" data-sort="status">Tanggal Login</th>
+                    <th scope="col" class="sort" data-sort="completion">No</th>
+                    <th scope="col" class="sort" data-sort="name">Username</th>
+                    <th scope="col" class="sort" data-sort="budget">Email</th>
+                    <th scope="col" class="sort" data-sort="status">Password</th>
+                    <th scope="col" class="sort" data-sort="status">Tanggal Bergabung</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -52,10 +53,10 @@
                         <span class="status">pending</span>
                       </span> 
                     </td>
+                    <td>2021-05-24</td>
                     <td>
-                      <a href="/user/detail" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
-                      <a href="/user/edit" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-                      <a href="/user/destroy" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i></button>
+                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
                     </td>
                    
                   </tr>
@@ -91,5 +92,115 @@
           </div>
         </div>
       </div>
-        
+
+    {{-- modal add --}}
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST">
+          @csrf
+          <div class="form-group">
+            <label >Username</label>
+            <input class="form-control" type="text" name="" id="">
+          </div>
+          <div class="form-group">
+            <label >Email</label>
+            <input class="form-control" type="email" name="" id="">
+          </div>
+          <div class="form-group">
+            <label >Password</label>
+            <input class="form-control" type="text" name="" id="">
+          </div>
+          <div class="form-group">
+            <label >Created at</label>
+            <input type="date"  class="form-control">
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  {{-- close modal add --}}
+  {{-- modal edit --}}
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit  Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            @csrf
+            <div class="form-group">
+              <label >Username</label>
+              <input class="form-control" type="text" name="" id="">
+            </div>
+            <div class="form-group">
+              <label >Email</label>
+              <input class="form-control" type="email" name="" id="">
+            </div>
+            <div class="form-group">
+              <label >Password</label>
+              <input class="form-control" type="text" name="" id="">
+            </div>
+            <div class="form-group">
+              <label >Created at</label>
+              <input type="date"  class="form-control">
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- close modal edit --}}
+  {{-- modal delete --}}
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content bg-gradient-danger">
+        	
+            <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+            	
+                <div class="py-3 text-center">
+                    <i class="ni ni-bell-55 ni-3x"></i>
+                    <h4 class="heading mt-4">You should read this!</h4>
+                    <p>Are you sure for delete this item ?</p>
+                </div>
+                
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white">Ok, Got it</button>
+                <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+            </div>
+            
+        </div>
+    </div>
+  {{-- close modal delete --}}   
 @endsection
