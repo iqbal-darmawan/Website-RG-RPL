@@ -1,0 +1,153 @@
+.navbar {
+    padding: 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
+    position: fixed;
+    background-color: #ffffff;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-item {
+    margin-right: 43px;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color:  black;
+}
+
+.nav-item.active {
+    background-color: #183B67;
+    padding: 30px 20px;
+}
+
+.nav-item.active a {
+    color: white;
+}
+
+.navbar-content-button {
+    background-color: #183B67;
+    border-radius: 5px;
+}
+
+.navbar-content-button a {
+    font-weight: 500;
+    line-height:28px;
+    color: #fff;
+}
+
+.footer {
+    bottom: 0;
+    padding: 50px;
+    margin-top: 50px;
+    background: #183B67;
+    width: 100%;
+}
+
+.footer-logo-image img {
+    margin-bottom: 35px;
+}
+
+.footer-description {
+    color: #fff;
+}
+
+h4.footer-description{
+    font-size:16px;
+}
+
+#footer-description-location{
+    font-size:12px;
+}
+
+p.footer-description {
+    font-size:14px;
+}
+
+.quick-contact {
+    color:#F2C808;
+    font-size:18px;
+}
+
+.quick-contact-input {
+    background-color: #395579;
+    border: 1px solid #223145;
+    border-radius: 5px;
+}
+
+.quick-contact-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #B1AEAE;
+    opacity: 1; /* Firefox */
+  }
+
+  .quick-contact-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #B1AEAE;
+  }
+
+  .quick-contact-input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #B1AEAE;
+  }
+
+  .form-floating label {
+    color: #B1AEAE;
+  }
+
+  input[type=email] {
+    color: white;
+  }
+
+  input[type=email]:focus {
+    background-color: #2a3e58;
+    color: white;
+  }
+
+  textArea#floatingTextarea {
+      min-height: 100px;
+  }
+
+  .form-floating textArea:focus {
+    background-color: #2a3e58;
+    color: white;
+  }
+
+  .quick-contact-button {
+    background: rgba(57, 85, 121, 0.25);
+    border: 1px solid #223145;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fff;
+    font-size:12px;
+  }
+
+  .quick-contact-button:hover {
+    background: rgba(40, 59, 85, 0.25);
+    border: 1px solid #223145;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fff;
+    font-size:12px;
+  }
+
+  .usefull-links {
+    color:#F2C808;
+    font-size:18px;
+  }
+
+ .links li a {
+    color: #fff;
+  }
+
+  .copyright-wrapper {
+    bottom: 0;
+    background: #000000;
+    width: 100%;
+    z-index: 999;
+    }
+
+    .copyright-text {
+        color: white;
+        font-size:12px;
+    }
+
+
