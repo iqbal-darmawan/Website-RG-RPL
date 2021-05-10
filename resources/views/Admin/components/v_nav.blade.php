@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link{{request()->is('mahasiswa') ? ' active' : ''}}" href="/mahasiswa">
-                <i class="ni ni-pin-3 text-primary"></i>
+                <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Karya mahasiswa</span>
               </a>
             </li>

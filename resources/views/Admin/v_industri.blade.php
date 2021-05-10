@@ -2,7 +2,7 @@
 @section('title','Industri')
 @section('content')
   <div class="col-lg-6 col-5 text-right">
-      <a href="/industri/add" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal">Add</a>
+      <button  class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal" >Add</button>
       <a href="#" class="btn btn-sm btn-neutral">Filters</a>
     </div>
   </div>
@@ -10,6 +10,7 @@
 </div>
 </div>
     <!-- Page content -->
+
     <div class="container-fluid mt--6">
       <div class="row">
         <div class="col">
@@ -31,27 +32,30 @@
                   </tr>
                 </thead>
                 <tbody class="list">
-                <tr>
-                    <td>1</td>
-                    <th scope="row">
-                        <div class="media-body">
-                          <span class="name mb-0 text-sm">Maulidan Games</span>
-                        </div>
-                    </th>
-                    <td>
-                        <div class="media-body">
-                            <span class="name mb-0 text-sm">lorem ipsum</span>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                            <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-1.jpg">
-                        </a>
-                    <td>
-                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
+               
+                  @php
+                      $no=1;
+                  @endphp
+                   @foreach ($industri as $data)
+                   <tr>
+                       <td>{{$no}}</td>
+                       <td>{{$data->nama_industri}}</td>
+                       <td>{{$data->deskripsi_industri}}</td>
+                       <td>
+                        <img class="avatar avatar-sm rounded-circle" src="{{ url('Img/Industri/' . $data->foto_industri) }}" alt="">
+                      </td>
+                       <td>
+                         <div>
+                          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal{{$data->id}}"><i class="fas fa-edit"></i></button>
+                          <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$data->id}}"><i class="fas fa-trash"></i></button>
+                         </div>
+                       </td>
+                      </tr>
+                       @php
+                           $no++
+                       @endphp
+                   @endforeach
+                 
                 </tbody>
               </table>
             </div>
@@ -96,33 +100,34 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="POST">
+        <form action="/industri/store" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label >Nama Industri</label>
-            <input class="form-control" type="text" name="" id="">
+            <input class="form-control" type="text" name="nama_industri" >
           </div>
           <div class="form-group">
             <label >Logo Industri</label>
-            <input class="form-control" type="file" name="" id="">
+            <input class="form-control" type="file" name="foto_industri" >
           </div>
           <div class="form-group">
             <label >Deskripsi Industri</label>
-            <textarea name="" class="form-control" cols="30" rows="3"></textarea>
+            <textarea name="deskripsi_industri" class="form-control" cols="30" rows="3"></textarea>
           </div>
-          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      
     </div>
   </div>
 </div>
   {{-- close modal add --}}
   {{-- modal edit --}}
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+  @foreach ($industri as $data)
+  <div class="modal fade" id="editModal{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -132,33 +137,38 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="" method="POST">
+          <form action="industri/update/{{$data->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <label >Nama Industri</label>
-              <input class="form-control" type="text" name="" id="">
+              <input class="form-control" type="text" value="{{$data->nama_industri}}" name="nama_industri">
+            </div>
+            <div class="form-group">
+              <img class="avatar rounded-circle" src="{{ url('Img/Industri/' . $data->foto_industri) }}" alt="">
             </div>
             <div class="form-group">
               <label >Logo Industri</label>
-              <input class="form-control" type="file" name="" id="">
+              <input class="form-control" type="file"  name="foto_industri">
             </div>
             <div class="form-group">
-              <label >Deskripsi Industri</label>
-              <textarea name="" class="form-control" cols="30" rows="3"></textarea>
+              <label>Deskripsi Industri</label>
+              <textarea name="deskripsi_industri" value="{{$data->deskripsi_industri}}" class="form-control" cols="30" rows="3"></textarea>
             </div>
-            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        
       </div>
     </div>
   </div>
+  @endforeach
   {{-- close modal edit --}}
   {{-- modal delete --}}
-  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+  @foreach ($industri as $data)
+  <div class="modal fade" id="deleteModal{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
         <div class="modal-content bg-gradient-danger">
         	
@@ -180,11 +190,12 @@
             </div>
             
             <div class="modal-footer">
-                <button type="button" class="btn btn-white">Ok, Got it</button>
-                <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+              <a href="/industri/destroy/{{$data->id}}"  class="btn btn-white">Ok</button>
+                <a class="text-white ml-auto" data-dismiss="modal">Close</button>
             </div>
             
         </div>
     </div>
+    @endforeach
   {{-- close modal delete --}}
 @endsection

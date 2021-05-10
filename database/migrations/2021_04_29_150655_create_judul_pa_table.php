@@ -15,15 +15,14 @@ class CreateJudulPATable extends Migration
     {
         Schema::create('judul_pa', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('mahasiswa_id')->constrained('mahasiswa');
-            $table->foreignId('dosen_id')->constrained('dosen_rpl');
-            $table->foreignId('industri_id')->constrained('industri');
+            $table->foreignId('mahasiswa_id')->nullable()->constrained('mahasiswa');
+            $table->foreignId('dosen_id')->nullable()->constrained('dosen_rpl');
+            $table->foreignId('industri_id')->nullable()->constrained('industri');
             $table->string('nama_judul', 100);
-            $table->string('deskripsi_judul');
-            $table->string('kualifikasi_judul');
+            $table->text('deskripsi_judul');
+            $table->text('kualifikasi_judul');
+            $table->string('tahun_penawaran');
             $table->string('tahun_mengambil');
-            $table->string('tahun_penawaran_dosen');
-            $table->string('tahun_penawaran_industri');
             $table->timestamps();
         });
     }

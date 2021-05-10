@@ -24,20 +24,17 @@
               <div class="col-8">
                 <h3 class="mb-0">@yield('title')</h3>
               </div>
-              <div class="col-4 text-right">
-                <a href="/judulpa/detail" class="btn btn-sm btn-primary">Detail</a>
-              </div>
             </div>
           </div>
           <div class="card-body">
-            <form>
+            <form action="/judulpa/update" method="POST">
               <h6 class="heading-small text-muted mb-4">Informasi Dosen</h6>
               <div class="pl-lg-4">
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-first-name">Judul PA</label>
-                      <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                      <input type="text" name="judulpa" class="form-control" placeholder="First name" value="Lucky">
                     </div>
                   </div>
                 </div>
@@ -45,7 +42,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-first-name">Nama Pembimbing</label>
-                      <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                      <input type="text" name="nama_pembimbing" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
                     </div>
                   </div>
                 </div>
@@ -53,7 +50,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-username">Kualifikasi judul</label>
-                      <textarea  id="input-username" class="form-control" placeholder="Username" value="lucky.jesse"  id="" cols="30" rows="5"></textarea>
+                      <textarea  name="kualifikasi judul" class="form-control" placeholder="Username" value="lucky.jesse"  id="" cols="30" rows="5"></textarea>
                     </div>
                   </div>
                 </div>
@@ -65,14 +62,8 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label class="form-control-label" for="input-city">Tahun penawaran dosen</label>
-                      <input type="date" id="input-city" class="form-control" placeholder="City" value="New York">
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-country">Industri</label>
-                      <input type="date" id="input-country" class="form-control" placeholder="Country" value="United States">
+                      <label class="form-control-label" for="input-city">Tahun penawaran </label>
+                      <input type="date" name="tahun penawaran" class="form-control" placeholder="City" value="New York">
                     </div>
                   </div>
                 </div>
@@ -83,11 +74,11 @@
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Deskripsi Judul </label>
-                  <textarea rows="5" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                  <textarea rows="5" name="deskripsi_judul" class="form-control" placeholder="A few words about you ..."></textarea>
                 </div>
               </div>
-              <button class="btn btn-primary">Simpan</button>
-              <button class="btn btn-neutal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+              <button type="reset" class="btn btn-neutal">reset</button>
             </form>
           </div>
         </div>
