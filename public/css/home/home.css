@@ -155,6 +155,11 @@ button.caraousel-button-indicators {
     border-radius: 50%;
 }
 
-  /* .title-testimoni {
-      margin
-  } */
+.testimoni-name > h4 {
+    font-size:14px;
+}
+
+.testimoni-name > p {
+    font-size: 13px;
+    color: #625E5E;
+}
