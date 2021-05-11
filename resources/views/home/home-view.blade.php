@@ -293,6 +293,15 @@
                                     corrupti accusantium ratione! Velit cumque impedit atque? Officiis suscipit dolore
                                     voluptate
                                     porro consequuntur iusto pariatur reprehenderit debitis. Ipsum.</p>
+                                <div class="d-flex mt-5">
+                                    <div class="testimoni-img">
+                                        <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
+                                    </div>
+                                    <div class="testimoni-name ms-3">
+                                        <h4 class="m-0">Iqbal Darmawan</h4>
+                                        <p>mahasiswa</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

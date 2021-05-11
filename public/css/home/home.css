@@ -151,6 +151,10 @@ button.caraousel-button-indicators {
     padding : 42px 28px;
 }
 
+.testimoni-img > img {
+    border-radius: 50%;
+}
+
   /* .title-testimoni {
       margin
   } */
