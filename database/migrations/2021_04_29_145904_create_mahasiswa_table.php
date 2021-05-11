@@ -15,7 +15,9 @@ class CreateMahasiswaTable extends Migration
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('id_produk')->constrained('produk');
+            $table->foreignId('id_produk')
+                ->constrained('produk')
+                ->onDelete('cascade');
             $table->string('nrp');
             $table->string('nama_mahasiswa');
             $table->string('kelas');
