@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JudulpaController;
+use App\Http\Controllers\IndustriController;
 
 
 Route::get('/', function () {
@@ -27,13 +29,19 @@ Route::view('/mahasiswa/edit', 'Admin/mahasiswa/v_edit_mahasiswa');
 Route::view('/mahasiswa/detail', 'Admin/mahasiswa/v_detail_mahasiswa');
 
 //judulpa
-Route::view('/judulpa', 'Admin/judulpa/v_judulpa');
-Route::view('/judulpa/edit', 'Admin/judulpa/v_edit_judulpa');
-Route::view('/judulpa/add', 'Admin/judulpa/v_add_judulpa');
-Route::view('/judulpa/detail', 'Admin/judulpa/v_detail_judulpa');
+Route::get('/judulpa',[JudulpaController::class,'index'])->name('judulpa');
+Route::get('/judulpa/create',[JudulpaController::class,'create']);
+Route::post('/judulpa/store',[JudulpaController::class,'store']);
+Route::get('/judulpa/show/{id}',[JudulpaController::class,'show']);
+Route::get('/judulpa/edit/{id}',[JudulpaController::class,'edit']);
+Route::post('/judulpa/update/{id}',[JudulpaController::class,'update']);
+Route::get('/judulpa/destroy/{id}',[JudulpaController::class,'destroy']);
 
 //user
 Route::view('/user', 'Admin/user/v_user');
 
 //industri
-Route::view('/industri', 'Admin/v_industri');
+Route::get('/industri',[IndustriController::class,'index'])->name('industri');
+Route::post('/industri/store',[IndustriController::class,'store']);
+Route::post('/industri/update/{id}',[IndustriController::class,'update']);
+Route::get('/industri/destroy/{id}',[IndustriController::class,'destroy']);
