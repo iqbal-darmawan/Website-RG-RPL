@@ -37,7 +37,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-first-name">Judul PA</label>
-                      <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                      <input type="text" id="input-first-name" class="form-control"  value="{{$judulpa->nama_judul}}" disabled>
                     </div>
                   </div>
                 </div>
@@ -45,7 +45,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-first-name">Nama Pembimbing</label>
-                      <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                      <input type="text" id="input-first-name" class="form-control"  value="{{$judulpa->nama_pembimbing}}" disabled>
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-username">Kualifikasi judul</label>
-                      <textarea  id="input-username" class="form-control" placeholder="Username" value="lucky.jesse"  id="" cols="30" rows="5"></textarea>
+                    <textarea  id="input-username" class="form-control" value=""  id="" cols="30" rows="5" disabled>{{$judulpa->kualifikasi_judul}}</textarea>
                     </div>
                   </div>
                 </div>
@@ -65,27 +65,24 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label class="form-control-label" for="input-city">Tahun penawaran dosen</label>
-                      <input type="date" id="input-city" class="form-control" placeholder="City" value="New York">
+                      <label class="form-control-label" for="input-city">Tahun penawaran </label>
+                      <input type="text" id="input-city" class="form-control"  value="{{$judulpa->tahun_penawaran}}" disabled>
                     </div>
                   </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-country">Industri</label>
-                      <input type="date" id="input-country" class="form-control" placeholder="Country" value="United States">
-                    </div>
+                  
                   </div>
                 </div>
-              </div>
+              
               <hr class="my-4" />
               <!-- Description -->
               <h6 class="heading-small text-muted mb-4">Deskripsi</h6>
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Deskripsi Judul </label>
-                  <textarea rows="5" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                  <textarea rows="5" class="form-control" disabled>{{$judulpa->deskripsi_judul}}</textarea>
                 </div>
               </div>
+            </div>
             </form>
           </div>
         </div>

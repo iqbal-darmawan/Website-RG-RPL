@@ -32,21 +32,21 @@ class JudulpaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'judulpa' => 'required',
+            'nama_judul' => 'required',
             'nama_pembimbing' => 'required',
             'kualifikasi_judul' => 'required',
             'deskripsi_judul' => 'required',
         ],[
-            'judulpa.required' =>'masukan judul yang ditawarkan',
+            'nama_judul.required' =>'masukan judul yang ditawarkan',
             'nama_pembimbing.required' =>'masukan nama pembimbing',
             'kualifikasi_judul.required' => 'masukan kualifikasi judul',
             'deskripsi_judul.required' => 'masukan deskripsi judul'
         ]);
         $data = [
-            'judulpa' => $request-> judulpa,
+            'nama_judul' => $request-> nama_judul,
             'nama_pembimbing' => $request-> nama_pembimbing,
             'kualifikasi_judul' => $request-> kualifikasi_judul,
-            'tahun_penawaran' => $request-> tahun_penawaran_industri,
+            'tahun_penawaran' => $request-> tahun_penawaran,
             'deskripsi_judul' => $request->deskripsi_judul
         ];
         $this->Judulpa->addData($data);
@@ -61,7 +61,13 @@ class JudulpaController extends Controller
      */
     public function show($id)
     {
-        
+        if (!$this->Judulpa->detailData($id)) {
+            abort(404);
+        }
+        $data=[
+            'judulpa' => $this->Judulpa->detailData($id)
+        ];
+        return view('Admin/judulpa/v_detail_judulpa',$data);
     }
 
     /**
@@ -72,7 +78,13 @@ class JudulpaController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (!$this->Judulpa->detailData($id)) {
+            abort(404);
+        }
+        $data=[
+            'judulpa' => $this->Judulpa->detailData($id)
+        ];
+        return view('Admin/judulpa/v_edit_judulpa',$data);
     }
 
     /**
@@ -84,17 +96,19 @@ class JudulpaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+            'nama_judul' => $request -> nama_judul,
+            'nama_pembimbing' => $request -> nama_pembimbing,
+            'tahun_penawaran' => $request -> tahun_penawaran,
+            'kualifikasi_judul' => $request ->kualifikasi_judul,
+            'deskripsi_judul' => $request ->deskripsi_judul,
+        ];
+        $this->Judulpa->editData($id,$data);
+        return redirect()->route('judulpa')->with('pesan','Data berhasil diubah');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $this->Judulpa->deleteData($id);
+        return redirect()->route('judulpa')->with('pesan','Data berhasil dihapus');
     }
 }

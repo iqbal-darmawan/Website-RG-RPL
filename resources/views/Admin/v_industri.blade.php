@@ -180,7 +180,6 @@
             </div>
             
             <div class="modal-body">
-            	
                 <div class="py-3 text-center">
                     <i class="ni ni-bell-55 ni-3x"></i>
                     <h4 class="heading mt-4">You should read this!</h4>

@@ -18,4 +18,22 @@ class JudulPA extends Model
     {
         DB::table('judul_pa')->insert($data);
     }
+    public function detailData($id)
+    {
+      $data = DB::table('judul_pa')->where('id',$id)->first();
+  
+      return $data;
+    }
+    public function editData($id,$data)
+    {
+        DB::table('judul_pa')
+        ->where('id',$id)
+        ->update($data);
+    }
+    public function deleteData($id)
+    {
+        DB::table('judul_pa')
+        ->where('id',$id)
+        ->delete();
+    }
 }

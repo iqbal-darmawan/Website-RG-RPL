@@ -19,8 +19,11 @@ Route::view('/mahasiswa/detail', 'Admin/mahasiswa/v_detail_mahasiswa');
 //judulpa
 Route::get('/judulpa',[JudulpaController::class,'index'])->name('judulpa');
 Route::get('/judulpa/create',[JudulpaController::class,'create']);
-Route::get('/judulpa/edit',[JudulpaController::class,'edit']);
-Route::get('/judulpa/destroy',[JudulpaController::class,'destroy']);
+Route::post('/judulpa/store',[JudulpaController::class,'store']);
+Route::get('/judulpa/show/{id}',[JudulpaController::class,'show']);
+Route::get('/judulpa/edit/{id}',[JudulpaController::class,'edit']);
+Route::post('/judulpa/update/{id}',[JudulpaController::class,'update']);
+Route::get('/judulpa/destroy/{id}',[JudulpaController::class,'destroy']);
 
 //user
 Route::view('/user', 'Admin/user/v_user');
