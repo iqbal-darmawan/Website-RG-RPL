@@ -23,12 +23,6 @@ class JudulpaController extends Controller
         return view('Admin/judulpa/v_add_judulpa');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -53,12 +47,6 @@ class JudulpaController extends Controller
         return redirect()->route('judulpa')->with('pesan','data berhasil di tambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         if (!$this->Judulpa->detailData($id)) {
@@ -70,12 +58,6 @@ class JudulpaController extends Controller
         return view('Admin/judulpa/v_detail_judulpa',$data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         if (!$this->Judulpa->detailData($id)) {
@@ -87,13 +69,6 @@ class JudulpaController extends Controller
         return view('Admin/judulpa/v_edit_judulpa',$data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $data = [
