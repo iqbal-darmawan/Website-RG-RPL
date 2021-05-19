@@ -5,7 +5,15 @@ use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
 
-Route::view('/', 'Admin/v_home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+// custom route
+// Route::view('/main', 'main');
+Route::view('/main', 'Admin/v_home');
+
 //dosen
 Route::view('/dosen', 'Admin/dosen/v_dosen');
 Route::view('/dosen/detail', 'Admin/dosen/v_detail_dosen');
