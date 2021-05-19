@@ -13,7 +13,6 @@ class MahasiswaController extends Controller
     public function __construct( )
     {
         $this->mahasiswa= new Mahasiswa();
-
     }
     public function index()
     {
@@ -29,26 +28,31 @@ class MahasiswaController extends Controller
     }
     public function store(Request $request)
     {
+        //input to table produk
         $produk = new Produk;
         $data = $request->all();
         $produk->nama_produk = $data['nama_produk'];
         $produk->nama_tim = $data['nama_tim'];
         $produk->deskripsi_produk = $data['deskripsi_produk'];
         $produk->save();
+
+                //input to table foto_produk
                 if($request->hasfile('foto_produk'))
                 {
-                foreach($request->file('foto_produk') as $key => $file)
-                {
-                        $fname = $file->getClientOriginalName();
-                        $file->move(public_path('Img/produk') , $fname);
-                        $data3 = array(
-                            'produk_id' => $produk->id,
-                            'foto_produk' => $fname,
-                        );
-                        fotoProduk::insert($data3);
-                    }
+                    foreach($request->file('foto_produk') as $key => $file)
+                    {
+                            $fname = $file->getClientOriginalName();
+                            $file->move(public_path('Img/produk') , $fname);
+                            $data3 = array(
+                                'produk_id' => $produk->id,
+                                'foto_produk' => $fname,
+                            );
+                            fotoProduk::insert($data3);
+                        }
                 
                 }
+
+                //input to table mahasiswa
                 if($request->hasfile('foto_mahasiswa'))
                 {
                    foreach($request->file('foto_mahasiswa') as $key => $file)
@@ -65,7 +69,6 @@ class MahasiswaController extends Controller
                     }
                    
                 }
-            
         return redirect()->route('mahasiswa')->with('pesan','data berhasil di tambahkan');
     }
 

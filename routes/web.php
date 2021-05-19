@@ -7,12 +7,12 @@ use App\Http\Controllers\MahasiswaController;
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 // custom route
 // Route::view('/main', 'main');
-Route::view('/main', 'Admin/v_home');
+//Route::view('/main', 'Admin/v_home');
 
 //dosen
 Route::view('/dosen', 'Admin/dosen/v_dosen');
