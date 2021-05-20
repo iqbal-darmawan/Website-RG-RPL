@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="navbar-content-button px-2">
-                <a href="" class="btn">Login</a>
+                <a href="{{ route('login') }}" class="btn">Login</a>
             </div>
         </div>
     </div>

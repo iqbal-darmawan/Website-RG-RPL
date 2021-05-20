@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\models\Home;
 
 class HomeController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->home = new Home();
     }
     public function index()
     {
@@ -18,6 +20,7 @@ class HomeController extends Controller
             'judulPa' => $this->home->totalJudulPa(),
             'industri' => $this->home->totalIndustri(),
         ];
+        //dd($data);
         return view('Admin/v_home',$data);
     }
 }
