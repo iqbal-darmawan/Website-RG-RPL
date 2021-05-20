@@ -12,6 +12,12 @@ class HomeController extends Controller
     }
     public function index()
     {
-        return view('Admin/v_home');
+        $data=[
+            'dosen' => $this->home->totalDosen(),
+            'produk' => $this->home->totalProduk(),
+            'judulPa' => $this->home->totalJudulPa(),
+            'industri' => $this->home->totalIndustri(),
+        ];
+        return view('Admin/v_home',$data);
     }
 }
