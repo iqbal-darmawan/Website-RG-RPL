@@ -15,8 +15,9 @@ class CreatePengabdianTable extends Migration
     {
         Schema::create('pengabdian', function (Blueprint $table) {
             $table->id('id');
+            $table->foreignId('dosen_id')->nullable()->constrained('dosen_rpl')->onDelete('cascade');
             $table->string('nama_pengabdian');
-            $table->string('deskripsi_pengabdian');
+            $table->string('deskripsi_pengabdian')->nullable();
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -40,8 +41,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function dosenRplRelated()
+
+    /**
+     * Mendapatkan semua data di table user
+     * @return Array
+     */
+    public function getUserData()
     {
-        return $this->hasOne(DosenRpl::class);
+        return DB::table('users')->get();
+    }
+
+    /**
+     * Mengedit profile setting
+     */
+    public function editData($id, $data)
+    {
+        DB::table('industri')
+        ->where('id',$id)
+        ->update($data);
+    }
+
+    /**
+     * Menghapus user
+     */
+    public function deleteData($id)
+    {
+        DB::table('industri')
+        ->where('id',$id)
+        ->delete();
     }
 }

@@ -88,16 +88,10 @@
             <h6 class="heading-small text-muted mb-4">Informasi Dosen</h6>
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-first-name">NIP</label>
-                    <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
-                  </div>
-                </div>
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Nama Lengkap</label>
-                    <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="Jesse">
+                    <input type="text" name="nama_lengkap"  class="form-control" value="{{$dosen->nama_lengkap}}" readonly>
                   </div>
                 </div>
               </div>
@@ -105,13 +99,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Jenis Kelamin</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Username" value="lucky.jesse">
+                    <input type="text" name="jenis_kelamin"  class="form-control" value="{{$dosen->jenis_kelamin}}" readonly>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-email">Tahun Bergabung</label>
-                    <input type="email" id="input-email" class="form-control" placeholder="jesse@example.com">
+                    <label class="form-control-label" for="input-first-name">NIP</label>
+                    <input type="text" name="nip"  class="form-control" value="{{$dosen->nip}}" readonly>
                   </div>
                 </div>
               </div>
@@ -124,71 +118,84 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Alamat</label>
-                    <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                     <textarea name="alamat" class="form-control"  cols="30" rows="5" readonly>{{$dosen->alamat}}</textarea>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-city">Kota</label>
-                    <input type="text" id="input-city" class="form-control" placeholder="City" value="New York">
+                    <label class="form-control-label" for="input-address">Tahun bergabung</label>
+                    <input name="thn_bergabung" class="form-control" placeholder="{{$dosen->thn_bergabung}}"  type="text" readonly>
                   </div>
                 </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-country">Negara</label>
-                    <input type="text" id="input-country" class="form-control" placeholder="Country" value="United States">
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-country">Kode Pos</label>
-                    <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code">
-                  </div>
-                </div>
-              </div>
-                <div class="row">
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-address">Alamat Email</label>
-                    <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                  </div>
-                </div>
-                  <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Telefon</label>
-                    <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                  </div>
-                  </div>
-                  <div class="col-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-address">Alamat Lecturer</label>
-                    <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                    <input name="telefon" class="form-control"  type="text" value="{{$dosen->telefon}}" readonly>
                   </div>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-address">Foto Dosen</label>
+                    <div>
+                        <img src="{{ url('Img/dosen/' . $dosen->foto_dosen) }}" width="100px" height="100px" alt="">
+                    </div>
+                  </div>
+                </div>
+               
               </div>
+            </div>
             <hr class="my-4" />
             <!-- Description -->
             <h6 class="heading-small text-muted mb-4">Tentang Dosen</h6>
             <div class="pl-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Prestasi</label>
-                <textarea rows="4" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                <label class="form-control-label"><i class="ni ni-hat-3"></i> Prestasi</label>
               </div>
+              <div class="form-group">
+                <ul class="list-group list-group-flush">
+                  @foreach ($prestasi as $item)
+                  <li class="list-group-item"><i class="ni ni-button-play"></i>  {{$item->nama_prestasi}} <br> {{$item->deskripsi_prestasi}}</li>
+                  
+                  @endforeach
+                </ul>
+              </div>
+              
             </div>
+            <hr class="my-4" />
             <div class="pl-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Penelitian</label>
-                <textarea rows="4" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                <label class="form-control-label"><i class="ni ni-hat-3"></i> Penelitian</label>
               </div>
+              <div class="form-group">
+                <ul class="list-group list-group-flush">
+                  @foreach ($penelitian as $item)
+                  <li class="list-group-item"><i class="ni ni-button-play"></i>  {{$item->nama_penelitian}} <br> {{$item->deskripsi_penelitian}}</li>
+                  @endforeach
+                </ul>
+              </div>
+              <div class="penelitian"></div>
             </div>
+            <hr class="my-4" />
             <div class="pl-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Pengabdian</label>
-                <textarea rows="4" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                <label class="form-control-label"><i class="ni ni-hat-3"></i> Pengabdian</label>
               </div>
+              <div class="form-group">
+                <ul class="list-group list-group-flush">
+                  @foreach ($pengabdian as $item)
+                  <li class="list-group-item"><i class="ni ni-button-play"></i>  {{$item->nama_pengabdian}} <br> {{$item->deskripsi_pengabdian}}</li>
+                  @endforeach
+                </ul>
+              </div>
+              <div class="pengabdian"></div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
+                <button class="btn btn-neutral btn-sm" type="reset">Reset</button>
             </div>
           </form>
         </div>

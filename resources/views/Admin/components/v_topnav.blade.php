@@ -53,7 +53,7 @@
                     <div class="col ml--2">
                       <div class="d-flex justify-content-between align-items-center">
                         <div>
-                          <h4 class="mb-0 text-sm">Lula Rania</h4>
+                          <h4 class="mb-0 text-sm">{{Auth::user()->names}}</h4>
                         </div>
                         <div class="text-right text-muted">
                           <small>2 hrs ago</small>
@@ -129,7 +129,7 @@
                     <div class="col ml--2">
                       <div class="d-flex justify-content-between align-items-center">
                         <div>
-                          <h4 class="mb-0 text-sm">Lula Rania</h4>
+                          <h4 class="mb-0 text-sm">{{Auth::user()->name}}</h4>
                         </div>
                         <div class="text-right text-muted">
                           <small>3 hrs ago</small>
@@ -154,7 +154,7 @@
                   <img alt="Image placeholder" src="{{asset('template/')}}/assets/img/theme/team-4.jpg">
                 </span>
                 <div class="media-body  ml-2  d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Lula Rania</span>
+                  <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->name}}</span>
                 </div>
               </div>
             </a>

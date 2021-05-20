@@ -1,0 +1,160 @@
+button.caraousel-button-indicators {
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50%;
+}
+
+.carousel-caption {
+    bottom: 40%;
+    padding-bottom: 0;
+}
+
+.carousel-caption-title {
+    margin-bottom: 36px;
+}
+
+.carousel-indicators {
+    bottom: 15%;
+}
+
+.card-header-padding {
+    padding: 0;
+}
+
+.card-content-wrapper {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.card-content-wrapper-dosen {
+    margin-top: 150px;
+}
+
+.card-content-wrapper-kerjasama-industri {
+    padding-top: 150px;
+    margin-bottom: 120px;
+}
+
+.card-height {
+    min-height: 500px;
+}
+
+.card {
+    border-radius: 23px;
+    width: 267px;
+}
+
+.card-content-first {
+    box-shadow: 0px 4px 30px rgba(11, 20, 230, 0.25);
+}
+
+.bg-card1 {
+    background: #FFFFFF;
+}
+
+.bg-card2 {
+    background: #8FAEFD;
+}
+
+.bg-card3 {
+    background: #F6FFBC;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.parallax {
+    background-image: url("/img/bg-paralax.jpg");
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: #fff;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.skill-bg {
+    width: 100%;
+}
+
+.progress-h4 {
+    color: white;
+    font-weight: 500;
+}
+
+.card-karya {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.read-more-text {
+    color: black;
+}
+
+/* .background-kerjasama-industri {
+    background-image: url("/img/bg-kerjasama-industri.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 650px;
+    background-position-x: center;
+    background-position-y: bottom 10px;
+} */
+
+  .section-headline h2 {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 100px;
+    position: relative;
+    text-transform: capitalize;
+  }
+
+  .section-headline h2::after {
+    border: 5px solid #F2C808;
+    bottom: -20px;
+    content: "";
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 40%;
+  }
+
+  .logo-kerjasama {
+      padding-left: 60px;
+      padding-right: 60px;
+  }
+
+  .bg-testimoni {
+    background: rgba(236, 236, 236, 0.36);
+  }
+
+.carousel-testimoni-wrapper {
+    height: 500px;
+}
+
+.card-testimoni {
+    border-radius: 0;
+    width: 350px;
+    margin: 0;
+    background: #FFFFFF;
+}
+
+.card-body-testimoni {
+    padding : 42px 28px;
+}
+
+.testimoni-img > img {
+    border-radius: 50%;
+}
+
+  /* .title-testimoni {
+      margin
+  } */

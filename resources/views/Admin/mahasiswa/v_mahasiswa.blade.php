@@ -2,7 +2,7 @@
 @section('title','Karya Mahasiswa')
 @section('content')
 <div class="col-lg-6 col-5 text-right">
-      <a href="/mahasiswa/add" class="btn btn-sm btn-neutral">Add</a>
+      <a href="/mahasiswa/create" class="btn btn-sm btn-neutral">Add</a>
       <a href="#" class="btn btn-sm btn-neutral">Filters</a>
     </div>
   </div>
@@ -25,50 +25,50 @@
                   <tr>
                   <th scope="col" class="sort" data-sort="completion">No</th>
                     <th scope="col" class="sort" data-sort="name">Judul Karya</th>
-                    <th scope="col" class="sort" data-sort="status">Foto Produk</th>
-                    <th scope="col" class="sort" data-sort="status">Tim Produksi</th>
-                    <th scope="col" class="sort" data-sort="status">Tahun Pembuatan Karya</th>
+                    <th scope="col" class="sort" data-sort="status">Nama Tim</th>
+                    <th scope="col" class="sort" data-sort="status">Tahun Produksi</th>
+                    
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody class="list">
+                  
+                  @php
+                      $no=1;
+                  @endphp
+                  @foreach ($dataKarya as $data)
                   <tr>
-                    <td>1</td>
+                    <td>{{$no}}</td>
                     <th scope="row">
                       <div class="media align-items-center">
                         <div class="media-body">
-                          <span class="name mb-0 text-sm">Argon Design System</span>
+                          <span class="name mb-0 text-sm">{{$data->nama_produk}}</span>
                         </div>
                       </div> 
                     </th>
-                    <td>
-                      <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                        <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-1.jpg">
-                      </a>
-                    </td>
-                    <td>
+                    <td>{{$data->nama_tim}}</td>
+                    <td>26 mei 2021</td>
+                    {{-- <td>
                       <div class="avatar-group">
-                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                          <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-1.jpg">
-                        </a>
-                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                          <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-2.jpg">
-                        </a>
-                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                          <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-3.jpg">
-                        </a>
-                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                          <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-4.jpg">
-                        </a>
+                        @if ($data->id == $mahasiswa->id_produk)
+                            @foreach ($mahasiswa as $data)
+                            <a  class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="{{$data->nama_mahasiswa}}">
+                              <img alt="Image placeholder" src="{{ asset('Img/mahasiswa/') }} . {{$data->foto_mahasiswa}}">
+                            </a>
+                            @endforeach
+                        @endif
                       </div> 
-                    </td>
-                    <td>20 Mei 2021</td>
+                    </td> --}}
                     <td>
-                      <a href="/mahasiswa/detail" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
-                      <a href="/mahasiswa/edit" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-                      <a href="/mahasiswa/destroy" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                      <a href="/mahasiswa/show/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
+                      <a href="/mahasiswa/edit/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="/mahasiswa/destroy/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
+                  @php
+                      $no++;
+                  @endphp
+                  @endforeach
                 </tbody>
               </table>
             </div>
@@ -103,3 +103,4 @@
       </div>
         
 @endsection
+
