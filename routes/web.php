@@ -5,9 +5,10 @@ use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\HomeController;
 
 // ======================LANDING=======================
-Route::view('/', 'welcome'); // ganti welcome dengan landing page
+//Route::view('/', ''); // ganti welcome dengan landing page
 
 // ======================AUTH=======================
 Auth::routes();
@@ -51,3 +52,12 @@ Route::get('/industri',[IndustriController::class,'index'])->name('industri');
 Route::post('/industri/store',[IndustriController::class,'store']);
 Route::post('/industri/update/{id}',[IndustriController::class,'update']);
 Route::get('/industri/destroy/{id}',[IndustriController::class,'destroy']);
+
+
+Route::get('/', function () {
+    return view('home.home-view');
+});
+
+Route::get('/karya', function () {
+    return view('karya.karya-view');
+});
