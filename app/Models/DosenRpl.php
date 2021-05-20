@@ -16,23 +16,32 @@ class DosenRpl extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'nama_lengkap',
         'email',
         'password',
+        'nama_lengkap',
         'jenis_kelamin',
+        'alamat',
+        'foto_dosen',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
+
     protected $casts = [
         'thn_bergabung' => 'datetime',
     ];
+
+    public function addDetail($data)
+    {
+        DB::table('dosen_rpl')->insert($data);
+    }
+
+    public function userRelated()
+    {
+        return $this->hasOne(User::class);
+    }
 }

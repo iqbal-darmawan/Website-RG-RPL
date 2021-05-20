@@ -14,13 +14,17 @@ class CreateDosenRplTable extends Migration
     public function up()
     {
         Schema::create('dosen_rpl', function (Blueprint $table) {
-            $table->foreignId('id')->constrained('users');
+            $table->id();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->string('nip')->unique();
             $table->string('nama_lengkap');
-            $table->string('jenis_kelamin',20);
-            $table->string('alamat');
-            $table->string('thn_bergabung');
-            $table->string('foto_dosen');
+            $table->string('jenis_kelamin',20)->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('thn_bergabung')->nullable();
+            $table->string('foto_dosen')->nullable();
             $table->timestamps();
         });
     }

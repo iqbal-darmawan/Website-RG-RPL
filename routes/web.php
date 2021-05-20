@@ -3,18 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
+use Illuminate\Support\Facades\Auth;
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 // custom route
-// Route::view('/main', 'main');
-Route::view('/main', 'Admin/v_home');
+Route::view('/main', [App\Http\Controllers\DosenController::class, 'render']);
+// Route::view('/main', 'Admin/v_home');
 
 //dosen
 Route::view('/dosen', 'Admin/dosen/v_dosen');
