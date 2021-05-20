@@ -30,28 +30,30 @@
                   </tr>
                 </thead>
                 <tbody class="list">
+                  @php
+                      $no=1;
+                  @endphp
+                  @foreach ($users as $data)
                   <tr>
-                    <td>1</td>
+                    <td>{{$no}}</td>
                     <th scope="row">
-                       <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/bootstrap.jpg">
-                        </a>
+                      <div class="media align-items-center">
                         <div class="media-body">
-                          <span class="name mb-0 text-sm">Lula Rania Salsabilla</span>
+                          <span class="name mb-0 text-sm">{{$data->name}}</span>
                         </div>
                       </div> 
                     </th>
-                    <td class="budget">
-                      lula@gmail.com
-                    </td>
-                    <td>2021-05-24</td>
+                    <td>{{$data->email}}</td>
+                    <td>26 mei 2021</td>
                     <td>
-                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i></button>
-                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
+                      <a href="#" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="#" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                     </td>
-                   
                   </tr>
+                  @php
+                      $no++;
+                  @endphp
+                  @endforeach
                 </tbody>
               </table>
             </div>

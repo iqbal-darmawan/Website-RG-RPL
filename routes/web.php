@@ -6,6 +6,7 @@ use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 // ======================LANDING=======================
 //Route::view('/', ''); // ganti welcome dengan landing page
@@ -45,7 +46,7 @@ Route::post('/judulpa/update/{id}',[JudulpaController::class,'update']);
 Route::get('/judulpa/destroy/{id}',[JudulpaController::class,'destroy']);
 
 // ======================USER=======================
-Route::view('/user', 'Admin/user/v_user');
+Route::get('/user', [UserController::class, 'index']);
 
 // ======================INDUSTRI=======================
 Route::get('/industri',[IndustriController::class,'index'])->name('industri');

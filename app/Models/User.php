@@ -48,7 +48,8 @@ class User extends Authenticatable
      */
     public function getUserData()
     {
-        return DB::table('users')->get();
+        $data = DB::table('users')->get();
+        return $data;
     }
 
     /**
