@@ -15,7 +15,7 @@ class CreateTableFotoProduk extends Migration
     {
         Schema::create('foto_produk', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('produk_id')->constrained('produk');
+            $table->foreignId('produk_id')->constrained('produk')->onDelete('cascade');
             $table->string('foto_produk');
             $table->timestamps();
         });

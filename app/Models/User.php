@@ -40,4 +40,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Mendapatkan semua data di table user
+     * @return Array
+     */
+    public function getUserData()
+    {
+        return DB::table('users')->get();
+    }
+
+    /**
+     * Mengedit profile setting
+     */
+    public function editData($id, $data)
+    {
+        DB::table('industri')
+        ->where('id',$id)
+        ->update($data);
+    }
+
+    /**
+     * Menghapus user
+     */
+    public function deleteData($id)
+    {
+        DB::table('industri')
+        ->where('id',$id)
+        ->delete();
+    }
 }

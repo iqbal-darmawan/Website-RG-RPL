@@ -29,13 +29,14 @@
         </div>
         <div class="card-body">
           <form action="/dosen/store" method="POST" enctype="multipart/form-data">
+            @csrf
             <h6 class="heading-small text-muted mb-4">Informasi Dosen</h6>
             <div class="pl-lg-4">
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Nama Lengkap</label>
-                    <input type="text" id="input-last-name" class="form-control">
+                    <input type="text" name="nama_lengkap" id="input-last-name" class="form-control">
                   </div>
                 </div>
               </div>
@@ -43,13 +44,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Jenis Kelamin</label>
-                    <input type="text" id="input-username" class="form-control">
+                    <input type="text" name="jenis_kelamin" id="input-username" class="form-control">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-first-name">NIP</label>
-                    <input type="text" id="input-first-name" class="form-control">
+                    <input type="text" name="nip" id="input-first-name" class="form-control">
                   </div>
                 </div>
               </div>
@@ -70,13 +71,27 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Email</label>
-                    <input id="input-address" class="form-control"  type="text">
+                    <input  name="email" class="form-control"  type="text">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Telefon</label>
-                    <input id="input-address" class="form-control"  type="text">
+                    <input name="telefon" class="form-control"  type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-address">Foto Dosen</label>
+                    <input name="foto_dosen" class="form-control"  type="file">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-address">Tahun bergabung</label>
+                    <input name="thn_bergabung" class="form-control"  type="date">
                   </div>
                 </div>
               </div>
@@ -93,11 +108,11 @@
               </div>
               <div class="form-group">
                 <label class="form-control-label">Nama Prestasi</label>
-                <input type="text" class="form-control" name="nama_penelitian">
+                <input type="text" class="form-control" name="nama_prestasi[]">
               </div>
               <div class="form-group">
                 <label class="form-control-label">Deskripsi Prestasi</label>
-                <textarea rows="3" class="form-control" name="deskripsi_penelitian" ></textarea>
+                <textarea rows="3" class="form-control" name="deskripsi_prestasi[]" ></textarea>
               </div>
               <div class="prestasi"></div>
             </div>
@@ -129,13 +144,17 @@
               </div>
               <div class="form-group">
                 <label class="form-control-label">Nama Pengabdian</label>
-                <input type="text" class="form-control" name="nama_penelitian" >
+                <input type="text" class="form-control" name="nama_pengabdian[]" >
               </div>
               <div class="form-group">
                 <label class="form-control-label">Deskripsi Pengabdian</label>
-                <textarea rows="4" class="form-control" name="deskripsi_penelitian" ></textarea>
+                <textarea rows="4" class="form-control" name="deskripsi_pengabdian[]" ></textarea>
               </div>
               <div class="pengabdian"></div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
+                <button class="btn btn-neutral btn-sm" type="reset">Reset</button>
             </div>
           </form>
         </div>

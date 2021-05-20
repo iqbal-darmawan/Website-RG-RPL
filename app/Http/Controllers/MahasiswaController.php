@@ -13,11 +13,15 @@ class MahasiswaController extends Controller
     public function __construct( )
     {
         $this->mahasiswa= new Mahasiswa();
+        $this->produk= new Produk();
+        $this->fotoProduk= new FotoProduk();
     }
     public function index()
     {
         $data=[
-            'mahasiswa' => $this->mahasiswa->getAlldata()
+            'mahasiswa' => $this->mahasiswa->getAlldata(),
+            'dataKarya' => $this->produk->getAllData(),
+            'fotoKarya' => $this->fotoProduk->getAllData(),
         ];
         return view('Admin/mahasiswa/v_mahasiswa',$data);
     }
@@ -78,7 +82,9 @@ class MahasiswaController extends Controller
             abort(404);
         }
         $data=[
-            'mahasiswa' => $this->mahasiswa->detailData($id)
+            'mahasiswa' => $this->mahasiswa->detailData($id),
+            'dataKarya' => $this->produk->detailData($id),
+            'fotoKarya' => $this->fotoProduk->detailData($id),
         ];
         return view('Admin/mahasiswa/v_detail_mahasiswa',$data);
     }
@@ -98,6 +104,9 @@ class MahasiswaController extends Controller
     }
     public function destroy($id)
     {
-        
+        $this->produk->deleteData($id);
+        $this->mahasiswa->deleteData($id);
+        $this->fotoProduk->deleteData($id);
+        return redirect()->route('industri')->with('pesan','Data berhasil dihapus');
     }
 }

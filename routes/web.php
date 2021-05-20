@@ -4,23 +4,28 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\DosenController;
 
+// ======================LANDING=======================
+Route::view('/', 'welcome'); // ganti welcome dengan landing page
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// ======================AUTH=======================
 Auth::routes();
 
-// custom route
-// Route::view('/main', 'main');
-//Route::view('/main', 'Admin/v_home');
+// ======================ADMIN=======================
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//dosen
-Route::view('/dosen', 'Admin/dosen/v_dosen');
-Route::view('/dosen/detail', 'Admin/dosen/v_detail_dosen');
-Route::view('/dosen/edit', 'Admin/dosen/v_edit_dosen');
-Route::view('/dosen/add', 'Admin/dosen/v_add_dosen');
+// ======================DOSEN=======================
+Route::get('/dosen',[DosenController::class,'index'])->name('dosen');
+Route::get('/dosen/create',[DosenController::class,'create']);
+Route::post('/dosen/store',[DosenController::class,'store']);
+Route::get('/dosen/show/{id}',[DosenController::class,'show']);
+Route::get('/dosen/edit/{id}',[DosenController::class,'edit']);
+Route::post('/dosen/update/{id}',[DosenController::class,'update']);
+Route::get('/dosen/destroy/{id}',[DosenController::class,'destroy']);
 
-//mahasiswa
+
+// ======================MAHASISWA=======================
 Route::get('/mahasiswa',[MahasiswaController::class,'index'])->name('mahasiswa');
 Route::get('/mahasiswa/create',[MahasiswaController::class,'create']);
 Route::post('/mahasiswa/store',[MahasiswaController::class,'store']);
@@ -29,7 +34,7 @@ Route::get('/mahasiswa/edit/{id}',[MahasiswaController::class,'edit']);
 Route::post('/mahasiswa/update/{id}',[MahasiswaController::class,'update']);
 Route::get('/mahasiswa/destroy/{id}',[MahasiswaController::class,'destroy']);
 
-// JudulPA
+// ======================JUDUL PA=======================
 Route::get('/judulpa',[JudulpaController::class,'index'])->name('judulpa');
 Route::get('/judulpa/create',[JudulpaController::class,'create']);
 Route::post('/judulpa/store',[JudulpaController::class,'store']);
@@ -38,10 +43,10 @@ Route::get('/judulpa/edit/{id}',[JudulpaController::class,'edit']);
 Route::post('/judulpa/update/{id}',[JudulpaController::class,'update']);
 Route::get('/judulpa/destroy/{id}',[JudulpaController::class,'destroy']);
 
-//user
+// ======================USER=======================
 Route::view('/user', 'Admin/user/v_user');
 
-//industri
+// ======================INDUSTRI=======================
 Route::get('/industri',[IndustriController::class,'index'])->name('industri');
 Route::post('/industri/store',[IndustriController::class,'store']);
 Route::post('/industri/update/{id}',[IndustriController::class,'update']);

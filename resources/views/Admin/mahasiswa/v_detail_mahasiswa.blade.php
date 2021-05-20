@@ -21,15 +21,11 @@
       <div class="card card-profile">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
+            @foreach ($fotoKarya as $data)
             <div class="carousel-item active">
-              <img src="{{asset('Img')}}/slider1.jpg" class="d-block w-100" width="200px" height="200px" alt="...">
+              <img src="{{ url('Img/produk/' . $data->foto_produk) }}" class="d-block w-100" width="200px" height="200px" alt="...">
             </div>
-            <div class="carousel-item">
-              <img src="{{asset('Img')}}/slider2.jpg" class="d-block w-100" width="200px" height="200px" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="{{asset('Img')}}/slider3.jpg" class="d-block w-100" width="200px" height="200px" alt="...">
-            </div>
+            @endforeach
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -53,18 +49,11 @@
                 <div>
                   <span class="heading">Pengembang</span> <br>
                   <div class="avatar-group desription">
-                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                      <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-1.jpg">
+                    @foreach ($mahasiswa as $data)
+                    <a  class="avatar avatar-sm rounded-circle"  data-toggle="tooltip" data-original-title="{{$data->nama_mahasiswa}}">
+                     <img alt="Image placeholder" src="{{ url('Img/mahasiswa/' . $data->foto_mahasiswa) }}" height="30px">
                     </a>
-                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                      <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-2.jpg">
-                    </a>
-                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                      <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-3.jpg">
-                    </a>
-                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                      <img alt="Image placeholder" src="{{ asset('template') }}/assets/img/theme/team-4.jpg">
-                    </a>
+                    @endforeach
                   </div> 
                 </div>
               </div>
@@ -72,17 +61,12 @@
           </div>
           <div class="text-center">
             <h5 class="h3">
-              Tim Lizan<span class="font-weight-light">, D3 IT B</span>
+              {{$dataKarya->nama_tim}}<span class="font-weight-light"></span>
             </h5>
-            <div class="h5 font-weight-300">
-              <i class="ni location_pin mr-2"></i>Bucharest, Romania
-            </div>
             <div class="h5 mt-4">
-              <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+              <i class="ni business_briefcase-24 mr-2"></i>{{$dataKarya->nama_produk}}
             </div>
-            <div>
-              <i class="ni education_hat mr-2"></i>University of Computer Science
-            </div>
+           
           </div>
         </div>
       </div>
@@ -104,13 +88,13 @@
                     <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="input-first-name">Nama Karya</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                        <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="{{$dataKarya->nama_produk}}" readonly>
                     </div>
                     </div>
                     <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Nama Tim</label>
-                        <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="Jesse">
+                        <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="{{$dataKarya->nama_tim}}" readonly>
                     </div>
                     </div>
                 </div>
@@ -118,143 +102,52 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="">Deskripsi Produk</label>
-                            <textarea name=""  class="form-control"  cols="30" rows="3"></textarea>
+                            <textarea name=""  class="form-control"  cols="30" rows="3" readonly>{{$dataKarya->deskripsi_produk}}</textarea>
                     </div>
                 </div>
                 </div>
+                @foreach ($fotoKarya as $data)
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="">Foto Produk</label>
-                            <input type="file" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="">Foto Produk</label>
-                            <input type="file" class="form-control">
-                        </div>
-                    </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="">foto karya</label>
+                   
+                      <div class="col-lg-3">
+                          <img src="{{ url('Img/produk/' . $data->foto_produk) }}"  height="100px" width="100px" alt="">
+                      </div>
+                    
+                  </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="">Foto Produk</label>
-                            <input type="file" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="">Foto Produk</label>
-                            <input type="file" class="form-control">
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
             <hr class="my-4" />
             <!-- Address -->
             <h6 class="heading-small text-muted mb-4">Informasi Pengembang</h6>
             <div class="pl-lg-4">
+              @foreach ($mahasiswa as $data)
               <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label >Nama</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  </div>
-                  <div class="col-md-4">
+                  <div class="col-lg-3">
                     <div class="form-group">
-                      <label >Kelas</label>
-                      <input type="text" class="form-control">
+                      <label for=""> Foto Anggota</label>
+                    <div>
+                      <img src="{{ url('Img/mahasiswa/' . $data->foto_mahasiswa) }}" height="100px" width="100px" alt="">
                     </div>
-                  </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label >Foto</label>
-                        <input type="file" class="form-control">
-                      </div>
-                   </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label >Nama</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label >Kelas</label>
-                      <input type="text" class="form-control">
                     </div>
-                  </div>
-                    <div class="col-md-4">
+                </div>
+                  <div class="col-lg-3">
                       <div class="form-group">
-                        <label >Foto</label>
-                        <input type="file" class="form-control">
+                        <label for=""> nama Anggota</label>
+                        <input type="text" class="form-control" readonly name="nama_mahasiswa" value="{{$data->nama_mahasiswa}}">
                       </div>
-                   </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label >Nama</label>
-                    <input type="text" class="form-control">
                   </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label >Kelas</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-3">
                       <div class="form-group">
-                        <label >Foto</label>
-                        <input type="file" class="form-control">
+                        <label for=""> kelas</label>
+                        <input type="text" class="form-control" readonly name="nama_mahasiswa" value="{{$data->kelas}}">
                       </div>
-                   </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label >Nama</label>
-                    <input type="text" class="form-control">
                   </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label >Kelas</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label >Foto</label>
-                        <input type="file" class="form-control">
-                      </div>
-                   </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label >Nama</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label >Kelas</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label >Foto</label>
-                        <input type="file" class="form-control">
-                      </div>
-                   </div>
-              </div>
+                </div>
+                @endforeach
               </div>
            
           </form>

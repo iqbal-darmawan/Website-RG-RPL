@@ -1,10 +1,7 @@
 @extends('Admin/components/v_wrapper')
 @section('title','User')
 @section('content')
-<div class="col-lg-6 col-5 text-right">
-      <a href="/industri/add" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal">Add</a>
-      <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-    </div>
+
   </div>
 </div>
 </div>
@@ -19,14 +16,15 @@
               <h3 class="mb-0">Table User</h3>
             </div>
             <!-- Light table -->
+
+            {{-- Foreach!! --}}
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" class="sort" data-sort="completion">No</th>
-                    <th scope="col" class="sort" data-sort="name">Username</th>
+                    <th scope="col" class="sort" data-sort="name">Nama</th>
                     <th scope="col" class="sort" data-sort="budget">Email</th>
-                    <th scope="col" class="sort" data-sort="status">Password</th>
                     <th scope="col" class="sort" data-sort="status">Tanggal Bergabung</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -45,13 +43,7 @@
                       </div> 
                     </th>
                     <td class="budget">
-                      $2500 USD 
-                    </td>
-                    <td>
-                      <span class="badge badge-dot mr-4">
-                        <i class="bg-warning"></i>
-                        <span class="status">pending</span>
-                      </span> 
+                      lula@gmail.com
                     </td>
                     <td>2021-05-24</td>
                     <td>
@@ -93,46 +85,6 @@
         </div>
       </div>
 
-    {{-- modal add --}}
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="POST">
-          @csrf
-          <div class="form-group">
-            <label >Username</label>
-            <input class="form-control" type="text" name="" id="">
-          </div>
-          <div class="form-group">
-            <label >Email</label>
-            <input class="form-control" type="email" name="" id="">
-          </div>
-          <div class="form-group">
-            <label >Password</label>
-            <input class="form-control" type="text" name="" id="">
-          </div>
-          <div class="form-group">
-            <label >Created at</label>
-            <input type="date"  class="form-control">
-          </div>
-          
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-  {{-- close modal add --}}
   {{-- modal edit --}}
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
