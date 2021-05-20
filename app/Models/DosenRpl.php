@@ -18,22 +18,12 @@ class DosenRpl extends Model
      */
     protected $fillable = [
         'nama_lengkap',
-<<<<<<< HEAD
         'email',
-=======
->>>>>>> 15c2c673c9e920b4c69703eea34049002cc1a2f0
         'password',
         'nama_lengkap',
         'jenis_kelamin',
-<<<<<<< HEAD
         'alamat',
         'foto_dosen',
-=======
-        'foto_dosen',
-        'nip',
-        'thn_bergabung',
-        'deskrispi_prestasi'
->>>>>>> 15c2c673c9e920b4c69703eea34049002cc1a2f0
     ];
 
     protected $hidden = [
@@ -46,16 +36,6 @@ class DosenRpl extends Model
         'thn_bergabung' => 'datetime',
     ];
 
-<<<<<<< HEAD
-    public function addDetail($data)
-    {
-        DB::table('dosen_rpl')->insert($data);
-    }
-
-    public function userRelated()
-    {
-        return $this->hasOne(User::class);
-=======
     public function getAllData()
     {
         
@@ -72,6 +52,5 @@ class DosenRpl extends Model
         DB::table('dosen_rpl')
         ->where('id',$id)
         ->delete();
->>>>>>> 15c2c673c9e920b4c69703eea34049002cc1a2f0
     }
 }
