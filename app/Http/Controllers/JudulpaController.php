@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Industri;
 use App\Models\JudulPA;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,12 @@ class JudulpaController extends Controller
             'judulpa' => $this->Judulpa->getAllData(),
         ];
         return view('Admin/judulpa/v_judulpa',$data);
+    }
+
+    public function display()
+    {
+        
+
     }
     public function create()
     {

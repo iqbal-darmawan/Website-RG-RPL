@@ -36,4 +36,8 @@ class Industri extends Model
         ->where('id',$id)
         ->delete();
     }
+    public function judulpa()
+    {
+        return $this->hasMany(JudulPA::class);
+    }
 }

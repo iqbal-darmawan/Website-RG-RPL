@@ -35,4 +35,8 @@ class JudulPA extends Model
         ->where('id',$id)
         ->delete();
     }
+    public function industri()
+    {
+        return $this->belongsTo(Industri::class);
+    }
 }
