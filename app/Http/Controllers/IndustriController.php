@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Industri;
+use App\Models\Industri;
 class IndustriController extends Controller
 {
     public function __construct()
