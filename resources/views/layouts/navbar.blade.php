@@ -11,14 +11,14 @@
                 <div class="nav-item {{ request()->is('karya') ? 'active' : '' }}">
                     <a  href="/karya">Karya</a>
                 </div>
-                <div class="nav-item">
-                    <a href="">Tawaran Judul PA</a>
+                <div class="nav-item {{ request()->is('judulpa') ? 'active' : '' }}">
+                    <a href="/judulpa">Tawaran Judul PA</a>
                 </div>
-                <div class="nav-item">
-                    <a href="">Daftar Dosen</a>
+                <div class="nav-item {{ request()->is('dosen') ? 'active' : '' }}">
+                    <a href="/dosen">Daftar Dosen</a>
                 </div>
-                <div class="nav-item">
-                    <a href="">Tentang Kami</a>
+                <div class="nav-item {{ request()->is('tentangkami') ? 'active' : '' }}">
+                    <a href="/tentangkami">Tentang Kami</a>
                 </div>
             </div>
             <div class="navbar-content-button px-2">
