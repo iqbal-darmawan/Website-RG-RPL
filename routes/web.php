@@ -67,6 +67,10 @@ Route::get('/', function () {
     return view('home.home-view');
 });
 
+// =================== Karya =================
 Route::get('/karya', function () {
     return view('karya.karya-view');
+});
+Route::get('/karya/details/karya-{id}', function ($id){
+    return view('karya.details.karya-details-view');
 });
