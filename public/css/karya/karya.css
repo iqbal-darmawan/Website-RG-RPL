@@ -62,3 +62,177 @@ form .form-control:focus{
     cursor:pointer;
     height:100%;
 }
+
+.header-karya {
+    margin-bottom: 150px;
+}
+
+.header-title h2:before{
+    border: 5px solid #183B67;
+    border-radius: 5px;
+    bottom: -20px;
+    content: "";
+    left: 112px;
+    margin: auto 0;
+    position: absolute;
+    right: 0;
+    width: 17%;
+}
+
+.header-title h2 {
+    margin-top:50px;
+}
+
+.header-title > h2 {
+    font-size:48px;
+    font-weight:bold;
+}
+
+.card-karya-wrapper1 {
+    max-width: 350px;
+    background: linear-gradient(180deg, #034DAB 0%, rgba(14, 94, 214, 0.966035) 40.1%, rgba(49, 94, 255, 0.81) 90.32%, rgba(41, 87, 248, 0.71) 100%);
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+.card-karya-wrapper2 {
+    max-width: 350px;
+    background: #FFFFFF;
+box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+.button-see-more > a {
+    font-size: 18px;
+    background-color: #fff;
+    padding: 8px 32px;
+    border-radius: 20px;
+}
+
+.button-see-more-2 > a {
+    font-size: 18px;
+    background-color: #0249FF;
+    padding: 8px 32px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.carousel-wrap {
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    position: relative;
+  }
+  .owl-carousel .owl-nav{
+    overflow: hidden;
+    height: 0px;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+      background: #2caae1;
+  }
+
+.owl-carousel .nav-btn{
+    height: 47px;
+    position: absolute;
+    width: 50px;
+    cursor: pointer;
+    top: 125px !important;
+  }
+
+  .owl-carousel .owl-prev.disabled,
+  .owl-carousel .owl-next.disabled{
+  pointer-events: none;
+  opacity: 0.2;
+  }
+
+  .owl-carousel .prev-slide{
+    background: url('/img/karya/icon/btn-prev.png') no-repeat scroll 0 0;
+    left: -45px;
+  }
+  .owl-carousel .next-slide{
+    background: url('/img/karya/icon/btn-next.png') no-repeat scroll 0 0;
+    right: -65px;
+  }
+  .owl-carousel .prev-slide:hover{
+   transform: scale(1.1);
+  }
+  .owl-carousel .next-slide:hover{
+    transform: scale(1.1);
+  }
+
+  /* owl-carousel-box-shadow */
+  .card-download-karya {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 370px;
+    border: none;
+  }
+
+    .owl-stage-outer {
+    overflow: visible;
+    }
+
+    .owl-item {
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+    .owl-item.active {
+        opacity: 1;
+    }
+    .owl-stage{
+        margin: 30px;
+    }
+
+  .button-download-karya > a {
+    background: #183F67;
+    border-radius: 10px;
+    color: #fff;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+
+  .karya-produk {
+      margin-bottom: 200px;
+  }
+
+  .karya-produk-title {
+      width: 30%;
+  }
+
+  .karya-produk-title > h2:after {
+    background: #DAD210;
+    border: 4px solid #DAD210;
+    border-radius: 5px;
+    bottom: 0;
+    top: 10px;
+    content: "";
+    left: 13%;
+    display: block;
+    position: relative;
+    right: 0;
+    width: 40%;
+  }
+
+  .card-karya {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 370px;
+}
+
+.card-header-padding {
+    padding: 0;
+}
+
+.see-more-karya > a {
+    text-decoration: none;
+    color: black;
+    width: 30%;
+    padding: 3px 8px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+
