@@ -28,4 +28,9 @@ class Produk extends Model
         ->where('id',$id)
         ->delete();
     }
+
+    public function fotoproduk()
+    {
+        $this->hasMany(FotoProduk::class);
+    }
 }

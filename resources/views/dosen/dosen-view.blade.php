@@ -94,18 +94,20 @@
             <h2 class="text-center">Dosen Tim RG RPL</h2>
         </div>
         <div class="dosen-tim-card-wrapper d-flex flex-wrap">
-            <div class="card dosen-tim-card">
-                <div class="card-header p-0">
-                    <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100 ">
-                </div>
-                <div class="card-body px-3 ">
-                    <h4>Lorem Ipsum</h4>
-                    <p class="my-3">Lorem ipsum dolor, sit amet....</p>
-                    <div class="see-more-karya mb-3 mt-5 d-block text-end">
-                        <a href="#">See more...</a>
+            @foreach ($collection as $item)
+                <div class="card dosen-tim-card">
+                    <div class="card-header p-0">
+                        <img src="{{ asset($item->fotoDosen) }}" alt="" class="text-center w-100 ">
+                    </div>
+                    <div class="card-body px-3 ">
+                        <h4>{{$item->namaDosen}}/h4>
+                        <p class="my-3">{{$item->deskripsi}}</p>
+                        <div class="see-more-karya mb-3 mt-5 d-block text-end">
+                            <a href="#">See more...</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
             <div class="card dosen-tim-card">
                 <div class="card-header p-0">
                     <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100 ">

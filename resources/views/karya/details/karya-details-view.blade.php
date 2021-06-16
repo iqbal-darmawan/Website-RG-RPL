@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('optional-css')
-<link rel="stylesheet" href="{{ asset('css/karya/karya.css') }}">
+<link rel="stylesheet" href="{{ asset('css/karya/karya-details.css') }}">
 <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/">
 @endsection
 
@@ -29,34 +29,65 @@
         </div>
     </div>
 </div>
+
 <div class="container">
-    <div class="content-header">
-        {{-- TODO : Ganti dengan carousel--}}
-        <div class="karya-img">
-            <img src="#" alt="#">
+    <div class="card">
+        <div class="card-body">
+            <div class="content-header-wrapper mb-5">
+                <div class="karya-img mb-3">
+                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#">
+                </div>
+                <div class="content-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="option-image d-flex">
+                                <div class="image">
+                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
+                                </div>
+                                <div class="image">
+                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
+                                </div>
+                                <div class="image">
+                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
+                                </div>
+                                <div class="image">
+                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
+                                </div>
+                        
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="team-desc">
+                                <h3>Nama Team</h3>
+                                {{-- TODO : Konek ke backend--}}
+                                <p>Nama Team -- Anggota Team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <h1 class="nama-karya">Nama Karya</h1>
+                <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
+                <h3 class="nama-karya">Manfaat</h3>
+                <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
+                <h3 class="nama-karya">Penggunaan</h3>
+                <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
+                <h3 class="nama-karya">Teknologi yang digunakan</h3>
+                <ul>
+                    <li>Teknologi</li>
+                    <li>Teknologi</li>
+                    <li>Teknologi</li>
+                    <li>Teknologi</li>
+                    <li>Teknologi</li>
+                </ul>
+            </div>
         </div>
-        <div class="team-desc">
-            <h3>Nama Team</h3>
-            {{-- TODO : Konek ke backend--}}
-            <p>Nama Team -- Anggota Team</p>
-        </div>
-        <div class="yellow-line"></div>
     </div>
-    <div class="main-content">
-        <h1 class="nama-karya">Nama Karya</h1>
-        <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
-        <h3 class="nama-karya">Manfaat</h3>
-        <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
-        <h3 class="nama-karya">Penggunaan</h3>
-        <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
-        <h3 class="nama-karya">Teknologi yang digunakan</h3>
-        <ul>
-            <li>Teknologi</li>
-            <li>Teknologi</li>
-            <li>Teknologi</li>
-            <li>Teknologi</li>
-            <li>Teknologi</li>
-        </ul>
-    </div>
+    
 </div>
+@endsection
+
+@section('onclick-script')
+
 @endsection

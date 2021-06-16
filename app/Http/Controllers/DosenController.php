@@ -7,6 +7,7 @@ use App\Models\DosenRpl;
 use App\Models\Penelitian;
 use App\Models\Prestasi;
 use App\Models\Pengabdian;
+use Illuminate\Support\Facades\DB;
 
 
 class DosenController extends Controller
@@ -23,7 +24,13 @@ class DosenController extends Controller
         $data=[
             'dosen' => $this->dosen->getAllData()
         ];
-        return view('Admin/dosen/v_dosen',$data);
+        return view('Admin/dosen/v_dosen', $data);
+    }
+
+    public function indexFront() {
+        return view('user.index', [
+            'users' => DB::table('users')->paginate(5)
+        ]);
     }
 
     public function create()

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('optional-css')
-<link rel="stylesheet" href="{{ asset('css/karya/karya.css') }}">
+<link rel="stylesheet" href="{{ asset('css/karya/karya-details.css') }}">
 <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/">
 @endsection
 
@@ -214,7 +214,7 @@
                         <h4>Lorem Ipsum</h4>
                         <p>Lorem ipsum dolor, sit amet....</p>
                         <div class="see-more-karya mb-4">
-                            <a href="#" class="d-block">See more...</a>
+                            <a href="{{url('/karya/details/karya-1')}}" class="d-block">See more...</a>
                         </div>
                     </div>
                 </div>

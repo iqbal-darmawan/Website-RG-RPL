@@ -28,11 +28,9 @@ class Mahasiswa extends Model
     }
     public function deleteData($id)
     {
-        
         DB::table('mahasiswa')
         ->where('id_produk',$id)
         ->delete();
-        
     }
 
 }
