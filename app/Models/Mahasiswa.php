@@ -23,7 +23,6 @@ class Mahasiswa extends Model
     public function detailData($id)
     {
         $data = DB::table('mahasiswa')->where('id_produk',$id)->get();
-
         return $data;
     }
     public function deleteData($id)
@@ -31,6 +30,13 @@ class Mahasiswa extends Model
         DB::table('mahasiswa')
         ->where('id_produk',$id)
         ->delete();
+    }
+    
+    public function deleteMahasiswaById($id)
+    {
+        DB::table('mahasiswa')
+        ->where('id',$id)
+        ->delete(); 
     }
 
 }

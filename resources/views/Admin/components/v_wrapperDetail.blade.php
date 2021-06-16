@@ -7,7 +7,7 @@
   <div class="main-content" id="panel">
     @include('Admin/components/v_topnavDetail')
     
-        @yield('content')
+      @yield('content')
      @include('Admin/components/v_footer')
    
  

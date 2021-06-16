@@ -29,6 +29,13 @@ class FotoProduk extends Model
         ->where('produk_id',$id)
         ->delete();
     }
+    
+    public function deleteFotoById($id)
+    {
+        DB::table('foto_produk')
+        ->where('id',$id)
+        ->delete();
+    }
     public function produk()
     {
         $this->belongsTo(Produk::class);

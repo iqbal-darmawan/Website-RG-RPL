@@ -1,8 +1,10 @@
 @extends('Admin/components/v_wrapper')
 @section('title','Industri')
 @section('content')
+
+@include('Admin.components.sweetalert')
   <div class="col-lg-6 col-5 text-right">
-      <button  class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal" >Add</button>
+      <button class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal" >Add</button>
       <a href="#" class="btn btn-sm btn-neutral">Filters</a>
     </div>
   </div>
@@ -47,7 +49,7 @@
                        <td>
                          <div>
                           <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal{{$data->id}}"><i class="fas fa-edit"></i></button>
-                          <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$data->id}}"><i class="fas fa-trash"></i></button>
+                          <a href="industri/destroy/{{$data->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                          </div>
                        </td>
                       </tr>
