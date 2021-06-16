@@ -8,7 +8,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\HomeController;
 
 // ======================LANDING=======================
-//Route::view('/', ''); // ganti welcome dengan landing page
+Route::view('/', 'home.home-view');
 
 // ======================AUTH=======================
 Auth::routes();
@@ -24,6 +24,12 @@ Route::get('/dosen/show/{id}',[DosenController::class,'show']);
 Route::get('/dosen/edit/{id}',[DosenController::class,'edit']);
 Route::post('/dosen/update/{id}',[DosenController::class,'update']);
 Route::get('/dosen/destroy/{id}',[DosenController::class,'destroy']);
+Route::get('/dosen/deletePrestasiById/{id}',[DosenController::class,'deletePrestasiById']);
+Route::get('/dosen/deletePenelitianById/{id}',[DosenController::class,'deletePenelitianById']);
+Route::get('/dosen/deletePengabdianById/{id}',[DosenController::class,'deletePengabdianById']);
+Route::post('/dosen/addArrayPrestasi/{id}',[DosenController::class,'addArrayPrestasi']);
+Route::post('/dosen/addArrayPenelitian/{id}',[DosenController::class,'addArrayPenelitian']);
+Route::post('/dosen/addArrayPengabdian/{id}',[DosenController::class,'addArrayPengabdian']);
 
 
 // ======================MAHASISWA=======================
@@ -34,6 +40,11 @@ Route::get('/mahasiswa/show/{id}',[MahasiswaController::class,'show']);
 Route::get('/mahasiswa/edit/{id}',[MahasiswaController::class,'edit']);
 Route::post('/mahasiswa/update/{id}',[MahasiswaController::class,'update']);
 Route::get('/mahasiswa/destroy/{id}',[MahasiswaController::class,'destroy']);
+Route::get('/mahasiswa/hapusFoto/{id}',[MahasiswaController::class,'deleteFotoById']);
+Route::get('/mahasiswa/hapusMahasiswa/{id}',[MahasiswaController::class,'deleteMahasiswaById']);
+Route::post('/mahasiswa/addFotoProduk/{id}',[MahasiswaController::class,'addFotoProduk']);
+Route::post('/mahasiswa/tambahMahasiswa/{id}',[MahasiswaController::class,'addMahasiswabyId']);
+
 
 // ======================JUDUL PA=======================
 Route::get('/judulpa',[JudulpaController::class,'index'])->name('judulpa');
@@ -54,9 +65,6 @@ Route::post('/industri/update/{id}',[IndustriController::class,'update']);
 Route::get('/industri/destroy/{id}',[IndustriController::class,'destroy']);
 
 
-Route::get('/', function () {
-    return view('home.home-view');
-});
 
 Route::get('/karya', function () {
     return view('karya.karya-view');

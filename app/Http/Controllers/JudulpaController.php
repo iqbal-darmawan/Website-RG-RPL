@@ -43,6 +43,7 @@ class JudulpaController extends Controller
             'tahun_penawaran' => $request-> tahun_penawaran,
             'deskripsi_judul' => $request->deskripsi_judul
         ];
+        session()->flash('success','data berhasil di tambahkan');
         $this->Judulpa->addData($data);
         return redirect()->route('judulpa')->with('pesan','data berhasil di tambahkan');
     }
@@ -66,6 +67,7 @@ class JudulpaController extends Controller
         $data=[
             'judulpa' => $this->Judulpa->detailData($id)
         ];
+        
         return view('Admin/judulpa/v_edit_judulpa',$data);
     }
 
@@ -79,11 +81,13 @@ class JudulpaController extends Controller
             'deskripsi_judul' => $request ->deskripsi_judul,
         ];
         $this->Judulpa->editData($id,$data);
+        session()->flash('success','data berhasil diubah');
         return redirect()->route('judulpa')->with('pesan','Data berhasil diubah');
     }
     public function destroy($id)
     {
         $this->Judulpa->deleteData($id);
-        return redirect()->route('judulpa')->with('pesan','Data berhasil dihapus');
+        session()->flash('success','data berhasil dihapus');
+        return redirect()->route('judulpa');
     }
 }

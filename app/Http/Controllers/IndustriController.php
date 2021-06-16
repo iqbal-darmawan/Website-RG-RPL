@@ -37,6 +37,8 @@ class IndustriController extends Controller
             'foto_industri' => $filename
         ];
         $this->Industri->addData($data);
+
+        session()->flash('success','data berhasil di tambahkan');
         return redirect()->route('industri')->with('pesan','data berhasil di tambahkan');
     }
     public function update(Request $request, $id)
@@ -48,7 +50,8 @@ class IndustriController extends Controller
             'nama_industri.required' =>'masukan nama industri',
             'deskripsi_industri.required' => 'masukan deskripsi industri',
         ]);
-        if ($request->foto_industri <> "") {
+        
+        if ($request->foto_industri <> " ") {
             $file = Request()->foto_industri;
             $filename = Request()->nama_industri. '.' . $file->extension();
             $file->move(public_path('Img/industri'),$filename);
@@ -65,15 +68,19 @@ class IndustriController extends Controller
             ];
             $this->Industri->editData($id,$data);
         }
-        return redirect()->route('industri')->with('pesan','Data berhasil diubah');
+
+        session()->flash('success','data berhasil diubah');
+        return redirect()->route('industri');
     }
     public function destroy($id)
     {
         $data = $this->Industri->detailData($id);
-        if ($data->foto_industri <>"") {
+        if ($data->foto_industri <>" ") {
             unlink(public_path('Img/industri'). '/' . $data->foto_industri);
         }
         $this->Industri->deleteData($id);
-        return redirect()->route('industri')->with('pesan','Data berhasil dihapus');
+
+        session()->flash('success','data berhasil dihapus');
+        return redirect()->route('industri');
     }
 }
