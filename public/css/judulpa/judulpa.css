@@ -63,9 +63,58 @@ form .form-control:focus{
     height:100%;
 }
 
-.card-content-wrapper {
-    margin-top: 120px;
-    margin-bottom: 120px;
+.header-judul {
+    margin-bottom: 150px;
+}
+
+.header-title h2:before{
+    border: 5px solid #183B67;
+    border-radius: 5px;
+    bottom: -20px;
+    content: "";
+    left: 112px;
+    margin: auto 0;
+    position: absolute;
+    right: 0;
+    width: 17%;
+}
+
+.header-title h2 {
+    margin-top:50px;
+}
+
+.header-title > h2 {
+    font-size:48px;
+    font-weight:bold;
+}
+
+.card-karya-wrapper1 {
+    max-width: 350px;
+    background: linear-gradient(180deg, #034DAB 0%, rgba(14, 94, 214, 0.966035) 40.1%, rgba(49, 94, 255, 0.81) 90.32%, rgba(41, 87, 248, 0.71) 100%);
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+.card-karya-wrapper2 {
+    max-width: 350px;
+    background: #FFFFFF;
+box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+.button-see-more > a {
+    font-size: 18px;
+    background-color: #fff;
+    padding: 8px 32px;
+    border-radius: 20px;
+}
+
+.button-see-more-2 > a {
+    font-size: 18px;
+    background-color: #0249FF;
+    padding: 8px 32px;
+    border-radius: 20px;
+    color: #fff;
 }
 
 .section-headline h2 {
@@ -78,42 +127,19 @@ form .form-control:focus{
   }
 /* Rectangle 56 */
 
-  .section-headline h2::before {
-    border: 5px solid #183B67;
-    bottom: 0px;
-    content: "    ";
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    width: 200px;
-    height: 15px;
-    left: -95px;
-    top: -23px;
-  }
-
-.card-height {
-    min-height: 500px;
+.tawaran-pa-wrapper {
+    margin-bottom:150px;
 }
 
-.card {
-    border-radius: 23px;
-    width: 267px;
+.tawaran-pa-card {
+    margin: 50px 100px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
-.card-content-first {
-    box-shadow: 0px 4px 30px rgba(11, 20, 230, 0.25);
-}
-
-.bg-card1 {
-    background: #2957F8;
-}
-
-.bg-card2 {
-    background: #fff;
-}
-
-.card-title {
-    font-size: 24px;
-    font-weight:bold;
+.date {
+    margin: 4px;
+    padding: 15px;
+    background: #E7E7E7;
 }
 
