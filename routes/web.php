@@ -23,21 +23,15 @@ Route::get('/karya/details', function (){
     return view('karya.details.karya-details-view');
 });
 
-Route::get('/daftardosen', function () {
-    return view('dosen.dosen-view');
-});
+Route::view('/daftar-dosen', 'dosen.dosen-view')->name('daftar-dosen');
 
-Route::get('/daftardosen/detail', function () {
-    return view('dosen.detail-dosen-view');
-});
+Route::view('/daftar-dosen/detail', 'dosen.detail-dosen-view')->name('daftar-dosen-detail');
 
-Route::get('/judulpa', function () {
-    return view('judulpa.judulpa-view');
-});
+Route::view('/judul-pa', 'judulpa.judulpa-view')->name('judul-pa');
 
-Route::get('/tentangkami', function () {
-    return view('tentangkami.tentangkami-view');
-});
+Route::view('/tentang-kami', 'tentangkami.tentangkami-view')->name('tentang-kami');
+
+Route::view('/gallery-editor', 'Admin.gallery.v_gallery')->name('gallery');
 
 // ======================ADMIN PAGE=======================
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
@@ -61,7 +55,7 @@ Route::group(['prefix' => '/dosen', 'middleware' => 'auth'], function () {
 
 
 // ======================MAHASISWA=======================
-Route::group(['prefix' => '/mahasiswa', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/karya-mahasiswa', 'middleware' => 'auth'], function () {
     Route::get('/', [MahasiswaController::class, 'index'])->name('mahasiswa');
     Route::get('/create', [MahasiswaController::class, 'create']);
     Route::post('/store', [MahasiswaController::class, 'store']);
@@ -88,8 +82,8 @@ Route::group(['prefix' => '/judulpa', 'middleware' => 'auth'], function () {
 });
 
 // ======================USER=======================
-Route::group(['prefix' => '/user', 'middleware' => 'auth'], function () {
-    Route::get('/', [UserController::class, 'index']);
+Route::group(['prefix' => '/users', 'middleware' => 'auth'], function () {
+    Route::get('/', [UserController::class, 'index'])->name('user');
 });
 
 // ======================INDUSTRI=======================
