@@ -6,7 +6,7 @@
         <div class="navbar-content d-flex align-items-center">
             <div class="navbar-content-title d-flex align-items-center">
                 <div class="nav-item {{ request()->is('/') ? 'active' : '' }}">
-                    <a href="/">Home</a>
+                    <a href="/">Dashboard</a>
                 </div>
                 <div class="nav-item {{ request()->is('karya') ? 'active' : '' }}">
                     <a  href="/karya">Karya</a>
@@ -30,8 +30,8 @@
                                 <a class="btn" href="{{ route('login') }}">Login</a>
                             @endif
                         @else
-                        <a class="btn" href="{{ route('home') }}">
-                            {{ __('Home') }}
+                        <a class="btn" href="{{ route('dashboard') }}">
+                            {{ __('Dashboard') }}
                         </a>
                         @endguest
                     </ul>

@@ -1,4 +1,5 @@
 <!-- Sidenav -->
+
 <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
       <!-- Brand -->
@@ -13,9 +14,15 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/') ? ' active' : ''}}" href="/">
-                <i class="ni ni-tv-2 text-primary"></i>
+              <a class="nav-link" href="{{route('home')}}">
+                <i class="fas fa-home text-primary"></i>
                 <span class="nav-link-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link{{request()->is('dashboard') ? ' active' : ''}}" href="{{route('dashboard')}}">
+                <i class="ni ni-tv-2 text-primary"></i>
+                <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
@@ -25,7 +32,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('mahasiswa') ? ' active' : ''}}" href="/mahasiswa">
+              <a class="nav-link{{request()->is('mahasiswa') ? ' active' : ''}}" onclick="" href="/mahasiswa">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Karya mahasiswa</span>
               </a>
@@ -46,6 +53,12 @@
               <a class="nav-link{{request()->is('/industri') ? ' active' : ''}}" href="/industri">
                 <i class="ni ni-building text-info"></i>
                 <span class="nav-link-text">Industri</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link{{request()->is('/gallery') ? ' active' : ''}}" href="/gallery">
+                <i class="ni ni-image text-danger"></i>
+                <span class="nav-link-text">Gallery</span>
               </a>
             </li>
             <li class="nav-item">

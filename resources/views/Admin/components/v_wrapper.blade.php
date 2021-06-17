@@ -2,6 +2,7 @@
 <html>
 @include('Admin/components/v_head')
 <body>
+
   @include('Admin/components/v_nav')
     <!-- Header -->
   <div class="main-content" id="panel">
@@ -15,12 +16,15 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
                   <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
                 </ol>
               </nav>
             </div>
         @yield('content')
-     @include('Admin/components/v_footer')
+      
+     
+            
+      @include('Admin/components/v_footer') 
    
  

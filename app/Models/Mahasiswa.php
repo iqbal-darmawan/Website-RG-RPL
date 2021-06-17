@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Mahasiswa extends Model
 {
     public $timestamps = false;
-    public $table = "Mahasiswa";
+    public $table = "mahasiswa";
     use HasFactory;
     
     protected $fillable=[
@@ -23,16 +23,20 @@ class Mahasiswa extends Model
     public function detailData($id)
     {
         $data = DB::table('mahasiswa')->where('id_produk',$id)->get();
-
         return $data;
     }
     public function deleteData($id)
     {
-        
         DB::table('mahasiswa')
         ->where('id_produk',$id)
         ->delete();
-        
+    }
+    
+    public function deleteMahasiswaById($id)
+    {
+        DB::table('mahasiswa')
+        ->where('id',$id)
+        ->delete(); 
     }
 
 }

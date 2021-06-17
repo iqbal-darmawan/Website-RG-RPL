@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-/* @charset "UTF-8" ; */
+/* @charset "UTF-8"; */
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -1962,7 +1962,7 @@ pre code {
   width: 100%;
   height: calc(1.6em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
-  font-size: 0.9rem;  
+  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
   color: #495057;
@@ -10002,6 +10002,7 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
 .navbar {
     padding: 0;
     box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
@@ -10078,11 +10079,6 @@ p.footer-description {
     background-color: #395579;
     border: 1px solid #223145;
     border-radius: 5px;
-    color: white !important;
-}
-
-.quick-contact-input:focus {
-  background-color: #2a3e58;
 }
 
 .quick-contact-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -10103,7 +10099,12 @@ p.footer-description {
   }
 
   input[type=email] {
-    color: black;
+    color: white;
+  }
+
+  input[type=email]:focus {
+    background-color: #2a3e58;
+    color: white;
   }
 
   textArea#floatingTextarea {
