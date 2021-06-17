@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 class FotoProduk extends Model
 {
-    public $table = "foto_produk";
     use HasFactory;
+    public $table = "foto_produk";
     protected $fillable = [
         'produk_id',
         'foto_produk'
@@ -18,6 +18,13 @@ class FotoProduk extends Model
         $data = DB::table('foto_produk')->get();
         return $data;
     }
+
+    public function getSinglePhoto($id)
+    {
+        $data = DB::table($this->table)->where('produk_id', '=', $id)->first();
+        return $data;
+    }
+
     public function detailData($id)
     {
         $data = DB::table('foto_produk')->where('produk_id',$id)->get();
@@ -38,6 +45,6 @@ class FotoProduk extends Model
     }
     public function produk()
     {
-        $this->belongsTo(Produk::class, 'produk_id');
+        return $this->belongsTo(Produk::class);
     }
 }
