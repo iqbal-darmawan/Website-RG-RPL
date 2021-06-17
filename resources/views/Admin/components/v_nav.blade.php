@@ -14,9 +14,15 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/home') ? ' active' : ''}}" href="/home">
-                <i class="ni ni-tv-2 text-primary"></i>
+              <a class="nav-link" href="{{route('home')}}">
+                <i class="fas fa-home text-primary"></i>
                 <span class="nav-link-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link{{request()->is('dashboard') ? ' active' : ''}}" href="{{route('dashboard')}}">
+                <i class="ni ni-tv-2 text-primary"></i>
+                <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('optional-css')
-<link rel="stylesheet" href="{{ asset('css/karya/karya-details.css') }}">
+<link rel="stylesheet" href="{{ asset('css/karya/karya.css') }}">
 <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/">
 @endsection
 
@@ -192,25 +192,20 @@
 <div class="karya-produk">
   <div class="container">
     <div class="karya-produk-wrapper">
-      <div class="karya-produk-title">
+      <div class="text-center">
         <h2>Karya Produk RPL</h2>
       </div>
       <div class="karya-data-wrapper my-5 d-flex flex-wrap justify-content-center">
         {{-- List Karya Here --}}
-        {{-- {{dd($karya)}} --}}
         @foreach ($karya as $item)
-        <div class="card card-karya mx-3 my-3 " style="width: 18rem; heigth:20rem">
-          <div class="card-header card-header-padding">
-            <div class="text-center">
-              <img src="{{$item->foto_produk}}" alt="" class="text-center w-100">
-            </div>
+        <div class="card shadow m-3" style="width: 18rem; heigth:24rem">
+          <div class="inner">
+            <img class="card-img-top" src="{{$item->foto_produk}}" alt="Card image cap">
           </div>
-          <div class="card-body px-3 mt-3">
-            <h4>{{$item->nama_produk}}</h4>
-            <p>{{$item->deskripsi_produk}}</p>
-            <div class="see-more-karya mb-4">
-              <a href="#" class="d-block">See more...</a>
-            </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{$item->nama_produk}}</h5>
+            <p class="card-text">{{$item->deskripsi_produk}}</p>
+            <a href="#">Check them out...</a>
           </div>
         </div>
         @endforeach
@@ -218,7 +213,7 @@
     </div>
   </div>
   <div class="d-flex justify-content-center">
-    {{-- {{$karya->links()}} --}}
+    {{$karya->links()}}
   </div>
 </div>
 

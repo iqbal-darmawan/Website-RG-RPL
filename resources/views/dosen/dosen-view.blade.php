@@ -94,7 +94,7 @@
             <h2 class="text-center">Dosen Tim RG RPL</h2>
         </div>
         <div class="dosen-tim-card-wrapper d-flex flex-wrap">
-            @foreach ($collection as $item)
+            @foreach ($dosen as $item)
                 <div class="card dosen-tim-card">
                     <div class="card-header p-0">
                         <img src="{{ asset($item->fotoDosen) }}" alt="" class="text-center w-100 ">

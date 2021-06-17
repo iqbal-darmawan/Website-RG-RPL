@@ -1,5 +1,5 @@
 @extends('Admin/components/v_wrapper')
-@section('title','Home')
+@section('title','')
 @section('content')
 </div>
 
