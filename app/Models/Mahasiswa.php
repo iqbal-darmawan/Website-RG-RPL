@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Mahasiswa extends Model
 {
     public $timestamps = false;
-    public $table = "Mahasiswa";
+    public $table = "mahasiswa";
     use HasFactory;
     
     protected $fillable=[

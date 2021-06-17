@@ -12,8 +12,8 @@ class ProdukFactory extends Factory
      *
      * @var string
      */
-    protected $model = Produk::class;
-
+    public $model = Produk::class;
+    
     /**
      * Define the model's default state.
      *
@@ -21,10 +21,11 @@ class ProdukFactory extends Factory
      */
     public function definition()
     {
+        
         return [
             'nama_produk' => 'Project '. $this->faker->jobTitle(),
             'nama_tim' => $this->faker->streetName(),
-            'deskripsi_produk' => $this->faker->sentences(3, true)
+            'deskripsi_produk' => $this->faker->sentences(3, true),
         ];
     }
 }

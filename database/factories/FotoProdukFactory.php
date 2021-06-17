@@ -22,7 +22,7 @@ class FotoProdukFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'foto_produk' => $this->faker->imageUrl(1280, 720, 'Foto')
         ];
     }
 }

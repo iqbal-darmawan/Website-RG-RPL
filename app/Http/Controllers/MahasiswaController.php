@@ -46,7 +46,7 @@ class MahasiswaController extends Controller
                     foreach($request->file('foto_produk') as $key => $file)
                     {
                             $fname = $file->getClientOriginalName();
-                            $file->move(public_path('Img/produk') , $fname);
+                            $file->move(public_path('img/produk') , $fname);
                             $data3 = array(
                                 'produk_id' => $produk->id,
                                 'foto_produk' => $fname,
@@ -61,7 +61,7 @@ class MahasiswaController extends Controller
                    foreach($request->file('foto_mahasiswa') as $key => $file)
                    {
                         $fname = $file->getClientOriginalName();
-                        $file->move(public_path('Img/mahasiswa') , $fname);
+                        $file->move(public_path('img/mahasiswa') , $fname);
                         $data2 = array(
                             'id_produk' => $produk->id,
                             'nama_mahasiswa' => $request->nama_mahasiswa[$key],
@@ -115,7 +115,7 @@ class MahasiswaController extends Controller
                     foreach($request->file('foto_produk') as $key => $file)
                     {
                             $fname = $file->getClientOriginalName();
-                            $file->move(public_path('Img/produk') , $fname);
+                            $file->move(public_path('img/produk') , $fname);
                             $data3 = array(
                                 'foto_produk' => $fname,
                             );
@@ -129,7 +129,7 @@ class MahasiswaController extends Controller
                    foreach($request->file('foto_mahasiswa') as $key => $file)
                    {
                         $fname = $file->getClientOriginalName();
-                        $file->move(public_path('Img/mahasiswa') , $fname);
+                        $file->move(public_path('img/mahasiswa') , $fname);
                         $data2 = array(
                             'nama_mahasiswa' => $request->nama_mahasiswa[$key],
                             'kelas' => $request->kelas[$key],
@@ -168,7 +168,7 @@ class MahasiswaController extends Controller
             $file = $request->file('foto_produk');
           
                 $fname = $file->getClientOriginalName();
-                $file->move(public_path('Img/produk') , $fname);
+                $file->move(public_path('img/produk') , $fname);
                 $data = array(
                     'produk_id' => $id,
                     'foto_produk' => $fname
@@ -187,7 +187,7 @@ class MahasiswaController extends Controller
             $file = $request->file('foto_mahasiswa');
           
                 $fname = $file->getClientOriginalName();
-                $file->move(public_path('Img/mahasiswa') , $fname);
+                $file->move(public_path('img/mahasiswa') , $fname);
                 $data = array(
                     'id_produk' => $id,
                     'nama_mahasiswa' => $request->nama_mahasiswa,

@@ -16,7 +16,7 @@ class Produk extends Model
         $data = DB::table('produk')
             ->select('produk.*', 'foto_produk.foto_produk')
             ->join('foto_produk', 'foto_produk.produk_id', '=', 'produk.id')
-            ->get();
+            ->paginate(9);
         return $data;  
     }
     public function detailData($id)
