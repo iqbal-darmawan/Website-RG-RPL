@@ -6,8 +6,9 @@ use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+
 
 // ======================LANDING=======================
 Route::view('/', 'home.home-view');
@@ -73,11 +74,8 @@ Route::group(['prefix' => '/industri', 'middleware' => 'auth'], function () {
 });
 
 
-
 // =================== Karya =================
-Route::get('/karya', function () {
-    return view('karya.karya-view');
-});
+Route::get('/karya', [ProductController::class, 'index'])->name('karya');
 
 Route::get('/karya/details', function (){
     return view('karya.details.karya-details-view');

@@ -38,6 +38,6 @@ class FotoProduk extends Model
     }
     public function produk()
     {
-        $this->belongsTo(Produk::class);
+        $this->belongsTo(Produk::class, 'produk_id');
     }
 }
