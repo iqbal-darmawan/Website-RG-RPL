@@ -71,14 +71,11 @@ Route::get('/', function () {
 Route::get('/karya', function () {
     return view('karya.karya-view');
 });
-<<<<<<< HEAD
 Route::get('/karya/details/karya-{id}', function ($id){
     return view('karya.details.karya-details-view');
-=======
-
-Route::get('/dosen', function () {
-    return view('dosen.dosen-view');
 });
+
+Route::get('/dosen', [DosenController::class, 'indexfrontend'])->name("dosen");
 
 Route::get('/dosen/detail', function () {
     return view('dosen.detail-dosen-view');
@@ -90,5 +87,4 @@ Route::get('/judulpa', function () {
 
 Route::get('/tentangkami', function () {
     return view('tentangkami.tentangkami-view');
->>>>>>> 248a73ad43a4f88db7f602b14606c3894e0c70de
 });

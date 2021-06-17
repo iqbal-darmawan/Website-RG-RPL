@@ -52,38 +52,15 @@
             <h2 class="text-center">Profil Dosen</h2>
         </div>
         <div class="d-flex my-5 profile-dosen-card-wrapper">
-            <div class="carrd card-profile">
+        @foreach ($dosen as $perdosen)
+            <div class="card card-profile">
                 <div class="card-body text-center p-5">
                     <img src="{{ asset('img/dosen/profil/icon.png') }}" alt="" class="mb-3">
                     <p>identitas</p>
-                    <span>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.</span>
+                    <span>{{$perdosen -> alamat}}</span>
                 </div>
             </div>
-            <div class="card card-profile">
-                <div class="card-body text-center p-5">
-                    <img src="{{ asset('img/dosen/profil/icon (1).png') }}" alt="" class="mb-3">
-                    <p>identitas</p>
-                    <span>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.</span>
-                </div>
-            </div>
-            <div class="card card-profile">
-                <div class="card-body text-center p-5">
-                    <img src="{{ asset('img/dosen/profil/icon (2).png') }}" alt="" class="mb-3">
-                    <p>identitas</p>
-                    <span>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.</span>
-                </div>
-            </div>
-            <div class="card card-profile">
-                <div class="card-body text-center p-5">
-                    <img src="{{ asset('img/dosen/profil/icon (3).png') }}" alt="" class="mb-3">
-                    <p>identitas</p>
-                    <span>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.</span>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -94,54 +71,20 @@
             <h2 class="text-center">Dosen Tim RG RPL</h2>
         </div>
         <div class="dosen-tim-card-wrapper d-flex flex-wrap">
+        @foreach ($dosen as $perdosen)
             <div class="card dosen-tim-card">
                 <div class="card-header p-0">
-                    <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100 ">
+                    <img src="{{ asset('img/dosen/'.$perdosen->foto_dosen) }}" alt="" class="text-center w-100 ">
                 </div>
                 <div class="card-body px-3 ">
-                    <h4>Lorem Ipsum</h4>
-                    <p class="my-3">Lorem ipsum dolor, sit amet....</p>
+                    <h4>{{$perdosen -> nama_lengkap}}</h4>
+                    <p class="my-3">{{$perdosen -> thn_bergabung}}</p>
                     <div class="see-more-karya mb-3 mt-5 d-block text-end">
                         <a href="#">See more...</a>
                     </div>
                 </div>
             </div>
-            <div class="card dosen-tim-card">
-                <div class="card-header p-0">
-                    <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100 ">
-                </div>
-                <div class="card-body px-3 ">
-                    <h4>Lorem Ipsum</h4>
-                    <p class="my-3">Lorem ipsum dolor, sit amet....</p>
-                    <div class="see-more-karya mb-3 mt-5 d-block text-end">
-                        <a href="#">See more...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card dosen-tim-card">
-                <div class="card-header p-0">
-                    <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100 ">
-                </div>
-                <div class="card-body px-3 ">
-                    <h4>Lorem Ipsum</h4>
-                    <p class="my-3">Lorem ipsum dolor, sit amet....</p>
-                    <div class="see-more-karya mb-3 mt-5 d-block text-end">
-                        <a href="#">See more...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card dosen-tim-card">
-                <div class="card-header p-0">
-                    <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100 ">
-                </div>
-                <div class="card-body px-3 ">
-                    <h4>Lorem Ipsum</h4>
-                    <p class="my-3">Lorem ipsum dolor, sit amet....</p>
-                    <div class="see-more-karya mb-3 mt-5 d-block text-end">
-                        <a href="#">See more...</a>
-                    </div>
-                </div>
-            </div>
+        @endforeach
         </div>
     </div>
 </div>

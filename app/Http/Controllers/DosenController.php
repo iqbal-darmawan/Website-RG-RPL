@@ -118,4 +118,13 @@ class DosenController extends Controller
         $this->prestasi->deleteData($id);
         return redirect()->route('dosen')->with('pesan','Data berhasil dihapus');
     }
+    //frontend =====================================
+
+    public function indexfrontend()
+    {
+        $data = [
+            "dosen" => $this->dosen->getAllData()
+        ];
+        return view("dosen.dosen-view",$data);
+    }
 }
