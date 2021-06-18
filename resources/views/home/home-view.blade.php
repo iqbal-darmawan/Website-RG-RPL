@@ -302,7 +302,7 @@
                                 <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
                                     </div>
                                     <div class="testimoni-name ms-3">
-                                        <h4 class="m-0">Lula Rania Salsabilla</h4>
+                                        <h4 class="m-0">{{Auth::user()->names}} Salsabilla</h4>
                                         <p class="m-0">Mahasiswa</p>
                                     </div>
                                 </div>

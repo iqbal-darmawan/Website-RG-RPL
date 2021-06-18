@@ -44,7 +44,7 @@
                       </div> 
                     </th>
                     <td>{{$data->email}}</td>
-                    <td>26 mei 2021</td>
+                    <td>{{date("d/m/Y", strtotime($data->created_at))}}</td>
                     <td>
                       <a href="#" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
                       <a href="#" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>

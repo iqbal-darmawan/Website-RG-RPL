@@ -23,7 +23,7 @@ Route::get('/karya/details', function (){
     return view('karya.details.karya-details-view');
 });
 
-Route::view('/daftar-dosen', 'dosen.dosen-view')->name('daftar-dosen');
+Route::get('/daftar-dosen', [DosenController::class, 'indexFront'])->name('daftar-dosen');
 
 Route::view('/daftar-dosen/detail', 'dosen.detail-dosen-view')->name('daftar-dosen-detail');
 

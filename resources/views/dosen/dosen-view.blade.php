@@ -94,13 +94,14 @@
             <h2 class="text-center">Dosen Tim RG RPL</h2>
         </div>
         <div class="dosen-tim-card-wrapper d-flex flex-wrap">
+            {{dd($dosen)}}
             @foreach ($dosen as $item)
                 <div class="card dosen-tim-card">
                     <div class="card-header p-0">
-                        <img src="{{ asset($item->fotoDosen) }}" alt="" class="text-center w-100 ">
+                        <img src="{{$item->dosen_rpl->}}" alt="" class="text-center w-100 ">
                     </div>
                     <div class="card-body px-3 ">
-                        <h4>{{$item->namaDosen}}/h4>
+                        <h4>{{$item->name}}/h4>
                         <p class="my-3">{{$item->deskripsi}}</p>
                         <div class="see-more-karya mb-3 mt-5 d-block text-end">
                             <a href="#">See more...</a>

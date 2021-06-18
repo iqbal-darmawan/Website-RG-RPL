@@ -7,7 +7,7 @@ use App\Models\DosenRpl;
 use App\Models\Penelitian;
 use App\Models\Prestasi;
 use App\Models\Pengabdian;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 
 class DosenController extends Controller
@@ -21,15 +21,19 @@ class DosenController extends Controller
    }
     public function index()
     {
-        $data=[
-            'dosen' => $this->dosen->getAllData()
-        ];
-        return view('Admin/dosen/v_dosen', $data);
+        $dosen = User::has('dosenrpl')
+            ->with('dosenrpl')
+            ->get();
+        return view('Admin/dosen/v_dosen', ['dosen' => $dosen]);
     }
 
     public function indexFront() {
-        return view('user.index', [
-            'users' => DB::table('users')->paginate(5)
+        $dosen = User::has('dosenrpl')
+            ->with('dosenrpl')
+            ->get();
+        
+        return view('dosen.dosen-view', [
+            'dosen' => $dosen
         ]);
     }
 

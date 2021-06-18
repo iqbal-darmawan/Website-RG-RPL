@@ -71,4 +71,9 @@ class User extends Authenticatable
         ->where('id',$id)
         ->delete();
     }
+
+    public function dosenrpl()
+    {
+        return $this->hasOne(DosenRpl::class);
+    }
 }
