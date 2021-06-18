@@ -13,7 +13,7 @@ class Produk extends Model
 
     public function getAllData()
     {
-        $data = DB::table('produk')->get();
+        $data = DB::table('produk')->paginate(10);
         return $data;  
     }
     public function detailData($id)

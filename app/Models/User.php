@@ -48,7 +48,7 @@ class User extends Authenticatable
      */
     public function getUserData()
     {
-        $data = DB::table('users')->get();
+        $data = DB::table('users')->paginate(10);
         return $data;
     }
 

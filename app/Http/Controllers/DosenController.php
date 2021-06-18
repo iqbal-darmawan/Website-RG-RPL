@@ -23,7 +23,7 @@ class DosenController extends Controller
     {
         $dosen = User::has('dosenrpl')
             ->with('dosenrpl')
-            ->get();
+            ->paginate(10);
         return view('Admin/dosen/v_dosen', ['dosen' => $dosen]);
     }
 

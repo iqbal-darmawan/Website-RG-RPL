@@ -49,17 +49,6 @@
                     </th>
                     <td>{{$data->nama_tim}}</td>
                     <td>26 mei 2021</td>
-                    {{-- <td>
-                      <div class="avatar-group">
-                        @if ($data->id == $mahasiswa->id_produk)
-                            @foreach ($mahasiswa as $data)
-                            <a  class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="{{$data->nama_mahasiswa}}">
-                              <img alt="Image placeholder" src="{{ asset('Img/mahasiswa/') }} . {{$data->foto_mahasiswa}}">
-                            </a>
-                            @endforeach
-                        @endif
-                      </div> 
-                    </td> --}}
                     <td>
                       <a href="/mahasiswa/show/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
                       <a href="/mahasiswa/edit/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
@@ -76,27 +65,7 @@
             <!-- Card footer -->
             <div class="card-footer py-4">
               <nav aria-label="...">
-                <ul class="pagination justify-content-end mb-0">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">
-                      <i class="fas fa-angle-left"></i>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
-                      <i class="fas fa-angle-right"></i>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
-                </ul>
+                {{$dataKarya->links()}}
               </nav>
             </div>
           </div>
