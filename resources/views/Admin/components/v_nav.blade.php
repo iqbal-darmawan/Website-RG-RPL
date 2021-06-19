@@ -56,6 +56,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link{{request()->is('/materi') ? ' active' : ''}}" href="/materi">
+                <i class="ni ni-image text-danger"></i>
+                <span class="nav-link-text">Materi</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link{{request()->is('/login') ? ' active' : ''}}" href="{{ route('logout') }}" 
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">

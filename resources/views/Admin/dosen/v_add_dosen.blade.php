@@ -18,7 +18,7 @@
 <div class="container-fluid mt--8">
   <div class="row">
     </div>
-    <div class="col-xl-8 order-xl-1">
+    <div class="col-xl-12 order-xl-1">
       <div class="card">
         <div class="card-header">
           <div class="row align-items-center">
@@ -140,7 +140,7 @@
                 <label class="form-control-label"><i class="ni ni-hat-3"></i> Pengabdian</label>
                 <div class="form-group" style="float: right">
                   <a class="addPengabdian btn btn-primary btn-sm" style="color: white">Tambah data</a>
-              </div>
+                </div>
               </div>
               <div class="form-group">
                 <label class="form-control-label">Nama Pengabdian</label>

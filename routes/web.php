@@ -5,6 +5,7 @@ use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 
 // ======================LANDING=======================
@@ -14,7 +15,7 @@ Route::view('/', 'home.home-view');
 Auth::routes();
 
 // ======================ADMIN=======================
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // ======================DOSEN=======================
 Route::get('/dosen',[DosenController::class,'index'])->name('dosen');
@@ -64,6 +65,19 @@ Route::post('/industri/store',[IndustriController::class,'store']);
 Route::post('/industri/update/{id}',[IndustriController::class,'update']);
 Route::get('/industri/destroy/{id}',[IndustriController::class,'destroy']);
 
+// ======================Gallery=======================
+Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');
+Route::get('/gallery/edit/{id}',[GalleryController::class,'edit']);
+Route::get('/gallery/create',[GalleryController::class,'create']);
+Route::post('/gallery/store',[GalleryController::class,'store']);
+Route::post('/gallery/update/{id}',[GalleryController::class,'update']);
+Route::get('/gallery/destroy/{id}',[GalleryController::class,'destroy']);
+Route::get('/gallery/destroyById/{id}',[GalleryController::class,'destroyById']);
+Route::post('/gallery/addFotoById/{id}',[GalleryController::class,'addFotoById']);
+
+
+
+//=======================MATERI========================
 
 
 Route::get('/karya', function () {
