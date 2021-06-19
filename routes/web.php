@@ -23,21 +23,15 @@ Route::get('/karya/details', function (){
     return view('karya.details.karya-details-view');
 });
 
-Route::get('/daftardosen', function () {
-    return view('dosen.dosen-view');
-});
+Route::view('/daftardosen', "dosen.dosen-view") ->name("daftardosen"); 
 
 Route::get('/daftardosen/detail', function () {
     return view('dosen.detail-dosen-view');
 });
 
-Route::get('/judulpa', function () {
-    return view('judulpa.judulpa-view');
-});
+Route::view('/judulpa', "judulpa.judulpa-view") ->name("judulpa");
 
-Route::get('/tentangkami', function () {
-    return view('tentangkami.tentangkami-view');
-});
+Route::view('/tentangkami', "tentangkami.tentangkami-view") ->name("tentangkami"); 
 
 // ======================ADMIN PAGE=======================
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
