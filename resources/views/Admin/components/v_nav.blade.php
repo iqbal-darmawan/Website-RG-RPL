@@ -26,37 +26,37 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('dosen') ? ' active' : ''}}" href="/dosen">
+              <a class="nav-link{{request()->is('dosen') ? ' active' : ''}}" href="{{route('dosen')}}">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Profile Dosen</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('mahasiswa') ? ' active' : ''}}" onclick="" href="/mahasiswa">
+              <a class="nav-link{{request()->is('mahasiswa') ? ' active' : ''}}" onclick="" href="{{route('mahasiswa')}}">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Karya mahasiswa</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('judulpa') ? ' active' : ''}}" href="/judulpa">
+              <a class="nav-link{{request()->is('judulpa') ? ' active' : ''}}" href="{{route('judulpa')}}">
                 <i class="ni ni-bullet-list-67 text-default"></i>
                 <span class="nav-link-text">Judul PA</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('user') ? ' active' : ''}}" href="/user">
+              <a class="nav-link{{request()->is('user') ? ' active' : ''}}" href="{{route('user')}}">
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">User</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/industri') ? ' active' : ''}}" href="/industri">
+              <a class="nav-link{{request()->is('/industri') ? ' active' : ''}}" href="{{route('industri')}}">
                 <i class="ni ni-building text-info"></i>
                 <span class="nav-link-text">Industri</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/gallery') ? ' active' : ''}}" href="/gallery">
+              <a class="nav-link{{request()->is('/gallery') ? ' active' : ''}}" href="{{route('gallery')}}">
                 <i class="ni ni-image text-danger"></i>
                 <span class="nav-link-text">Gallery</span>
               </a>

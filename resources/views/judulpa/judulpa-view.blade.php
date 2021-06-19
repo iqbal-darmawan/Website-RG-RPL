@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="col-md-8">
-        @foreach ($judul as $perjudul)
+        {{-- @foreach ($judul as $perjudul) --}}
             <div class="d-flex card-height">
                 <div class="card card-content-first bg-card1 mx-4 my-6 align-self-start">
                     <div class="card-body px-2 py-6">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+        {{-- @endforeach --}}
         </div>
     </div>
 </div>

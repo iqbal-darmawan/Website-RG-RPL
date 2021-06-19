@@ -48,7 +48,7 @@ class User extends Authenticatable
      */
     public function getUserData()
     {
-        $data = DB::table('users')->get();
+        $data = DB::table('users')->paginate(10);
         return $data;
     }
 
@@ -70,5 +70,10 @@ class User extends Authenticatable
         DB::table('industri')
         ->where('id',$id)
         ->delete();
+    }
+
+    public function dosenrpl()
+    {
+        return $this->hasOne(DosenRpl::class);
     }
 }

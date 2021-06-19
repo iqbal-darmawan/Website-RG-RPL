@@ -59,8 +59,8 @@
             <div class="card tim-card">
                 <div class="card-body text-center">
                     <img src="{{ asset('img/tentangkami/vector.png') }}" alt="">
-                    <!-- <h5 style="font-size:18px; font-weight:bold;">Lula Rania Salsabilla</h5> -->
-                    <h5 class="text-bold mt-4">Lula Rania Salsabilla</h5>
+                   {{-- <h5 style="font-size:18px; font-weight:bold;">{{Auth::user()->names}} Salsabilla</h5> --}}
+                    <h5 class="text-bold mt-4">Salsabilla</h5>
                     <p class="text-secondary mt-4">Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
                 </div>
             </div>

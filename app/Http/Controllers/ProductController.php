@@ -14,9 +14,11 @@ class ProductController extends Controller
     }
     public function index()
     {
+        $products = Produk::has('fotoproduk')
+            ->with('fotoproduk')
+            ->paginate(9);
         $data = [
-            'karya' => $this->produk->getAllData(),
-            // 'foto' => $this->foto
+            'karya' => $products,
         ];
         return view('karya.karya-view', $data);
     }

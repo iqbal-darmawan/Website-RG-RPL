@@ -53,4 +53,8 @@ class DosenRpl extends Model
         ->where('id',$id)
         ->delete();
     }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

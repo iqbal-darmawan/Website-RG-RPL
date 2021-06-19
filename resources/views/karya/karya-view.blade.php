@@ -200,7 +200,7 @@
         @foreach ($karya as $item)
         <div class="card shadow m-3" style="width: 18rem; heigth:24rem">
           <div class="inner">
-            <img class="card-img-top" src="{{$item->foto_produk}}" alt="Card image cap">
+            <img class="card-img-top" src="{{$item->fotoproduk[0]->foto_produk}}" alt="Card image cap">
           </div>
           <div class="card-body text-center">
             <h5 class="card-title">{{$item->nama_produk}}</h5>

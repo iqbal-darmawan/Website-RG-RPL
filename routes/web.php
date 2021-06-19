@@ -23,15 +23,15 @@ Route::get('/karya/details', function (){
     return view('karya.details.karya-details-view');
 });
 
-Route::view('/daftardosen', "dosen.dosen-view") ->name("daftardosen"); 
+Route::get('/daftar-dosen', [DosenController::class, 'indexFront'])->name('daftar-dosen');
 
-Route::get('/daftardosen/detail', function () {
-    return view('dosen.detail-dosen-view');
-});
+Route::view('/daftar-dosen/detail', 'dosen.detail-dosen-view')->name('daftar-dosen-detail');
 
-Route::view('/judulpa', "judulpa.judulpa-view") ->name("judulpa");
+Route::view('/judul-pa', 'judulpa.judulpa-view')->name('judul-pa');
 
-Route::view('/tentangkami', "tentangkami.tentangkami-view") ->name("tentangkami"); 
+Route::view('/tentang-kami', 'tentangkami.tentangkami-view')->name('tentang-kami');
+
+Route::view('/gallery-editor', 'Admin.gallery.v_gallery')->name('gallery');
 
 // ======================ADMIN PAGE=======================
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
@@ -55,7 +55,7 @@ Route::group(['prefix' => '/dosen', 'middleware' => 'auth'], function () {
 
 
 // ======================MAHASISWA=======================
-Route::group(['prefix' => '/mahasiswa', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/karya-mahasiswa', 'middleware' => 'auth'], function () {
     Route::get('/', [MahasiswaController::class, 'index'])->name('mahasiswa');
     Route::get('/create', [MahasiswaController::class, 'create']);
     Route::post('/store', [MahasiswaController::class, 'store']);
@@ -82,8 +82,8 @@ Route::group(['prefix' => '/judulpa', 'middleware' => 'auth'], function () {
 });
 
 // ======================USER=======================
-Route::group(['prefix' => '/user', 'middleware' => 'auth'], function () {
-    Route::get('/', [UserController::class, 'index']);
+Route::group(['prefix' => '/users', 'middleware' => 'auth'], function () {
+    Route::get('/', [UserController::class, 'index'])->name('user');
 });
 
 // ======================INDUSTRI=======================

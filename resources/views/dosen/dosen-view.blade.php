@@ -52,15 +52,13 @@
             <h2 class="text-center">Profil Dosen</h2>
         </div>
         <div class="d-flex my-5 profile-dosen-card-wrapper">
-        @foreach ($dosen as $perdosen)
             <div class="card card-profile">
                 <div class="card-body text-center p-5">
                     <img src="{{ asset('img/dosen/profil/icon.png') }}" alt="" class="mb-3">
                     <p>identitas</p>
-                    <span>{{$perdosen -> alamat}}</span>
+                    <span>Hehe</span>
                 </div>
             </div>
-            @endforeach
         </div>
     </div>
 </div>
@@ -71,20 +69,21 @@
             <h2 class="text-center">Dosen Tim RG RPL</h2>
         </div>
         <div class="dosen-tim-card-wrapper d-flex flex-wrap">
-        @foreach ($dosen as $perdosen)
-            <div class="card dosen-tim-card">
-                <div class="card-header p-0">
-                    <img src="{{ asset('img/dosen/'.$perdosen->foto_dosen) }}" alt="" class="text-center w-100 ">
-                </div>
-                <div class="card-body px-3 ">
-                    <h4>{{$perdosen -> nama_lengkap}}</h4>
-                    <p class="my-3">{{$perdosen -> thn_bergabung}}</p>
-                    <div class="see-more-karya mb-3 mt-5 d-block text-end">
-                        <a href="#">See more...</a>
+        {{--dd($dosen)--}}
+            @foreach ($dosen as $item)
+                <div class="card dosen-tim-card">
+                    <div class="card-header p-0">
+                        <img src="{{$item->dosenrpl->foto_dosen}}" alt="" class="text-center w-100 ">
+                    </div>
+                    <div class="card-body px-3 ">
+                        <h4>{{$item->name}}</h4>
+                        <p class="my-3">{{$item->deskripsi}}</p>
+                        <div class="see-more-karya mb-3 mt-5 d-block text-end">
+                            <a href="#">See more...</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
         </div>
     </div>
 </div>

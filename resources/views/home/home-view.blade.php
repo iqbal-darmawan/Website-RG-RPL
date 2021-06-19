@@ -302,12 +302,12 @@
                                 <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
                                     </div>
                                     <div class="testimoni-name ms-3">
-                                        <h4 class="m-0">Lula Rania Salsabilla</h4>
+                                        <h4 class="m-0">Luly</h4>
                                         <p class="m-0">Mahasiswa</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <div class="item">
                         <div class="card card-testimoni">
@@ -338,17 +338,17 @@
           $('.owl-carousel').owlCarousel({
             dots:true,
             loop:true,
-            margin:10,
+            margin:0,
             nav:false,
             responsive:{
               0:{
-                items:1
+                items:2
               },
               600:{
-                items:1
+                items:2
               },
               1000:{
-                items:1
+                items:2
               }
             }
           })

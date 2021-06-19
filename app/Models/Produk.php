@@ -13,10 +13,7 @@ class Produk extends Model
 
     public function getAllData()
     {
-        $data = DB::table('produk')
-            ->select('produk.*', 'foto_produk.foto_produk')
-            ->join('foto_produk', 'foto_produk.produk_id', '=', 'produk.id')
-            ->paginate(9);
+        $data = DB::table('produk')->paginate(10);
         return $data;  
     }
     public function detailData($id)
