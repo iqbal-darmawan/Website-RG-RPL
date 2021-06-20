@@ -15,7 +15,6 @@ class CreateDosenRplTable extends Migration
     {
         Schema::create('dosen_rpl', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('user_id')->constrained('users');
             $table->string('nip');
             $table->string('nama_lengkap');
             $table->string('jenis_kelamin',20);

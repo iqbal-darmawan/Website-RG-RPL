@@ -35,52 +35,35 @@
         <div class="card-body">
             <div class="content-header-wrapper mb-5">
                 <div class="karya-img mb-3">
-                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#">
+                    <div class="inner">
+                        <img src="{{$foto[0]->foto_produk}}" alt="#">
+                    </div>
+                    {{-- {{dd($karya, $foto)}} --}}
                 </div>
                 <div class="content-header">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="option-image d-flex">
+                                @foreach ($foto as $item)
                                 <div class="image">
-                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
+                                    <img src="{{$item->foto_produk}}" alt="#" class="">
                                 </div>
-                                <div class="image">
-                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
-                                </div>
-                                <div class="image">
-                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
-                                </div>
-                                <div class="image">
-                                    <img src="{{asset('img/karya/placeholder-karya.jpg')}}" alt="#" class="">
-                                </div>
-                        
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="team-desc">
                                 <h3>Nama Team</h3>
                                 {{-- TODO : Konek ke backend--}}
-                                <p>Nama Team -- Anggota Team</p>
+                                <p>{{$karya->nama_tim}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="main-content">
-                <h1 class="nama-karya">Nama Karya</h1>
-                <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
-                <h3 class="nama-karya">Manfaat</h3>
-                <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
-                <h3 class="nama-karya">Penggunaan</h3>
-                <p class="karya-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, sequi. Corporis consequuntur blanditiis quod quas ex possimus nisi doloremque cumque?</p>
-                <h3 class="nama-karya">Teknologi yang digunakan</h3>
-                <ul>
-                    <li>Teknologi</li>
-                    <li>Teknologi</li>
-                    <li>Teknologi</li>
-                    <li>Teknologi</li>
-                    <li>Teknologi</li>
-                </ul>
+                <h1 class="nama-karya">{{$karya->nama_produk}}</h1>
+                <p class="karya-desc">{{$karya->deskripsi_produk}}</p>
             </div>
         </div>
     </div>

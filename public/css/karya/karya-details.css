@@ -91,3 +91,17 @@ form .form-control:focus{
     font-size: 40px;
     line-height: 47px;
   }
+
+.inner {
+    overflow: hidden;
+    height: 446px;
+    width: 1068px;
+}
+.inner img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.karya-desc {
+    font-size: 1rem;
+}

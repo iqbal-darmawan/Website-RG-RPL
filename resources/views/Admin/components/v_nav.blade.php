@@ -32,7 +32,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('mahasiswa') ? ' active' : ''}}" onclick="" href="{{route('mahasiswa')}}">
+              <a class="nav-link{{request()->is('karya-mahasiswa') ? ' active' : ''}}" onclick="" href="{{route('mahasiswa')}}">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Karya mahasiswa</span>
               </a>
@@ -44,25 +44,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('user') ? ' active' : ''}}" href="{{route('user')}}">
+              <a class="nav-link{{request()->is('users') ? ' active' : ''}}" href="{{route('user')}}">
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">User</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/industri') ? ' active' : ''}}" href="{{route('industri')}}">
+              <a class="nav-link{{request()->is('industri') ? ' active' : ''}}" href="{{route('industri')}}">
                 <i class="ni ni-building text-info"></i>
                 <span class="nav-link-text">Industri</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/gallery') ? ' active' : ''}}" href="{{route('gallery')}}">
+              <a class="nav-link{{request()->is('gallery-editor') ? ' active' : ''}}" href="{{route('gallery')}}">
                 <i class="ni ni-image text-danger"></i>
                 <span class="nav-link-text">Gallery</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/login') ? ' active' : ''}}" href="{{ route('logout') }}" 
+              <a class="nav-link{{request()->is('login') ? ' active' : ''}}" href="{{ route('logout') }}" 
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 <i class="ni ni-key-25 text-info"></i>

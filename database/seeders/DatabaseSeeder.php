@@ -21,8 +21,7 @@ class DatabaseSeeder extends Seeder
             ->has(FotoProduk::factory()->count(3), 'fotoproduk')
             ->count(12)
             ->create();
-        User::factory()->has(DosenRpl::factory()->count(1), 'dosenrpl')
-            ->count(10)
-            ->create();
+
+        DosenRpl::factory()->count(19)->create();
     }
 }

@@ -9,6 +9,7 @@
 </div>
 </div>
     <!-- Page content -->
+    @include('Admin.components.sweetalert')
     <div class="container-fluid mt--6">
       <div class="row">
         <div class="col">
@@ -37,15 +38,15 @@
                   @foreach ($dosen as $data)
                   <tr>
                     <td>{{$no}}</td>
-                    <td>{{$data->dosenrpl->nip}}</td>
-                    <td>{{$data->name}}</td>
+                    <td>{{$data->nip}}</td>
+                    <td>{{$data->nama_lengkap}}</td>
                     <td>
-                      <img class="avatar avatar-sm rounded-circle" src="{{ url('img/dosen/' . $data->dosenrpl->foto_dosen) }}" alt="">
+                      <img class="avatar avatar-sm rounded-circle" src="{{ asset('img/dosen/profil/' . $data->foto_dosen) }}" alt="">
                     </td>
                     <td>
-                      <a href="/dosen/show/{{$data->dosenrpl->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
-                      <a href="/dosen/edit/{{$data->dosenrpl->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-                      <a href="/dosen/destroy/{{$data->dosenrpl->id}}" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                      <a href="/dosen/show/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
+                      <a href="/dosen/edit/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="/dosen/destroy/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                   @php

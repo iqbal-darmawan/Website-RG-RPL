@@ -197,23 +197,19 @@ border-radius: 20px;
       margin-bottom: 200px;
   }
 
-  .karya-produk-title {
-      width: 30%;
-  }
-
-  .karya-produk-title > h2:after {
+.karya-produk-title h2:after {
     background: #DAD210;
-    border: 4px solid #DAD210;
-    border-radius: 5px;
+    border-radius: 30px;
+    border: 6px solid #DAD210;
     bottom: 0;
     top: 10px;
     content: "";
-    left: 13%;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
     position: relative;
-    right: 0;
-    width: 40%;
-  }
+    width: 15%;
+}
 
   .card-karya {
     background: #FFFFFF;
@@ -245,5 +241,3 @@ border-radius: 20px;
     max-height: 100%;
     object-fit: cover;
 }
-
-

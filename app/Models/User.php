@@ -72,8 +72,6 @@ class User extends Authenticatable
         ->delete();
     }
 
-    public function dosenrpl()
-    {
-        return $this->hasOne(DosenRpl::class);
-    }
+
+    
 }

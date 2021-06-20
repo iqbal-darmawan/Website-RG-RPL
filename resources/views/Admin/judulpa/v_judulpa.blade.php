@@ -2,7 +2,7 @@
 @section('title','Tawaran Judul PA')
 @section('content')
 
-@include('Admin.components.toast')
+@include('Admin.components.sweetalert')
   <div class="col-lg-6 col-5 text-right">
       <a href="/judulpa/create" class="btn btn-sm btn-neutral">Add</a>
       <a href="#" class="btn btn-sm btn-neutral">Filters</a>

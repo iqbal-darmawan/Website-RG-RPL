@@ -23,7 +23,7 @@
           <div class="carousel-inner">
             @foreach ($fotoKarya as $data)
             <div class="carousel-item active">
-              <img src="{{ url('Img/produk/' . $data->foto_produk) }}" class="d-block w-100" width="200px" height="200px" alt="...">
+              <img src="{{ url('img/produk/' . $data->foto_produk) }}" class="d-block w-100" width="200px" height="200px" alt="...">
             </div>
             @endforeach
           </div>
@@ -51,7 +51,7 @@
                   <div class="avatar-group desription">
                     @foreach ($mahasiswa as $data)
                     <a  class="avatar avatar-sm rounded-circle"  data-toggle="tooltip" data-original-title="{{$data->nama_mahasiswa}}">
-                     <img alt="Image placeholder" src="{{ url('Img/mahasiswa/' . $data->foto_mahasiswa) }}" height="30px">
+                     <img alt="Image placeholder" src="{{ url('img/mahasiswa/' . $data->foto_mahasiswa) }}" height="30px">
                     </a>
                     @endforeach
                   </div> 
@@ -112,7 +112,7 @@
                     <label class="form-control-label" for="">foto karya</label>
                    
                       <div class="col-lg-3">
-                          <img src="{{ url('Img/produk/' . $data->foto_produk) }}"  height="100px" width="100px" alt="">
+                          <img src="{{ url('img/produk/' . $data->foto_produk) }}"  height="100px" width="100px" alt="">
                       </div>
                     
                   </div>
@@ -130,7 +130,7 @@
                     <div class="form-group">
                       <label for=""> Foto Anggota</label>
                     <div>
-                      <img src="{{ url('Img/mahasiswa/' . $data->foto_mahasiswa) }}" height="100px" width="100px" alt="">
+                      <img src="{{ url('img/mahasiswa/' . $data->foto_mahasiswa) }}" height="100px" width="100px" alt="">
                     </div>
                     </div>
                 </div>

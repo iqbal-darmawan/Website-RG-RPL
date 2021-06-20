@@ -44,7 +44,7 @@
                        <td>{{$data->nama_industri}}</td>
                        <td>{{$data->deskripsi_industri}}</td>
                        <td>
-                        <img class="avatar avatar-sm rounded-circle" src="{{ url('Img/Industri/' . $data->foto_industri) }}" alt="">
+                        <img class="avatar avatar-sm rounded-circle" src="{{ url('img/Industri/' . $data->foto_industri) }}" alt="">
                       </td>
                        <td>
                          <div>
@@ -146,7 +146,7 @@
               <input class="form-control" type="text" value="{{$data->nama_industri}}" name="nama_industri">
             </div>
             <div class="form-group">
-              <img class="avatar rounded-circle" src="{{ url('Img/Industri/' . $data->foto_industri) }}" alt="">
+              <img class="avatar rounded-circle" src="{{ url('img/Industri/' . $data->foto_industri) }}" alt="">
             </div>
             <div class="form-group">
               <label >Logo Industri</label>

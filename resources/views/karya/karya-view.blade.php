@@ -191,21 +191,23 @@
 
 <div class="karya-produk">
   <div class="container">
-    <div class="karya-produk-wrapper">
-      <div class="text-center">
-        <h2>Karya Produk RPL</h2>
+    <div class="karya-produk-wrapper ">
+      <div class="karya-produk-title">
+        <div class="text-center">
+          <h2>Karya Produk RPL</h2>
+        </div>
       </div>
       <div class="karya-data-wrapper my-5 d-flex flex-wrap justify-content-center">
         {{-- List Karya Here --}}
         @foreach ($karya as $item)
-        <div class="card shadow m-3" style="width: 18rem; heigth:24rem">
+        <div class="card shadow m-3 " style="width: 18rem; heigth:24rem">
           <div class="inner">
             <img class="card-img-top" src="{{$item->fotoproduk[0]->foto_produk}}" alt="Card image cap">
           </div>
           <div class="card-body text-center">
             <h5 class="card-title">{{$item->nama_produk}}</h5>
             <p class="card-text">{{$item->deskripsi_produk}}</p>
-            <a href="#">Check them out...</a>
+            <a href="{{route('karya-details', $item->id)}}">Check them out...</a>
           </div>
         </div>
         @endforeach

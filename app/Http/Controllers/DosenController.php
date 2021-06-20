@@ -21,20 +21,8 @@ class DosenController extends Controller
    }
     public function index()
     {
-        $dosen = User::has('dosenrpl')
-            ->with('dosenrpl')
-            ->paginate(10);
+        $dosen = $this->dosen->getAllData();
         return view('Admin/dosen/v_dosen', ['dosen' => $dosen]);
-    }
-
-    public function indexFront() {
-        $dosen = User::has('dosenrpl')
-            ->with('dosenrpl')
-            ->get();
-        
-        return view('dosen.dosen-view', [
-            'dosen' => $dosen
-        ]);
     }
 
     public function create()
@@ -47,8 +35,8 @@ class DosenController extends Controller
         $data = $request->all();  
         $dosen = new DosenRpl;
         $file = $request->foto_dosen;
-        $fname = $request->nama_lengkap;
-        $file->move(public_path('Img/dosen') , $fname);
+        $fname = $request->nama_lengkap . '.' . $file->extension();
+        $file->move(public_path('img/dosen/profil') , $fname);
         $dosen->nip = $data['nip'];
         $dosen->nama_lengkap = $data['nama_lengkap'];
         $dosen->jenis_kelamin = $data['jenis_kelamin'];
@@ -124,7 +112,7 @@ class DosenController extends Controller
         {
             $file = $request->foto_dosen;
             $fname = $request->nama_lengkap;
-            $file->move(public_path('Img/dosen') , $fname);
+            $file->move(public_path('img/dosen') , $fname);
             $data=[
                 'nip' => $request->nip,
                 'nama_lengkap' => $request->nama_lengkap,
@@ -158,15 +146,6 @@ class DosenController extends Controller
         $this->pengabdian->deleteData($id);
         $this->prestasi->deleteData($id);
         return redirect()->route('dosen')->with('pesan','Data berhasil dihapus');
-    }
-    //frontend =====================================
-
-    public function indexfrontend()
-    {
-        $data = [
-            "dosen" => $this->dosen->getAllData()
-        ];
-        return view("dosen.dosen-view",$data);
     }
 
     public function updateArrayPrestasi(Request $request,$id)
@@ -248,6 +227,31 @@ class DosenController extends Controller
     {
         Pengabdian::destroy($id);
         return back();
+    }
+
+    // Frontend =========================
+    public function indexFront()
+    {
+        $dosen = $this->dosen->getAllData();
+
+        return view('dosen.dosen-view', [
+            'dosen' => $dosen
+        ]);
+    }
+
+    public function showFront($id)
+    {
+        $dosen = $this->dosen->detailData($id);
+        $penelitian = DosenRpl::where($id)->penelitian;
+        $pengabdian = DosenRpl::where($id)->pengabdian;
+        $prestasi = DosenRpl::where($id)->prestasi;
+
+        return view('dosen.detail-dosen-view', [
+            'dosen' => $dosen,
+            'penelitian' => $penelitian,
+            'pengabdian' => $pengabdian,
+            'prestasi' => $prestasi,
+        ]);
     }
 
 }

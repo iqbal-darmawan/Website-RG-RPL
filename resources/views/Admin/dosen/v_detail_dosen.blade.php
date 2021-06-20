@@ -8,13 +8,14 @@
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-lg-7 col-md-10">
-        <h1 class="display-2 text-white">Hello Jesse</h1>
+        <h1 class="display-2 text-white">Hello {{Auth::user()->name}}</h1>
         <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
       </div>
     </div>
   </div>
 </div>
 <!-- Page content -->
+{{-- {{dd($dosen)}} --}}
 <div class="container-fluid mt--6">
   <div class="row">
     <div class="col-xl-4 order-xl-2">
@@ -24,7 +25,7 @@
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="#">
-                <img src="{{ asset('template') }}/assets/img/theme/team-4.jpg" class="rounded-circle">
+                <img src="{{asset('img/dosen/profil/'.$dosen->foto_dosen)}}" class="rounded-circle">
               </a>
             </div>
           </div>
@@ -41,15 +42,15 @@
               <div class="card-profile-stats d-flex justify-content-center">
                 <div>
                   <span class="heading">22</span>
-                  <span class="description">Friends</span>
+                  <span class="description">Penelitian</span>
                 </div>
                 <div>
                   <span class="heading">10</span>
-                  <span class="description">Photos</span>
+                  <span class="description">Prestasi</span>
                 </div>
                 <div>
                   <span class="heading">89</span>
-                  <span class="description">Comments</span>
+                  <span class="description">Pengabdian</span>
                 </div>
               </div>
             </div>
@@ -79,7 +80,7 @@
               <h3 class="mb-0">Detail</h3>
             </div>
             <div class="col-4 text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Edit</a>
+              <a href="{{route('dosen-edit', $dosen->id)}}" class="btn btn-sm btn-primary">Edit</a>
             </div>
           </div>
         </div>
@@ -141,7 +142,7 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Foto Dosen</label>
                     <div>
-                        <img src="{{ url('Img/dosen/' . $dosen->foto_dosen) }}" width="100px" height="100px" alt="">
+                        <img src="{{ url('img/dosen/profil/' . $dosen->foto_dosen) }}" width="100px" height="100px" alt="">
                     </div>
                   </div>
                 </div>
@@ -192,10 +193,6 @@
                 </ul>
               </div>
               <div class="pengabdian"></div>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
-                <button class="btn btn-neutral btn-sm" type="reset">Reset</button>
             </div>
           </form>
         </div>

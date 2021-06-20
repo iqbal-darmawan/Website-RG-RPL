@@ -30,7 +30,7 @@ class IndustriController extends Controller
         ]);
         $file = Request()->foto_industri;
         $filename = Request()->nama_industri. '.' . $file->extension();
-        $file->move(public_path('Img/industri'),$filename);
+        $file->move(public_path('img/industri'),$filename);
         $data = [
             'nama_industri' => $request-> nama_industri,
             'deskripsi_industri' => $request -> deskripsi_industri,
@@ -54,7 +54,7 @@ class IndustriController extends Controller
         if ($request->foto_industri <> " ") {
             $file = Request()->foto_industri;
             $filename = Request()->nama_industri. '.' . $file->extension();
-            $file->move(public_path('Img/industri'),$filename);
+            $file->move(public_path('img/industri'),$filename);
             $data = [
                 'nama_industri' => $request -> nama_industri,
                 'deskripsi_industri' => $request -> deskripsi_industri,
@@ -76,7 +76,7 @@ class IndustriController extends Controller
     {
         $data = $this->Industri->detailData($id);
         if ($data->foto_industri <>" ") {
-            unlink(public_path('Img/industri'). '/' . $data->foto_industri);
+            unlink(public_path('img/industri'). '/' . $data->foto_industri);
         }
         $this->Industri->deleteData($id);
 

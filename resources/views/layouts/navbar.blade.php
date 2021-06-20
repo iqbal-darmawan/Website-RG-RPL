@@ -8,16 +8,16 @@
                 <div class="nav-item {{ request()->is('/') ? 'active' : '' }}">
                     <a href="/">Home</a>
                 </div>
-                <div class="nav-item {{ request()->is('karya') ? 'active' : '' }}">
+                <div class="nav-item {{ (request()->is('karya') or request()->is('karya-details')) ? 'active' : '' }}">
                     <a  href="{{route('karya')}}">Karya</a>
                 </div>
-                <div class="nav-item {{ request()->is('judulpa') ? 'active' : '' }}">
+                <div class="nav-item {{ request()->is('judul-pa') ? 'active' : '' }}">
                     <a href="{{route('judul-pa')}}">Tawaran Judul PA</a>
                 </div>
-                <div class="nav-item {{ request()->is('dosen') ? 'active' : '' }}">
+                <div class="nav-item {{ request()->is('daftar-dosen') || request()->is('daftar-dosen-details') ? 'active' : '' }}">
                     <a href="{{route('daftar-dosen')}}">Daftar Dosen</a>
                 </div>
-                <div class="nav-item {{ request()->is('tentangkami') ? 'active' : '' }}">
+                <div class="nav-item {{ request()->is('tentang-kami') ? 'active' : '' }}">
                     <a href="{{route('tentang-kami')}}">Tentang Kami</a>
                 </div>
             </div>

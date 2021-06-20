@@ -55,7 +55,7 @@
                 </div>
                 @foreach ($fotoKarya as $item)
                 <div class="row">
-                  <img src="{{ url('Img/produk/' . $item->foto_produk) }}" width="100px" height="100px" alt="">
+                  <img src="{{ url('img/produk/' . $item->foto_produk) }}" width="100px" height="100px" alt="">
                   <div class="col-lg-4">
                       <div class="form-group">
                           <label for="">Foto Produk</label>

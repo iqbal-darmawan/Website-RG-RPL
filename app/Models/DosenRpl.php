@@ -39,7 +39,7 @@ class DosenRpl extends Model
     public function getAllData()
     {
         
-        $data = DB::table('dosen_rpl')->get();
+        $data = DB::table('dosen_rpl')->paginate(9);
         return $data;
     }
     public function detailData($id)
@@ -53,8 +53,17 @@ class DosenRpl extends Model
         ->where('id',$id)
         ->delete();
     }
-    public function user()
+
+    public function penelitian()
     {
-        return $this->hasOne(User::class);
+        return $this->hasMany(Penelitian::class);
+    }
+    public function prestasi()
+    {
+        return $this->hasMany(Prestasi::class);
+    }
+    public function pengabdian()
+    {
+        return $this->hasMany(Pengabdian::class);
     }
 }

@@ -29,7 +29,7 @@ class DosenRplFactory extends Factory
             'alamat' => $this->faker->address(),
             'thn_bergabung' => $this->faker->year(),
             'telefon' => '+62 ' . $this->faker->phoneNumber(),
-            'foto_dosen' => '-',
+            'foto_dosen' => 'img-'.$this->faker->numberBetween(0, 6).'.jpg',
         ];
     }
 }

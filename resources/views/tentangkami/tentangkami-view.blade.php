@@ -82,7 +82,7 @@
                 <div class="card-body text-center">
                     <img src="{{ asset('img/tentangkami/Vector (2).png') }}" alt="">
                     <h5 class="text-bold mt-4">Arief Graifhan Ramadhani</h5>
-                    <p class="text-secondary mt-4">Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
+                    <p class="text-secondary mt-4"> Currently interested in Backend and Software Engineering. I use Colemak as my default keyboard layout.</p>
                 </div>
             </div>
             <div class="card tim-card">

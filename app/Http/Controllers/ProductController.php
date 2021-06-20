@@ -22,4 +22,16 @@ class ProductController extends Controller
         ];
         return view('karya.karya-view', $data);
     }
+
+    public function show($id)
+    {
+        $karya = $this->produk->detailData($id);
+        $foto = Produk::find($id)->fotoproduk;
+        $data = [
+            'karya' => $karya,
+            'foto' => $foto,
+        ];
+
+        return view('karya.details.karya-details-view', $data);
+    }
 }

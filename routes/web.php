@@ -8,7 +8,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-
+use App\Models\Produk;
 
 // ======================LANDING=======================
 Route::view('/', 'home.home-view')->name('home');
@@ -18,14 +18,11 @@ Auth::routes();
 
 // =================== Karya Home =================
 Route::get('/karya', [ProductController::class, 'index'])->name('karya');
+Route::get('/karya/details/karya-{id}', [ProductController::class, 'show'])->name('karya-details');
 
-Route::get('/karya/details', function (){
-    return view('karya.details.karya-details-view');
-});
-
+// =================== Daftar Dosen ==================
 Route::get('/daftar-dosen', [DosenController::class, 'indexFront'])->name('daftar-dosen');
-
-Route::view('/daftar-dosen/detail', 'dosen.detail-dosen-view')->name('daftar-dosen-detail');
+Route::get('/daftar-dosen/details/dosen-{id}', [DosenController::class, 'showFront'])->name('daftar-dosen-details');
 
 Route::view('/judul-pa', 'judulpa.judulpa-view')->name('judul-pa');
 
@@ -42,7 +39,7 @@ Route::group(['prefix' => '/dosen', 'middleware' => 'auth'], function () {
     Route::get('/create', [DosenController::class, 'create']);
     Route::post('/store', [DosenController::class, 'store']);
     Route::get('/show/{id}', [DosenController::class, 'show']);
-    Route::get('/edit/{id}', [DosenController::class, 'edit']);
+    Route::get('/edit/{id}', [DosenController::class, 'edit'])->name('dosen-edit');
     Route::post('/update/{id}', [DosenController::class, 'update']);
     Route::get('/destroy/{id}', [DosenController::class, 'destroy']);
     Route::get('/deletePrestasiById/{id}', [DosenController::class, 'deletePrestasiById']);
@@ -52,7 +49,6 @@ Route::group(['prefix' => '/dosen', 'middleware' => 'auth'], function () {
     Route::post('/addArrayPenelitian/{id}', [DosenController::class, 'addArrayPenelitian']);
     Route::post('/addArrayPengabdian/{id}', [DosenController::class, 'addArrayPengabdian']);
 });
-
 
 // ======================MAHASISWA=======================
 Route::group(['prefix' => '/karya-mahasiswa', 'middleware' => 'auth'], function () {
@@ -68,7 +64,6 @@ Route::group(['prefix' => '/karya-mahasiswa', 'middleware' => 'auth'], function 
     Route::post('/addFotoProduk/{id}', [MahasiswaController::class, 'addFotoProduk']);
     Route::post('/tambahMahasiswa/{id}', [MahasiswaController::class, 'addMahasiswabyId']);
 });
-
 
 // ======================JUDUL PA=======================
 Route::group(['prefix' => '/judulpa', 'middleware' => 'auth'], function () {
