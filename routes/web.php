@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-use App\Models\Produk;
 
 // ======================LANDING=======================
 Route::view('/', 'home.home-view')->name('home');
@@ -76,6 +76,16 @@ Route::group(['prefix' => '/judulpa', 'middleware' => 'auth'], function () {
     Route::get('/destroy/{id}', [JudulpaController::class, 'destroy']);
 });
 
+// ======================Gallery=======================
+Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');
+Route::get('/gallery/edit/{id}',[GalleryController::class,'edit']);
+Route::get('/gallery/create',[GalleryController::class,'create']);
+Route::post('/gallery/store',[GalleryController::class,'store']);
+Route::post('/gallery/update/{id}',[GalleryController::class,'update']);
+Route::get('/gallery/destroy/{id}',[GalleryController::class,'destroy']);
+Route::get('/gallery/destroyById/{id}',[GalleryController::class,'destroyById']);
+Route::post('/gallery/addFotoById/{id}',[GalleryController::class,'addFotoById']);
+
 // ======================USER=======================
 Route::group(['prefix' => '/users', 'middleware' => 'auth'], function () {
     Route::get('/', [UserController::class, 'index'])->name('user');
@@ -87,4 +97,20 @@ Route::group(['prefix' => '/industri', 'middleware' => 'auth'], function () {
     Route::post('/store', [IndustriController::class, 'store']);
     Route::post('/update/{id}', [IndustriController::class, 'update']);
     Route::get('/destroy/{id}', [IndustriController::class, 'destroy']);
+});
+
+// =======================MATERI========================
+Route::group(['prefix' => '/materi', 'middleware' => 'auth'], function () {
+    Route::get('/',[MateriController::class,'index'])->name('materi');
+    Route::get('/edit/{id}',[MateriController::class,'edit']);
+    Route::get('/create',[MateriController::class,'create']);
+    Route::post('/store',[MateriController::class,'store']);
+    Route::post('/update/{id}',[MateriController::class,'update']);
+    Route::get('/destroy/{id}',[MateriController::class,'destroy']);
+    Route::get('/destroyById/{id}',[MateriController::class,'destroyById']);
+    Route::post('/addFileById/{id}',[MateriController::class,'addFileById']);
+});
+
+Route::get('/karya', function () {
+    return view('karya.karya-view');
 });

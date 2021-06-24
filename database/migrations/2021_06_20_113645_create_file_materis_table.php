@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGalleriesTable extends Migration
+class CreateFileMaterisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('gallery', function (Blueprint $table) {
+        Schema::create('file_materi', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('foto');
+            $table->foreignId('materi_id')->constrained('materi');
+            $table->string('nama_file');
+            $table->string('category');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gallery');
+        Schema::dropIfExists('file_materis');
     }
 }

@@ -32,7 +32,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('karya-mahasiswa') ? ' active' : ''}}" onclick="" href="{{route('mahasiswa')}}">
+              <a class="nav-link{{request()->is('karya-mahasiswa') ? ' active' : ''}}" href="{{route('mahasiswa')}}">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Karya mahasiswa</span>
               </a>
@@ -62,7 +62,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('login') ? ' active' : ''}}" href="{{ route('logout') }}" 
+              <a class="nav-link{{request()->is('materi') ? ' active' : ''}}" href="{{route('materi')}}">
+                <i class="ni ni-folder-17 text-success"></i>
+                <span class="nav-link-text">Materi</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link{{request()->is('logout') ? ' active' : ''}}" href="{{ route('logout') }}" 
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 <i class="ni ni-key-25 text-info"></i>
