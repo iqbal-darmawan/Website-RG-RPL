@@ -30,6 +30,14 @@
                     <label class="form-control-label" for="input-last-name">Nama Materi</label>
                     <input type="text" name="nama_materi" id="input-last-name" class="form-control">
                   </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Kategory</label>
+                    <select name="category" id="" class="form-control">
+                      <option selected>Category</option>
+                      <option value="wppl">RPL</option>
+                      <option value="wppl"> WPPL</option>
+                   </select>
+                  </div>
                 </div>
               </div>
               <div class="row">

@@ -17,6 +17,7 @@ class CreateFileMaterisTable extends Migration
             $table->id();
             $table->foreignId('materi_id')->constrained('materi');
             $table->string('file_materi');
+            $table->string('category');
             $table->timestamps();
         });
     }

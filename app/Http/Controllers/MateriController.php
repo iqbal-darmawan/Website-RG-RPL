@@ -39,6 +39,7 @@ class MateriController extends Controller
                     $data2 = array(
                         'materi_id' => $materi->id,
                         'file_materi' => $fname,
+                        'category' => $data['category'],
                         'created_at' => now(),
                         'updated_at' => now()
                     );
