@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JudulpaController;
 use App\Http\Controllers\IndustriController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
@@ -76,9 +77,15 @@ Route::get('/gallery/destroyById/{id}',[GalleryController::class,'destroyById'])
 Route::post('/gallery/addFotoById/{id}',[GalleryController::class,'addFotoById']);
 
 
-
 //=======================MATERI========================
-
+Route::get('/materi',[MateriController::class,'index'])->name('materi');
+Route::get('/materi/edit/{id}',[MateriController::class,'edit']);
+Route::get('/materi/create',[MateriController::class,'create']);
+Route::post('/materi/store',[MateriController::class,'store']);
+Route::post('/materi/update/{id}',[MateriController::class,'update']);
+Route::get('/materi/destroy/{id}',[MateriController::class,'destroy']);
+Route::get('/materi/destroyById/{id}',[MateriController::class,'destroyById']);
+Route::post('/materi/addFileById/{id}',[MateriController::class,'addFileById']);
 
 Route::get('/karya', function () {
     return view('karya.karya-view');

@@ -8,6 +8,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
+      // materi
+      $('.addFile').on('click',function(){
+      addFile();
+    });
+    function addFile(){
+      var addFile ='<div class="row"><div class="col-lg-12"><div class="form-group"><label class="form-control-label" for="input-username">File Materi</label><input type="file" name="file_materi[]" id="input-username" class=" form-control"></div></div></div>';
+      $('.materi').append(addFile);
+    };
       //gallery
     $('.addGallery').on('click',function(){
       addGallery();
@@ -61,23 +69,6 @@
     $('.remove').live('click',function(){
       $(this).parent().parent().parent().remove();
     });
-
-    $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-})
   </script>
 </body>
 </html>

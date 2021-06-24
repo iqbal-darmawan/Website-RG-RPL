@@ -44,20 +44,20 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/industri') ? ' active' : ''}}" href="/industri">
+              <a class="nav-link{{request()->is('industri') ? ' active' : ''}}" href="/industri">
                 <i class="ni ni-building text-info"></i>
                 <span class="nav-link-text">Industri</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/gallery') ? ' active' : ''}}" href="/gallery">
+              <a class="nav-link{{request()->is('gallery') ? ' active' : ''}}" href="/gallery">
                 <i class="ni ni-image text-danger"></i>
                 <span class="nav-link-text">Gallery</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link{{request()->is('/materi') ? ' active' : ''}}" href="/materi">
-                <i class="ni ni-image text-danger"></i>
+              <a class="nav-link{{request()->is('materi') ? ' active' : ''}}" href="/materi">
+                <i class="ni ni-folder-17 text-success"></i>
                 <span class="nav-link-text">Materi</span>
               </a>
             </li>
