@@ -56,14 +56,14 @@ class DosenRpl extends Model
 
     public function penelitian()
     {
-        return $this->hasMany(Penelitian::class);
+        return $this->hasMany(Penelitian::class, 'dosen_id');
     }
     public function prestasi()
     {
-        return $this->hasMany(Prestasi::class);
+        return $this->hasMany(Prestasi::class, 'dosen_id');
     }
     public function pengabdian()
     {
-        return $this->hasMany(Pengabdian::class);
+        return $this->hasMany(Pengabdian::class, 'dosen_id');
     }
 }

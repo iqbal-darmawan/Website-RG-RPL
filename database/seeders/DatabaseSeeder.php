@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\DosenRpl;
-use App\Models\User;
 use App\Models\Produk;
 use App\Models\FotoProduk;
+use App\Models\Gallery;
+use App\Models\Industri;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,5 +24,7 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         DosenRpl::factory()->count(19)->create();
+        Gallery::factory()->count(10)->create();
+        Industri::factory()->count(10)->create();
     }
 }

@@ -35,11 +35,11 @@
         <div class="d-flex align-items-center profile-wrapper mx-5">
             <div class="card-image-profile me-5">
                 {{-- {{dd($dosen)}} --}}
-                <img src="{{ asset('img/dosen/profil/img-'. $dosen[0]->dosenrpl->foto_dosen.'.jpg') }}" alt="" class="text-center ">
+                <img src="{{ asset('img/dosen/profil/'. $dosen->foto_dosen) }}" alt="" class="text-center ">
             </div>
             <div class="">
                 <h3>Nama</h3>
-                <p class="text-secondary">{{$dosen[0]->name}}</p>
+                <p class="text-secondary">{{$dosen->nama_lengkap}}</p>
                 <h3>Beban Ajar</h3>
                 <p class="text-secondary">Lorem ipsum dolor, sit amet....</p>
                 <h3>Pendidikan Terakhir</h3>

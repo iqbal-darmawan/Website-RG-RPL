@@ -7,7 +7,6 @@ use App\Models\DosenRpl;
 use App\Models\Penelitian;
 use App\Models\Prestasi;
 use App\Models\Pengabdian;
-use App\Models\User;
 
 
 class DosenController extends Controller
@@ -136,7 +135,7 @@ class DosenController extends Controller
          $this->updateArrayPrestasi($request,$id);
          $this->updateArrayPenelitian($request,$id);
          $this->updateArrayPengabdian($request,$id);
-        return redirect()->route('dosen')->with('pesan','Data berhasil dihapus');
+        return redirect()->route('dosen')->with('pesan','Data berhasil diupdate');
 
     }
     public function destroy($id)
@@ -242,9 +241,9 @@ class DosenController extends Controller
     public function showFront($id)
     {
         $dosen = $this->dosen->detailData($id);
-        $penelitian = DosenRpl::where($id)->penelitian;
-        $pengabdian = DosenRpl::where($id)->pengabdian;
-        $prestasi = DosenRpl::where($id)->prestasi;
+        $penelitian = DosenRpl::find($id)->penelitian;
+        $pengabdian = DosenRpl::find($id)->pengabdian;
+        $prestasi = DosenRpl::find($id)->prestasi;
 
         return view('dosen.detail-dosen-view', [
             'dosen' => $dosen,

@@ -88,16 +88,15 @@
       <h2 class="text-center">Dosen Tim RG RPL</h2>
     </div>
     <div class="dosen-tim-card-wrapper d-flex flex-wrap justify-content-center">
-      {{--dd($dosen)--}}
       @foreach ($dosen as $item)
       <div class="card dosen-tim-card shadow m-3" style="width: 330px; heigth:362">
         <div class="card-header p-0">
-          <img src="{{asset('img/dosen/profil/img-' .$item->dosenrpl->foto_dosen. '.jpg')}}" alt=""
+          <img src="{{asset('img/dosen/profil/' .$item->foto_dosen)}}" alt=""
             class="text-center w-100 " />
         </div>
         <div class="card-body px-3 ">
-          <h4>{{$item->name}}</h4>
-          <p class="my-3">{{$item->deskripsi}}</p>
+          <h4>{{$item->nama_lengkap}}</h4>
+          <p class="my-3">NIP: {{$item->nip}}</p>
           <div class="see-more-karya mb-3 mt-5 d-block text-end">
             <a href="{{route('daftar-dosen-details', $item->id)}}">See profile</a>
           </div>
@@ -106,7 +105,7 @@
       @endforeach
     </div>
   </div>
-  <div class="pagination">
+  <div class="pagination justify-content-center">
     {{$dosen->links()}}
   </div>
 </div>

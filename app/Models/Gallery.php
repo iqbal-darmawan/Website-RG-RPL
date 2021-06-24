@@ -10,7 +10,7 @@ class Gallery extends Model
     use HasFactory;
     protected $table = 'gallery';
     protected $fillable=[
-        'nama_kegiatan','foto_kegiatan'
+        'nama','foto'
     ];
 
     protected $hidden=[

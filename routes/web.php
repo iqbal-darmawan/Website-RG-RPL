@@ -9,6 +9,8 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
 
 // ======================LANDING=======================
 Route::view('/', 'home.home-view')->name('home');
@@ -24,14 +26,14 @@ Route::get('/karya/details/karya-{id}', [ProductController::class, 'show'])->nam
 Route::get('/daftar-dosen', [DosenController::class, 'indexFront'])->name('daftar-dosen');
 Route::get('/daftar-dosen/details/dosen-{id}', [DosenController::class, 'showFront'])->name('daftar-dosen-details');
 
+// =================== JUDUL PA =======================
 Route::view('/judul-pa', 'judulpa.judulpa-view')->name('judul-pa');
 
+// ==================== TENTANG KAMI ====================
 Route::view('/tentang-kami', 'tentangkami.tentangkami-view')->name('tentang-kami');
 
-Route::view('/gallery-editor', 'Admin.gallery.v_gallery')->name('gallery');
-
 // ======================ADMIN PAGE=======================
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 // ======================DOSEN=======================
 Route::group(['prefix' => '/dosen', 'middleware' => 'auth'], function () {
@@ -77,14 +79,16 @@ Route::group(['prefix' => '/judulpa', 'middleware' => 'auth'], function () {
 });
 
 // ======================Gallery=======================
-Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');
-Route::get('/gallery/edit/{id}',[GalleryController::class,'edit']);
-Route::get('/gallery/create',[GalleryController::class,'create']);
-Route::post('/gallery/store',[GalleryController::class,'store']);
-Route::post('/gallery/update/{id}',[GalleryController::class,'update']);
-Route::get('/gallery/destroy/{id}',[GalleryController::class,'destroy']);
-Route::get('/gallery/destroyById/{id}',[GalleryController::class,'destroyById']);
-Route::post('/gallery/addFotoById/{id}',[GalleryController::class,'addFotoById']);
+Route::group(['prefix' => '/gallery', 'middleware' => 'auth'], function () {
+    Route::get('/',[GalleryController::class,'index'])->name('gallery');
+    Route::get('/edit/{id}',[GalleryController::class,'edit']);
+    Route::get('/create',[GalleryController::class,'create']);
+    Route::post('/store',[GalleryController::class,'store']);
+    Route::post('/update/{id}',[GalleryController::class,'update']);
+    Route::get('/destroy/{id}',[GalleryController::class,'destroy']);
+    Route::get('/destroyById/{id}',[GalleryController::class,'destroyById']);
+    Route::post('/addFotoById/{id}',[GalleryController::class,'addFotoById']);
+});
 
 // ======================USER=======================
 Route::group(['prefix' => '/users', 'middleware' => 'auth'], function () {
@@ -109,8 +113,4 @@ Route::group(['prefix' => '/materi', 'middleware' => 'auth'], function () {
     Route::get('/destroy/{id}',[MateriController::class,'destroy']);
     Route::get('/destroyById/{id}',[MateriController::class,'destroyById']);
     Route::post('/addFileById/{id}',[MateriController::class,'addFileById']);
-});
-
-Route::get('/karya', function () {
-    return view('karya.karya-view');
 });

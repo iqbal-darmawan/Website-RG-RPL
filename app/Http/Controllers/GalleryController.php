@@ -13,35 +13,27 @@ class GalleryController extends Controller
             'gallery' => Gallery::get()
         ];
       
-        return view('Admin.Gallery.v_gallery',$data);
+        return view('Admin.gallery.v_gallery',$data);
     }
 
     public function create()
     {
-        return view('Admin/Gallery/v_add_gallery');
+        return view('Admin/gallery/v_add_gallery');
     }
 
     public function store(Request $request)
     {
         $gallery = new Gallery;
         $data=$request->all();
-        $gallery->nama_kegiatan = $data['nama_kegiatan'];
+
+        $gallery->nama = $data['nama'];
+        $gallery->foto = $data['foto'];
+
+        $fname = $gallery->foto->getClientOriginalName();
+        $gallery->foto->move(public_path('img/gallery'), $fname);
         $gallery->created_at = now();
         $gallery->save();
-        if ($request->hasFile('foto_kegiatan')) {
-            foreach($request->file('foto_kegiatan') as $key => $file)
-            {
-                    $fname = $file->getClientOriginalName();
-                    $file->move(public_path('Img/gallery') , $fname);
-                    $data2 = array(
-                        'gallery_id' => $gallery->id,
-                        'foto_kegiatan' => $fname,
-                        'created_at' => now(),
-                        'updated_at' => now()
-                    );
-                    GalleryFoto::insert($data2);
-            }
-        }
+
         session()->flash('success','data berhasil di tambahkan');
         return redirect()->route('gallery');
     }
@@ -56,44 +48,27 @@ class GalleryController extends Controller
         $data=[
             'gallery' => Gallery::find($id),
         ];
-        return view("Admin.Gallery.v_edit_gallery",$data);
+        return view("Admin.gallery.v_edit_gallery",$data);
     }
 
 
     public function update(Request $request, $id)
     {
-        
+        $data = [
+            'nama' => $request->nama,
+            'foto' => $request->foto,
+            'updated_at' => now(),
+        ];
+
+        Gallery::where('id', $id)->update($data);
+        return redirect()->route('dosen')->with('pesan', 'Data berhasil diupdate');
     }
 
 
     public function destroy($id)
     {
         Gallery::destroy($id);
-        session()->flash('success','foto berhasil di hapus');
-        return back();
-    }
-    public function addFotoById(Request $request,$id)
-    {    
-        if ($request->hasFile('foto_kegiatan')) {
-            foreach ($request->file('foto_kegiatan') as $key => $file) {
-                
-                $fname = $file->getClientOriginalName();
-                $file->move(public_path('Img/gallery') , $fname);
-                $data2 = array(
-                    'gallery_id' => $id,
-                    'foto_kegiatan' => $fname,
-                    'created_at' => now(),
-                    'updated_at' => now()
-                );
-            }
-        }
-        session()->flash('success','foto berhasil di tambahkan');
-        return back();
-    }
-    public function destroyById($id)
-    {
-        GalleryFoto::destroy($id);
-        session()->flash('success','foto berhasil di tambahkan');
+        session()->flash('success','foto berhasil dihapus');
         return back();
     }
 }
