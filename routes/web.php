@@ -20,8 +20,11 @@ Route::view('/', 'home.home-view')->name('home');
 Auth::routes();
 
 // =================== Karya Home =================
-Route::get('/karya', [ProductController::class, 'index'])->name('karya');
-Route::get('/karya/details/karya-{id}', [ProductController::class, 'show'])->name('karya-details');
+Route::group(['prefix'=>'/karya'], function () {
+    Route::get('/', [ProductController::class, 'index'])->name('karya');
+    Route::get('/details/karya-{id}', [ProductController::class, 'show'])->name('karya-details');
+    Route::get('/download/materi-{id}', [MateriController::class, 'download'])->name('download');
+});
 
 // =================== Daftar Dosen ==================
 Route::get('/daftar-dosen', [DosenController::class, 'indexFront'])->name('daftar-dosen');

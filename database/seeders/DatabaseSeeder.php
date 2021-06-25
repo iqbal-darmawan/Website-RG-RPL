@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\DosenRpl;
+use App\Models\FileMateri;
 use App\Models\Produk;
 use App\Models\FotoProduk;
 use App\Models\Gallery;
@@ -26,13 +27,16 @@ class DatabaseSeeder extends Seeder
             ->create();
         Industri::factory()
             ->has(JudulPA::factory()->count(3), 'judulpa')
-            ->count(12)
+            ->count(5)
             ->create();
         DosenRpl::factory()
             ->has(JudulPA::factory()->count(5), 'judulpa')
-            ->count(12)
+            ->count(9)
             ->create();
         Gallery::factory()->count(10)->create();
-        Materi::factory()->count(4)->create();
+        Materi::factory()
+            ->has(FileMateri::factory()->count(1), 'fileMateri')
+            ->count(6)
+            ->create();
     }
 }

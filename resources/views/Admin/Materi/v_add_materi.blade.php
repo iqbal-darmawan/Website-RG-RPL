@@ -28,7 +28,7 @@
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Nama Materi</label>
-                    <input type="text" name="nama_materi" id="input-last-name" class="form-control">
+                    <input type="text" name="nama" id="input-last-name" class="form-control">
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Kategory</label>

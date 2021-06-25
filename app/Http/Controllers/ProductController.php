@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Produk;
-use App\Models\FotoProduk;
+use App\Models\Materi;
 
 class ProductController extends Controller
 {
@@ -17,8 +16,11 @@ class ProductController extends Controller
         $products = Produk::has('fotoproduk')
             ->with('fotoproduk')
             ->paginate(9);
+
+        $materi = Materi::has('fileMateri')->with('fileMateri')->get();    
         $data = [
             'karya' => $products,
+            'materi' => $materi
         ];
         return view('karya.karya-view', $data);
     }

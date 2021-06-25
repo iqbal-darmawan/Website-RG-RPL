@@ -29,6 +29,6 @@ class CreateFileMaterisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file_materis');
+        Schema::dropIfExists('file_materi');
     }
 }

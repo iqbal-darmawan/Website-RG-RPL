@@ -17,7 +17,7 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">List Gallery</h3>
+              <h3 class="mb-0">List Materi</h3>
             </div>
             <section>
               <div class="container">

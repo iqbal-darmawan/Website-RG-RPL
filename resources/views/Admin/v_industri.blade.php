@@ -154,7 +154,7 @@
             </div>
             <div class="form-group">
               <label>Deskripsi Industri</label>
-              <textarea name="deskripsi_industri" value="{{$data->deskripsi_industri}}" class="form-control" cols="30" rows="3"></textarea>
+              <textarea name="deskripsi_industri" value="{{$data->deskripsi_industri}}" style="overflow: hidden" class="form-control" cols="30" rows="3"></textarea>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -197,5 +197,4 @@
         </div>
     </div>
     @endforeach
-  {{-- close modal delete --}}
 @endsection

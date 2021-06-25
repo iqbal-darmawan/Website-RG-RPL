@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Materi;
+use App\Models\FileMateri;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MateriFactory extends Factory
+class FileMateriFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Materi::class;
+    protected $model = FileMateri::class;
 
     /**
      * Define the model's default state.
@@ -21,9 +21,11 @@ class MateriFactory extends Factory
      */
     public function definition()
     {
+        $materi = ['RPL', 'WPPL'];
+        $r = array_rand($materi);
         return [
-            'nama' => $this->faker->sentence(),
-            'deskripsi' => $this->faker->paragraph(),
+            'nama_file' => 'materi-'. rand(0, 4) . '.docx',
+            'category' => $materi[$r]
         ];
     }
 }
