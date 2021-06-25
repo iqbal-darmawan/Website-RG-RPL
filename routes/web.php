@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GalleryController;
+use App\Models\JudulPA;
 
 // ======================LANDING=======================
 Route::view('/', 'home.home-view')->name('home');
@@ -27,7 +28,7 @@ Route::get('/daftar-dosen', [DosenController::class, 'indexFront'])->name('dafta
 Route::get('/daftar-dosen/details/dosen-{id}', [DosenController::class, 'showFront'])->name('daftar-dosen-details');
 
 // =================== JUDUL PA =======================
-Route::view('/judul-pa', 'judulpa.judulpa-view')->name('judul-pa');
+Route::get('/judul-pa', [JudulpaController::class, 'indexFront'])->name('judul-pa');
 
 // ==================== TENTANG KAMI ====================
 Route::view('/tentang-kami', 'tentangkami.tentangkami-view')->name('tentang-kami');

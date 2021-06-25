@@ -97,4 +97,12 @@ class JudulpaController extends Controller
         session()->flash('success','data berhasil dihapus');
         return redirect()->route('judulpa');
     }
+
+    public function indexFront()
+    {
+        $data = [
+            'judul' => $this->Judulpa->getAllData(),
+        ];
+        return view('judulpa.judulpa-view', $data);
+    }
 }

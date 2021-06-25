@@ -66,4 +66,8 @@ class DosenRpl extends Model
     {
         return $this->hasMany(Pengabdian::class, 'dosen_id');
     }
+    public function judulpa()
+    {
+        return $this->hasMany(JudulPA::class, 'dosen_id');
+    }
 }

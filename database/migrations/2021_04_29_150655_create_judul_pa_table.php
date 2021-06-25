@@ -15,7 +15,6 @@ class CreateJudulPATable extends Migration
     {
         Schema::create('judul_pa', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('mahasiswa_id')->nullable()->constrained('mahasiswa');
             $table->foreignId('dosen_id')->nullable()->constrained('dosen_rpl');
             $table->foreignId('industri_id')->nullable()->constrained('industri');
             $table->string('nama_judul', 100);

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Industri extends Model
 {
     use HasFactory;
+    protected $table = 'industri';
 
     public function getAllData()
     {

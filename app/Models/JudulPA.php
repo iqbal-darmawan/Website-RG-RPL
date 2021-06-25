@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\DB;
 class JudulPA extends Model
 {
     use HasFactory;
+    protected $table = 'judul_pa';
+
     public function getAllData()
     {
-        $data = DB::table('judul_pa')->get();
+        $data = DB::table('judul_pa')->paginate(5);
         return $data;
     }
     public function addData($data)
@@ -38,5 +40,9 @@ class JudulPA extends Model
     public function industri()
     {
         return $this->belongsTo(Industri::class);
+    }
+    public function dosen()
+    {
+        return $this->belongsTo(DosenRpl::class);
     }
 }

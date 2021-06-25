@@ -8,6 +8,8 @@ use App\Models\Produk;
 use App\Models\FotoProduk;
 use App\Models\Gallery;
 use App\Models\Industri;
+use App\Models\JudulPA;
+use App\Models\Materi;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,9 +24,15 @@ class DatabaseSeeder extends Seeder
             ->has(FotoProduk::factory()->count(3), 'fotoproduk')
             ->count(12)
             ->create();
-
-        DosenRpl::factory()->count(19)->create();
+        Industri::factory()
+            ->has(JudulPA::factory()->count(3), 'judulpa')
+            ->count(12)
+            ->create();
+        DosenRpl::factory()
+            ->has(JudulPA::factory()->count(5), 'judulpa')
+            ->count(12)
+            ->create();
         Gallery::factory()->count(10)->create();
-        Industri::factory()->count(10)->create();
+        Materi::factory()->count(4)->create();
     }
 }
