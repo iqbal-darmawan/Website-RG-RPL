@@ -40,12 +40,12 @@
             <div class="">
                 <h3>Nama</h3>
                 <p class="text-secondary">{{$dosen->nama_lengkap}}</p>
-                <h3>Beban Ajar</h3>
-                <p class="text-secondary">Lorem ipsum dolor, sit amet....</p>
-                <h3>Pendidikan Terakhir</h3>
-                <p class="text-secondary">Lorem ipsum dolor, sit amet....</p>
-                <h3>Jabatan</h3>
-                <p class="text-secondary">Dosen PENS</p>
+                <h3>NIP</h3>
+                <p class="text-secondary">{{$dosen->nip}}</p>
+                <h3>Tahun Bergabung</h3>
+                <p class="text-secondary">{{date("Y", strtotime($dosen->thn_bergabung))}}</p>
+                <h3>No. Telepon</h3>
+                <p class="text-secondary">{{$dosen->telefon}}</p>
             </div>
         </div>
     </div>
