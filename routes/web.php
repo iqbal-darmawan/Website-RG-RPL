@@ -32,6 +32,7 @@ Route::get('/daftar-dosen/details/dosen-{id}', [DosenController::class, 'showFro
 
 // =================== JUDUL PA =======================
 Route::get('/judul-pa', [JudulpaController::class, 'indexFront'])->name('judul-pa');
+Route::get('/judul-pa/details/judul-pa-{id}', [JudulpaController::class, 'showFront'])->name('judul-pa-details');
 
 // ==================== TENTANG KAMI ====================
 Route::view('/tentang-kami', 'tentangkami.tentangkami-view')->name('tentang-kami');

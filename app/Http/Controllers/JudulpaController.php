@@ -105,4 +105,12 @@ class JudulpaController extends Controller
         ];
         return view('judulpa.judulpa-view', $data);
     }
+
+    public function showFront()
+    {
+        $data = [
+            'judul' => $this->Judulpa->getAllData(),
+        ];
+        return view('judulpa.details.judulpa-details-view', $data);
+    }
 }
