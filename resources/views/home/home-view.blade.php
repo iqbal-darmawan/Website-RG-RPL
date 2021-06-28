@@ -28,18 +28,14 @@
             <img src="{{ asset('img/bg1.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2 class="carousel-caption-title">Workshop Produksi Perangkat Lunak</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque reiciendis repellendus odit cupiditate
-                    excepturi error omnis voluptate, nobis repudiandae sed non minus libero necessitatibus explicabo,
-                    nam, rerum inventore debitis. Molestias.</p>
+                <p>Workshop Produksi perangkat lunak merupakan mata kuliah yang mana membahas mengenai materi rekayasa perangkat lunak dengan mempelajari bagaimana cara memproduksi, serta membuat output karya rekayasa perangkat lunak tertentu yang dapat bermanfaat. </p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="{{ asset('img/bg1.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2 class="carousel-caption-title">RG RPL</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et veritatis quo perferendis libero,
-                    eveniet expedita architecto sit provident. Autem praesentium ea aut ullam aspernatur neque?
-                    Consequatur ipsum in quod eum.</p>
+                <p>Research Group RPL adalah sebuah grup penelitian dari program studi teknik informatika, berspesialisasi pada subjek rekayasa perangkat lunak dan bekerja bersama dalam masalah atau topik seputar RPL.</p>
             </div>
         </div>
     </div>
@@ -60,9 +56,7 @@
             <div class="">
                 <h5 style="font-size:24px; font-weight:bold;">Apa itu</h5>
                 <h2 style="font-size:36px; font-weight:bold;">Web RG RPL ?</h2>
-                <p style="font-size:18px; color: #978787;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Incidunt cumque commodi amet esse cupiditate quae vel porro, voluptas eius modi quaerat, adipisci
-                    est. Eligendi aspernatur et, quam autem nam rerum?</p>
+                <p style="font-size:18px; color: #978787;">Sebuah wadah untuk memberikan informasi mengenai profile dan kegiatan RG RPL. Meliputi profile dosen RG RPL terkait penelitian, prestasi dan pengabdian, kemudian dokumentasi karya, kerjasama industri, penawaran judul PA, rekomendasi materi dan pembahasan seputar RPL lainnya.</p>
             </div>
         </div>
         <div class="col-md-8">
@@ -130,8 +124,7 @@
         <div class="col-md-3 d-flex flex-column justify-content-center">
             <div>
                 <h2 style="font-size:36px; font-weight:bold;">Karya Mahasiswa</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt cumque commodi amet esse
-                    cupiditate quae vel porro, voluptas eius modi quaerat, adipisci est.</p>
+                <p>Pada kegiatan pembelajaran mengenai rekayasa perangkat lunak, mahasiswa dengan bimbingan RG RPL membuat suatu karya berbasis software yang sangat bermanfaat kedepannya.</p>
                 <a href="#">
                     <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -231,8 +224,7 @@
             <div>
                 <h5 style="font-size:24px; font-weight:bold;">Dosen</h5>
                 <h2 style="font-size:36px; font-weight:bold;">Tim RG RPL</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt cumque commodi amet esse
-                    cupiditate quae vel porro, voluptas eius modi quaerat, adipisci est.</p>
+                <p>Detail profile dari dosen yang tergabung dalam Research Group Rekayasa Perangkat Lunak Teknik Informatika PENS.</p>
                 <a href="#">
                     <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -278,9 +270,7 @@
             <div class="d-flex justify-content-between">
                 <div>
                     <h2 style="font-size:36px; font-weight:bold;">Apa Kata Mereka?</h2>
-                    <p style="color:#888888;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia quos id
-                        nostrum nihil assumenda voluptas cum repellat delectus cumque magni qui tenetur est amet
-                        distinctio voluptatum, dolorem animi hic quo!</p>
+                    <p style="color:#888888;">Berikut merupakan beberapa tanggapan dan masukan dari user website RG RPL mengenai suguhan konten serta informasi yang ada pada halaman website Research Group Rekayasa Perangkat Lunak.</p>
                 </div>
             </div>
             <div class="carousel-testimoni-wrapper">
@@ -288,18 +278,15 @@
                     <div class="item">
                         <div class="card card-testimoni">
                             <div class="card-body card-body-testimoni">
-                                <h5 class="mb-4">Lorem ipsum dolor sit amet</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus soluta dolores assumenda
-                                    corrupti accusantium ratione! Velit cumque impedit atque? Officiis suscipit dolore
-                                    voluptate
-                                    porro consequuntur iusto pariatur reprehenderit debitis. Ipsum.</p>
-                                <div class="d-flex mt-5">
+                                <h5 class="mb-4">Sangat Informatif dan Menarik</h5>
+                                <p>Data yang disajikan pada website ini sangat bermanfaat, sebelumnya saya adalah mahasiswa teknik informatika PENS 2019. Saya mendapatkan beberapa rekomendasi materi yang ada di website ini dan juga dapat melihat karya karya menarik dari mahasiswa IT PENS.</p>
+                                <div class="d-flex align-items-center mt-5">
                                     <div class="testimoni-img">
                                         <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
                                     </div>
                                     <div class="testimoni-name ms-3">
                                         <h4 class="m-0">Iqbal Darmawan</h4>
-                                        <p>mahasiswa</p>
+                                        <p class="m-0">Mahasiswa</p>
                                     </div>
                                 </div>
                             </div>
@@ -308,22 +295,34 @@
                     <div class="item">
                         <div class="card card-testimoni">
                             <div class="card-body card-body-testimoni">
-                                <h5 class="mb-4">Lorem ipsum dolor sit amet</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus soluta dolores assumenda
-                                    corrupti accusantium ratione! Velit cumque impedit atque? Officiis suscipit dolore
-                                    voluptate
-                                    porro consequuntur iusto pariatur reprehenderit debitis. Ipsum.</p>
+                                <h5 class="mb-4">Bermanfaat dan Solutif</h5>
+                                <p>Berkat website RG RPL, saya mengetahui kegiatan dari mahasiswa dan RG RPL. Kemudian data yang disajikan sangat jelas dan terbuka. Saya juga telah terbantu karena mendapat rekomendasi judul PA di website ini. Terimakasih website RG RPL!<3</p>
+                                <div class="d-flex align-items-center mt-5">
+                                <div class="testimoni-img">
+                                <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
+                                    </div>
+                                    <div class="testimoni-name ms-3">
+                                        <h4 class="m-0">Luly</h4>
+                                        <p class="m-0">Mahasiswa</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <div class="item">
                         <div class="card card-testimoni">
                             <div class="card-body card-body-testimoni">
-                                <h5 class="mb-4">Lorem ipsum dolor sit amet</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus soluta dolores assumenda
-                                    corrupti accusantium ratione! Velit cumque impedit atque? Officiis suscipit dolore
-                                    voluptate
-                                    porro consequuntur iusto pariatur reprehenderit debitis. Ipsum.</p>
+                                <h5 class="mb-4">Wadah yang Detail dan Update</h5>
+                                <p>Saya merupakan dosen yang tergabung dalam RG RPL, dimana sebelum ada website ini saya harus menjelaskan secara manual dan kurang efektif. Namun sekarang sangat terbantu karena adanya website ini update, detail dan informatif.</p>
+                                    <div class="d-flex align-items-center mt-5">
+                                    <div class="testimoni-img">
+                                        <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
+                                    </div>
+                                    <div class="testimoni-name ms-3">
+                                        <h4 class="m-0">Erwin Sutisna</h4>
+                                        <p class="m-0">Dosen</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -337,19 +336,19 @@
 <script>
     jQuery(document).ready(function($){
           $('.owl-carousel').owlCarousel({
-            dots:false,
+            dots:true,
             loop:true,
-            margin:10,
+            margin:0,
             nav:false,
             responsive:{
               0:{
-                items:1
+                items:2
               },
               600:{
-                items:1
+                items:2
               },
               1000:{
-                items:3
+                items:2
               }
             }
           })

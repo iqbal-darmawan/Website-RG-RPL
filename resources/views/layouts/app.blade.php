@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Home | RG-RPL</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,6 +16,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css">
+
 
     <!-- Optional CSS -->
     @yield('optional-css')
@@ -26,24 +29,23 @@
 </head>
 
 <body>
-    {{-- @include('layouts.navbar-mobile') --}}
+{{-- @include('layouts.navbar-mobile') --}}
 
-    <div class="container-fluid p-0">
-        @include('layouts.navbar')
+<div class="container-fluid p-0">
+    @include('layouts.navbar')
 
-        @yield('content')
+    @yield('content')
 
-        @yield('optional-content')
+    @yield('optional-content')
 
-    </div>
-    @include('layouts.footer')
+</div>
+@include('layouts.footer')
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 
-    <!-- Optional Javascript -->
-    @yield('optional-js')
+<!-- Optional Javascript -->
+@yield('optional-js')
 </body>
-
 </html>
