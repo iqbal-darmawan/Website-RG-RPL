@@ -29,6 +29,7 @@
         </div>
     </div>
 </div>
+{{-- {{dd($judul)}} --}}
 @foreach ($judul as $item)
 <div class="container">
     <div class="card-wrapper-content-detail">
@@ -37,7 +38,7 @@
                 <h3>Judul Project Akhir</h3>
                 <hr class="w-100 text-secondary">
                 <ul>
-                        <li>{{{$item->nama_judul}}}</li>
+                        <li>{{$item->nama_judul}}</li>
                 </ul>
             </div>
         </div>
