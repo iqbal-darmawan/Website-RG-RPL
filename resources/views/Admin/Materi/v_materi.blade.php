@@ -34,7 +34,9 @@
                   <div class="card card-body">
                     <label for="">Materi RPL</label>
                     <hr>
-                  
+                    @foreach ($materi as $item)
+                        
+                    @endforeach
                    
                   </div>
                 </div>

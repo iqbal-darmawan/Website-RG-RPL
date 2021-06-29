@@ -13,7 +13,7 @@ class MateriController extends Controller
     public function index()
     {
         $data=[
-            'materi' => Materi::find()->fileMateri,
+            'materi' => Materi::find(1)->fileMateri,
         ];
         return view('Admin.Materi.v_materi',$data);
     }

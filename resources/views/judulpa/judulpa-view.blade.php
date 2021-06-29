@@ -53,9 +53,9 @@
               <p class="mb-3 text-white">Pengubahan perangkat lunak itu sendiri guna mengembangkan,
                 memelihara, dan membangun kembali dengan menggunakan prinsip rekayasa untuk menghasilkan
                 perangkat lunak yang dapat bekerja lebih efisien dan efektif untuk pengguna</p>
-              <div class="button-see-more mb-4">
+              {{-- <div class="button-see-more mb-4">
                 <a href="" class="btn">See more..</a>
-              </div>
+              </div> --}}
             </div>
           </div>
           <div class="card-karya-wrapper2 card m-4">
@@ -67,9 +67,9 @@
               <p>Workshop Produksi perangkat lunak merupakan mata kuliah yang mana membahas mengenai
                 materi rekayasa perangkat lunak dengan mempelajari bagaimana cara memproduksi, serta
                 membuat output karya rekayasa perangkat lunak tertentu yang dapat bermanfaat</p>
-              <div class="button-see-more-2 mb-4">
+              {{-- <div class="button-see-more-2 mb-4">
                 <a href="" class="btn">See more..</a>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>
