@@ -21,7 +21,7 @@ class JudulPA extends Model
     }
     public function detailData($id)
     {
-      $data = DB::table('judul_pa')->where('id',$id)->first();
+      $data = DB::table('judul_pa')->where('id',$id)->first(['nama_judul', 'deskripsi_judul', 'kualifikasi_judul']);
   
       return $data;
     }

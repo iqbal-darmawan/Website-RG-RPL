@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DosenRpl;
 use App\Models\Industri;
 use App\Models\JudulPA;
 use Illuminate\Http\Request;
@@ -108,8 +109,9 @@ class JudulpaController extends Controller
 
     public function showFront($id)
     {
+        $test = $this->Judulpa->detailData($id);
         $data = [
-            'judul' => $this->Judulpa->detailData($id),
+            'judul' => $test,
         ];
         return view('judulpa.details.judulpa-details-view', $data);
     }

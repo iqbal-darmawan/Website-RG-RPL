@@ -30,39 +30,27 @@
     </div>
 </div>
 {{-- {{dd($judul)}} --}}
-@foreach ($judul as $item)
+
 <div class="container">
     <div class="card-wrapper-content-detail">
         <div class="card content-detail-card">
             <div class="card-body">
                 <h3>Judul Project Akhir</h3>
                 <hr class="w-100 text-secondary">
-                <ul>
-                        <li>{{$item->nama_judul}}</li>
-                </ul>
-            </div>
-        </div>
-        <div class="card content-detail-card">
-            <div class="card-body">
+                <h4>{{$judul->nama_judul}}</h4>
+                <br>
+                <br>
                 <h3>Deskripsi Project Akhir</h3>
                 <hr class="w- text-secondary">
-                <ul>
-                        <li>{{$item->deskripsi_judul}}</li>
-                   
-                </ul>
-            </div>
-        </div>
-        <div class="card content-detail-card">
-            <div class="card-body">
+                <p>{{$judul->deskripsi_judul}}</p>
+                <br>
+                <br>
                 <h3>Kualifikasi Judul</h3>
                 <hr class="w-100 text-secondary">
-                <ul>
-                        <li>{{$item->kualifikasi_judul}}</li>
-                </ul>
+                <h4>{{$judul->kualifikasi_judul}}</h4>
             </div>
         </div>
     </div>
 </div>
-@endforeach
 
 @endsection
