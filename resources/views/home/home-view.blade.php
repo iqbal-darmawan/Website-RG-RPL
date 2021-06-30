@@ -278,8 +278,10 @@
                             </div>
                         </div>
                         @endforeach
-
                     </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    {{ $gallery->links() }}
                 </div>
             </div>
         </div>

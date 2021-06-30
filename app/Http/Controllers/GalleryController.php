@@ -22,7 +22,7 @@ class GalleryController extends Controller
     public function indexFront()
     {
         $data=[
-            'gallery' => Gallery::latest()->limit(7)->get(),
+            'gallery' => Gallery::latest()->paginate(6),
             'dosen' => DosenRpl::count(),
             'karya' => Produk::count(),
             'industri' => Industri::count(),
