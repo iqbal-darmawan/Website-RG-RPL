@@ -26,10 +26,10 @@
             <div class="col-md-4">
                 <h3 class="usefull-links">Usefull Links</h3>
                 <ul class="list-unstyled links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Karya</a></li>
-                    <li><a href="#">Daftar Dosen</a></li>
-                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('karya')}}">Karya</a></li>
+                    <li><a href="{{route('daftar-dosen')}}">Daftar Dosen</a></li>
+                    <li><a href="{{route('tentang-kami')}}">Tentang Kami</a></li>
                 </ul>
             </div>
         </div>
