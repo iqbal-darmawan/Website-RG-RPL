@@ -93,6 +93,7 @@
         <div class="text-tawaran-pa w-50">
           <h4>{{$item->nama_judul}}</h4>
           <p>{{ Str::limit($item->deskripsi_judul, 100, '...') }}</p>
+          <a href="{{route('judul-pa-details', $item->id)}}">Check them out...</a>
         </div>
         <div class="deskripsi-tawaran-pa d-flex justify-content-center align-items-center w-25">
           <div class="date-wrapper">
