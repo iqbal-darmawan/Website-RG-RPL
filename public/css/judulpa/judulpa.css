@@ -68,15 +68,16 @@ form .form-control:focus{
 }
 
 .header-title h2:before{
-    border: 5px solid #183B67;
-    border-radius: 5px;
-    bottom: -20px;
     content: "";
-    left: 112px;
+    border: 5px solid #183B67;
+    background-color: #183B67;
+    border-radius: 5px;
     margin: auto 0;
     position: absolute;
     right: 0;
-    width: 17%;
+    bottom: 350px;
+    left: 10px;
+    width: 50%;
 }
 
 .header-title h2 {
@@ -138,8 +139,7 @@ border-radius: 20px;
 }
 
 .date {
-    margin: 4px;
-    padding: 15px;
+    padding: 30px;
     background: #E7E7E7;
 }
 

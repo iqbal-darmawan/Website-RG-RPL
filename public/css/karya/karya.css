@@ -64,19 +64,20 @@ form .form-control:focus{
 }
 
 .header-karya {
-    margin-bottom: 150px;
+    margin-bottom: 120px;
 }
 
 .header-title h2:before{
-    border: 5px solid #183B67;
-    border-radius: 5px;
-    bottom: -20px;
     content: "";
-    left: 112px;
+    border: 5px solid #183B67;
+    background-color:#183B67 ;
+    border-radius: 5px;
     margin: auto 0;
     position: absolute;
     right: 0;
-    width: 17%;
+    bottom: 380px;
+    left: 10px;
+    width: 50%;
 }
 
 .header-title h2 {
@@ -166,7 +167,6 @@ border-radius: 20px;
   .card-download-karya {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    width: 370px;
     border: none;
   }
 
@@ -232,7 +232,6 @@ border-radius: 20px;
 }
 
 .inner {
-    overflow: hidden;
     height: 180px;
     width: 18rem;
 }

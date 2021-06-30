@@ -31,10 +31,7 @@
       <div class="header-left">
         <h2>Apa itu RG RPL ?</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Tempora culpa distinctio assumenda dicta iure ex ipsa libero
-          hic dolorem sequi, animi architecto ullam voluptatem non,
-          reiciendis suscipit atque maxime tempore.
+          Research Group RPL adalah sebuah grup penelitian dari program studi teknik informatika, berspesialisasi pada subjek rekayasa perangkat lunak dan bekerja bersama dalam masalah atau topik seputar RPL.
         </p>
       </div>
     </div>
@@ -53,29 +50,25 @@
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon.png') }}" alt="" class="mb-3" />
-          <p>Identitas</p>
-          <span>Hehe</span>
+          <p class="fs-5">Identitas</p>
         </div>
       </div>
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon-1.png') }}" alt="" class="mb-3" />
-          <p>Produk</p>
-          <span>Hehe</span>
+          <p class="fs-5">Penelitian</p>
         </div>
       </div>
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon-2.png') }}" alt="" class="mb-3" />
-          <p>Kegiatan</p>
-          <span>Hehe</span>
+          <p class="fs-5">Prestasi</p>
         </div>
       </div>
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon-3.png') }}" alt="" class="mb-3" />
-          <p>Penelitian</p>
-          <span>Hehe</span>
+          <p class="fs-5">Pengabdian</p>
         </div>
       </div>
     </div>

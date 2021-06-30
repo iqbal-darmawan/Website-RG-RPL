@@ -14,7 +14,7 @@ use App\Http\Controllers\GalleryController;
 use App\Models\JudulPA;
 
 // ======================LANDING=======================
-Route::view('/', 'home.home-view')->name('home');
+Route::get('/', [GalleryController::class, 'indexFront'])->name('home');
 
 // ======================AUTH=======================
 Auth::routes();

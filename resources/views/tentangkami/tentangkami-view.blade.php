@@ -37,9 +37,8 @@
             <div class="col-md-6 d-flex flex-column justify-content-center">
                 <div class="wrapper-content-title">
                     <h2 style="font-size:36px; font-weight:bold;">Team Lizan</h2>
-                    <p style="font-size:18px; color: #978787;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Incidunt cumque commodi amet esse cupiditate quae vel porro, voluptas eius modi quaerat, adipisci
-                        est. Eligendi aspernatur et, quam autem nam rerum?</p>
+                    <p style="font-size:18px; color: #978787;">Team Lizan merupakan kelompok RPL yang bermula dari ketakutan menunggu pembagian kelompok dan berakhir bahagia setelah bersatu bertemu dengan kelompoknya.
+                    </p>
                 </div>
             </div>
             <div class="col-md-6 bg-dosen-header">
@@ -60,7 +59,7 @@
                 <div class="card-body text-center">
                     <img src="{{ asset('img/tentangkami/vector.png') }}" alt="">
                    {{-- <h5 style="font-size:18px; font-weight:bold;">{{Auth::user()->names}} Salsabilla</h5> --}}
-                    <h5 class="text-bold mt-4">Salsabilla</h5>
+                    <h5 class="text-bold mt-4">Lula Rania Salsabilla</h5>
                     <p class="text-secondary mt-4">Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
                 </div>
             </div>
@@ -141,8 +140,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <a href="">
-                    <img src="{{ asset('img/tentangkami/maps.png') }}" alt="" class="m-5">
+                <a href="https://www.google.com/maps/place/Politeknik+Elektronika+Negeri+Surabaya/@-7.2758924,112.7938315,17z/data=!4m5!3m4!1s0x2dd7fa10ea2ae883:0xbe22c55d60ef09c7!8m2!3d-7.2758471!4d112.7937557" target="_blank">
+                    <img src="{{ asset('img/tentangkami/maps.jpg') }}" alt="" class="m-5 border">
                 </a>
             </div>
         </div>

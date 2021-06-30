@@ -34,11 +34,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class="header-title">
-          <h2>Tawaran Judul PA</h2>
-          <p>Pada halaman Tawaran Judul PA yang menampilkan berbagai macam Judul PA yang dapat diajukan dan
-            bila nanti sudah mendapat acc pada judul PA tersebut</p>
-
+        <div class="d-flex align-items-center h-100">
+            <div class="header-title">
+                <h2>Tawaran Judul PA</h2>
+                <p>Pada halaman Tawaran Judul PA yang menampilkan berbagai macam Judul PA yang dapat diajukan dan
+                  bila nanti sudah mendapat acc pada judul PA tersebut</p>
+              </div>
         </div>
       </div>
       <div class="col-md-8">
@@ -53,9 +54,9 @@
               <p class="mb-3 text-white">Pengubahan perangkat lunak itu sendiri guna mengembangkan,
                 memelihara, dan membangun kembali dengan menggunakan prinsip rekayasa untuk menghasilkan
                 perangkat lunak yang dapat bekerja lebih efisien dan efektif untuk pengguna</p>
-              <div class="button-see-more mb-4">
+              {{-- <div class="button-see-more mb-4">
                 <a href="" class="btn">See more..</a>
-              </div>
+              </div> --}}
             </div>
           </div>
           <div class="card-karya-wrapper2 card m-4">
@@ -67,9 +68,9 @@
               <p>Workshop Produksi perangkat lunak merupakan mata kuliah yang mana membahas mengenai
                 materi rekayasa perangkat lunak dengan mempelajari bagaimana cara memproduksi, serta
                 membuat output karya rekayasa perangkat lunak tertentu yang dapat bermanfaat</p>
-              <div class="button-see-more-2 mb-4">
+              {{-- <div class="button-see-more-2 mb-4">
                 <a href="" class="btn">See more..</a>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>
@@ -86,27 +87,16 @@
     @foreach ($judul as $item)
     <div class="card tawaran-pa-card">
       <div class="card-body p-4 d-flex justify-content-between align-items-center">
-        <div class="logo">
+        <div class="logo me-3">
           <img src="{{ asset('img/karya/icon/fa-solid_atom.jpg') }}" alt="" class="w-100">
         </div>
-        <div class="text-tawaran-pa">
+        <div class="text-tawaran-pa w-50">
           <h4>{{$item->nama_judul}}</h4>
-          <p>{{$item->deskripsi_judul}}</p>
+          <p>{{ Str::limit($item->deskripsi_judul, 100, '...') }}</p>
         </div>
-        <div class="deskripsi-tawaran-pa">
-          <div class="date-wrapper d-flex mb-3">
-            <p class="date">{{$item->tahun_penawaran}}</p>
-          </div>
-          <div class="nama-dosen d-flex mb-1">
-            <svg width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M15.1473 5.50316C16.8236 5.50316 18.1666 4.27412 18.1666 2.75158C18.1666 1.22904 16.8236 0 15.1473 0C13.471 0 12.1178 1.22904 12.1178 2.75158C12.1178 4.27412 13.471 5.50316 15.1473 5.50316ZM7.06873 5.50316C8.74503 5.50316 10.0881 4.27412 10.0881 2.75158C10.0881 1.22904 8.74503 0 7.06873 0C5.39243 0 4.03927 1.22904 4.03927 2.75158C4.03927 4.27412 5.39243 5.50316 7.06873 5.50316ZM7.06873 7.33754C4.71585 7.33754 0 8.41066 0 10.5477V12.8407H14.1375V10.5477C14.1375 8.41066 9.42161 7.33754 7.06873 7.33754ZM15.1473 7.33754C14.8544 7.33754 14.5212 7.35589 14.1678 7.3834C15.3391 8.15384 16.1571 9.19027 16.1571 10.5477V12.8407H22.216V10.5477C22.216 8.41066 17.5002 7.33754 15.1473 7.33754Z"
-                fill="black" fill-opacity="0.5" />
-            </svg>
-            <p class="m-0 ms-2">{{$item->nama_pembimbing}}</p>
-          </div>
-          <div class="kategori-pa d-flex">
-            <p>{{$item->kualifikasi_judul}}</p>
+        <div class="deskripsi-tawaran-pa d-flex justify-content-center align-items-center w-25">
+          <div class="date-wrapper">
+            <p class="date m-0">{{$item->tahun_penawaran}}</p>
           </div>
         </div>
       </div>

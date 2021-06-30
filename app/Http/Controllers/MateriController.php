@@ -9,11 +9,11 @@ use App\Models\FileMateri;
 
 class MateriController extends Controller
 {
-    
+
     public function index()
     {
         $data=[
-            'materi' => Materi::find()->fileMateri,
+            'materi' => Materi::find(1)->fileMateri,
         ];
         return view('Admin.Materi.v_materi',$data);
     }
@@ -23,12 +23,12 @@ class MateriController extends Controller
         $file = public_path() . "/files/". $filename;
         return Response::download($file, $filename);
     }
-  
+
     public function create()
     {
         return view('Admin.Materi.v_add_materi');
     }
-  
+
     public function store(Request $request)
     {
         $materi = new Materi;
@@ -55,7 +55,7 @@ class MateriController extends Controller
         session()->flash('success','data berhasil di tambahkan');
         return redirect()->route('materi');
     }
-   
+
     public function edit($id)
     {
         $data = Materi::find($id);
@@ -66,7 +66,7 @@ class MateriController extends Controller
                 'materi' => Materi::find($id),
                 'file_materi' => FileMateri::where('materi_id',$id)->get()
             ];
-            
+
             return view('Admin.Materi.v_edit_materi',$file);
         }
     }
@@ -99,16 +99,16 @@ class MateriController extends Controller
     {
         FileMateri::where('materi_id',$id)->delete();
         Materi::destroy($id);
-        
+
         session()->flash('success','foto berhasil di hapus');
         return back();
     }
 
     public function addFileById(Request $request,$id)
-    {    
+    {
         if ($request->hasFile('file_materi')) {
             foreach ($request->file('file_materi') as $key => $file) {
-                
+
                 $fname = $file->getClientOriginalName();
                 $file->move(public_path('files/materi') , $fname);
                 $data2 = array(

@@ -98,19 +98,19 @@
                 <div class="col-md-4 text-center">
                     <div class="progress-circular">
                         <h5 class="progress-h4">TIM RG RPL</h5>
-                        <h2>100</h2>
+                        <h2>{{ $dosen }}</h2>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div class="progress-circular">
                         <h5 class="progress-h4">Karya</h5>
-                        <h2>100</h2>
+                        <h2>{{ $karya }}</h2>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div class="progress-circular">
                         <h5 class="progress-h4">Kerja Sama</h5>
-                        <h2>100</h2>
+                        <h2>{{ $industri }}</h2>
                     </div>
                 </div>
             </div>
@@ -238,7 +238,7 @@
 </div>
 
 {{-- konten landing page-5-kerjasama --}}
-<div class="container card-content-wrapper-kerjasama-industri">
+{{-- <div class="container card-content-wrapper-kerjasama-industri">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
@@ -260,12 +260,36 @@
             </div>
         </div>
     </div>
+</div> --}}
+
+{{-- konten-galery page-6 --}}
+<div class="container card-content-wrapper-kerjasama-industri">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+                <h2>Galerry</h2>
+                <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center">
+                    <div class="logo-kerjasama d-flex flex-wrap justify-content-center">
+                        @foreach ($gallery as $item )
+                        <div class="card-gallery card m-4">
+                            <img class="card-img-top" src="{{ $item->foto }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5>{{ Str::limit($item->nama, 50, '...') }}</h5>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {{-- konten landing page-6-testimoni --}}
 
 <div class="bg-testimoni">
-    <div class="container p-5">
+    <div class="container p-1">
         <div class="d-block">
             <div class="d-flex justify-content-between">
                 <div>
@@ -307,7 +331,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                     <div class="item">
                         <div class="card card-testimoni">
@@ -342,13 +366,13 @@
             nav:false,
             responsive:{
               0:{
-                items:2
+                items:1
               },
               600:{
                 items:2
               },
               1000:{
-                items:2
+                items:3
               }
             }
           })

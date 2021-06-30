@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use App\Models\Gallery;
+use App\Models\DosenRpl;
+use App\Models\Industri;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -12,8 +15,20 @@ class GalleryController extends Controller
         $data=[
             'gallery' => Gallery::get()
         ];
-      
+
         return view('Admin.gallery.v_gallery',$data);
+    }
+
+    public function indexFront()
+    {
+        $data=[
+            'gallery' => Gallery::latest()->limit(7)->get(),
+            'dosen' => DosenRpl::count(),
+            'karya' => Produk::count(),
+            'industri' => Industri::count(),
+        ];
+
+        return view('home.home-view',$data);
     }
 
     public function create()
@@ -40,7 +55,7 @@ class GalleryController extends Controller
 
     public function show($id)
     {
-        
+
     }
 
     public function edit($id)

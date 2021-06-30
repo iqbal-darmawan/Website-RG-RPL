@@ -1,4 +1,5 @@
-<main class="navbar px-4">
+
+<main class="navbar-wrapper px-4">
     <div class="d-flex justify-content-between align-items-center w-100">
         <div class="navbar-logo-image">
             <img src="{{ asset('img/LogoPens.jpg') }}" alt="">
@@ -27,7 +28,7 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <a class="btn" href="{{ route('login') }}">Login</a>
+                                <a class="btn login-button" href="{{ route('login') }}">Login</a>
                             @endif
                         @else
                         <a class="btn" href="{{ route('dashboard') }}">

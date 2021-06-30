@@ -1,3 +1,4 @@
+
 <main class="footer">
     <div class="container">
         <div class="row mb-5">
@@ -14,13 +15,12 @@
                 <h3 class="quick-contact">Quick Contact</h3>
                 <form action="">
                     <div class="mb-3">
-                        <input type="email" name="email" id="email" placeholder="Enter email" class="form-control quick-contact-input p-3">
+                        <input type="email" name="email" id="email" placeholder="Enter email" class="quick-contact-input ">
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control quick-contact-input" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Enter Message</label>
+                        <textarea class="quick-contact-input" placeholder="Enter Message" id="floatingTextarea"></textarea>
                     </div>
-                    <button type="submit" class="btn quick-contact-button">Send Message</button>
+                    <button type="submit" class="quick-contact-button">Send Message</button>
                 </form>
             </div>
             <div class="col-md-4">
