@@ -98,8 +98,8 @@ border-radius: 20px;
 .card-karya-wrapper2 {
     max-width: 350px;
     background: #FFFFFF;
-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
-border-radius: 20px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
 .button-see-more > a {
