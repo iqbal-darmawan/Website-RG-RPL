@@ -31,10 +31,9 @@
       <div class="header-left">
         <h2>Apa itu RG RPL ?</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Tempora culpa distinctio assumenda dicta iure ex ipsa libero
-          hic dolorem sequi, animi architecto ullam voluptatem non,
-          reiciendis suscipit atque maxime tempore.
+        Research Group RPL adalah sebuah grup penelitian dari program studi teknik informatika, 
+        berspesialisasi pada subjek rekayasa perangkat lunak dan bekerja bersama dalam masalah atau 
+        topik seputar RPL
         </p>
       </div>
     </div>

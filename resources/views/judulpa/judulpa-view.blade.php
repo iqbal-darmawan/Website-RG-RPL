@@ -92,6 +92,7 @@
         <div class="text-tawaran-pa">
           <h4>{{$item->nama_judul}}</h4>
           <p>{{$item->deskripsi_judul}}</p>
+          <a href="{{route('judul-pa-details', $item->id)}}">Check them out...</a>
         </div>
         <div class="deskripsi-tawaran-pa">
           <div class="date-wrapper d-flex mb-3">

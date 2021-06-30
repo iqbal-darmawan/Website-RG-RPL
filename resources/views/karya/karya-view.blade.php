@@ -49,9 +49,9 @@
                 <img src="{{ asset('img/karya/icon/fa-solid_atom.jpg') }}" alt="" class="text-center w-30"
                   style="border-radius : 20px;">
               </div>
-              <p class="mb-3 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                accusantium recusandae dolorum quae, tenetur consequuntur? Est dolorum, eligendi cumque
-                id asperiores, debitis hic esse accusamus magni recusandae maxime, reiciendis nihil.</p>
+              <p class="mb-3 text-white">Pengubahan perangkat lunak itu sendiri guna mengembangkan, memelihara, 
+                dan membangun kembali dengan menggunakan prinsip rekayasa untuk menghasilkan perangkat lunak yang 
+                dapat bekerja lebih efisien dan efektif untuk pengguna</p>
               <div class="button-see-more mb-4">
                 <a href="" class="btn">See more..</a>
               </div>
@@ -59,13 +59,13 @@
           </div>
           <div class="card-karya-wrapper2 card m-4">
             <div class="card-body text-center p-4">
-              <h4 class="mb-4">Rekayasa Perangkat Lunak</h4>
+              <h4 class="mb-4">Workshop Produksi Perangkat Lunak</h4>
               <div class="text-center mb-4">
                 <img src="{{ asset('img/karya/icon/fa-solid_atom.png') }}" alt="" class="text-center w-40">
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod accusantium recusandae
-                dolorum quae, tenetur consequuntur? Est dolorum, eligendi cumque id asperiores, debitis
-                hic esse accusamus magni recusandae maxime, reiciendis nihil.</p>
+              <p>Workshop Produksi perangkat lunak merupakan mata kuliah yang mana membahas mengenai materi 
+                rekayasa perangkat lunak dengan mempelajari bagaimana cara memproduksi, serta membuat output 
+                karya rekayasa perangkat lunak tertentu yang dapat bermanfaat</p>
               <div class="button-see-more-2 mb-4">
                 <a href="" class="btn">See more..</a>
               </div>
