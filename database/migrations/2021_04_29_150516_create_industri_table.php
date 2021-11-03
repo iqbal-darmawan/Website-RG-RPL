@@ -16,7 +16,8 @@ class CreateIndustriTable extends Migration
         Schema::create('industri', function (Blueprint $table) {
             $table->id('id');
             $table->string('nama_industri', 100);
-            $table->string('deskripsi_industri');
+            $table->text('deskripsi_industri');
+            $table->string('foto_industri');
             $table->timestamps();
         });
     }

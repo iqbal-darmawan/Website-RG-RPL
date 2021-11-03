@@ -34,17 +34,18 @@
     <div class="wrapper-content-profile">
         <div class="d-flex align-items-center profile-wrapper mx-5">
             <div class="card-image-profile me-5">
-                <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center ">
+                {{-- {{dd($dosen)}} --}}
+                <img src="{{ asset('img/dosen/profil/'. $dosen->foto_dosen) }}" alt="" class="text-center ">
             </div>
             <div class="">
                 <h3>Nama</h3>
-                <p class="text-secondary">Lorem ipsum dolor, sit amet....</p>
-                <h3>Beban Ajar</h3>
-                <p class="text-secondary">Lorem ipsum dolor, sit amet....</p>
-                <h3>Pendidikan Terakhir</h3>
-                <p class="text-secondary">Lorem ipsum dolor, sit amet....</p>
-                <h3>Jabatan</h3>
-                <p class="text-secondary">Lorem ipsum dolor, sit amet....</p>
+                <p class="text-secondary">{{$dosen->nama_lengkap}}</p>
+                <h3>NIP</h3>
+                <p class="text-secondary">{{$dosen->nip}}</p>
+                <h3>Tahun Bergabung</h3>
+                <p class="text-secondary">{{date("Y", strtotime($dosen->thn_bergabung))}}</p>
+                <h3>No. Telepon</h3>
+                <p class="text-secondary">{{$dosen->telefon}}</p>
             </div>
         </div>
     </div>
@@ -57,21 +58,33 @@
             <div class="card-body">
                 <h3>Penelitian</h3>
                 <hr class="w-100 text-secondary">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa est dolores recusandae dignissimos, repellat distinctio reiciendis eaque porro totam quis animi aliquam veniam obcaecati, enim quia eum expedita vero!</p>
+                <ul>
+                    @foreach ($penelitian as $item)
+                        <li>{{$item->nama_penelitian}}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
         <div class="card content-profile-card">
             <div class="card-body">
-                <h3>Produk</h3>
+                <h3>Prestasi</h3>
                 <hr class="w- text-secondary">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa est dolores recusandae dignissimos, repellat distinctio reiciendis eaque porro totam quis animi aliquam veniam obcaecati, enim quia eum expedita vero!</p>
+                <ul>
+                    @foreach ($prestasi as $item)
+                        <li>{{$item->nama_prestasi}}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
         <div class="card content-profile-card">
             <div class="card-body">
                 <h3>Pengabdian</h3>
                 <hr class="w-100 text-secondary">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa est dolores recusandae dignissimos, repellat distinctio reiciendis eaque porro totam quis animi aliquam veniam obcaecati, enim quia eum expedita vero!</p>
+                <ul>
+                    @foreach ($pengabdian as $item)
+                        <li>{{$item->nama_pengabdian}}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

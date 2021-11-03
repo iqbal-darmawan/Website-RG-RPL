@@ -17,6 +17,14 @@ button.caraousel-button-indicators {
     bottom: 15%;
 }
 
+.carousel-item {
+	transition: -webkit-transform 0.5s ease;
+	transition: transform 0.5s ease;
+	transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+	-webkit-backface-visibility: visible;
+	        backface-visibility: visible;
+}
+
 .card-header-padding {
     padding: 0;
 }
@@ -102,7 +110,7 @@ button.caraousel-button-indicators {
     display: inline-block;
     font-size: 40px;
     font-weight: 600;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     position: relative;
     text-transform: capitalize;
   }
