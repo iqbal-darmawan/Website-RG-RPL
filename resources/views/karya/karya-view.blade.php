@@ -10,7 +10,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <h1 class="title-jumbotron">Daftar Karya</h1>
-      <form id="search-form" class="form-inline" role="form" method="post" action="//www.google.com/search"
+      {{-- <form id="search-form" class="form-inline" role="form" method="post" action="//www.google.com/search"
         target="_blank">
         <div class="input-group bg-input-group">
           <input type="text" class="search-form form-control" placeholder="Search">
@@ -24,15 +24,15 @@
             </button>
           </span>
         </div>
-      </form>
+      </form> --}}
     </div>
   </div>
 </div>
 
 <div class="header-karya">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
+    <div class="row content-wrapper">
+      <div class="col-md-4 col-sm-12">
         <div class="d-flex align-items-center h-100">
             <div class="header-title">
                 <h2>Karya Rekayasa Perangkat Lunak</h2>
@@ -40,8 +40,8 @@
               </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <div class="d-flex">
+      <div class="col-md-8 col-sm-12">
+        <div class="d-flex card-wrapper">
           <div class="card-karya-wrapper1 card m-4">
             <div class="card-karya-header card-body text-center p-4">
               <h4 class="mb-4 text-white">Rekayasa Perangkat Lunak</h4>
@@ -104,7 +104,7 @@
                   <span>{{$item->updated_at}}</span>
                 </div>
               </div>
-              <p>{{ Str::limit($item->deskripsi, 150, '...') }}</p>
+              <p>{{ Str::limit($item->deskripsi, 75, '...') }}</p>
               <div class="button-download-karya mt-4 mb-3">
                 <a href="{{route('download', $item->fileMateri->nama_file)}}">Download</a>
               </div>
@@ -149,26 +149,26 @@
   </div>
 </div>
 
-
-<script>
-  $('.owl-carousel').owlCarousel({
-    dots: false,
-    margin: 10,
-    nav: true,
-    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 3
-      },
-      1000: {
-        items: 3
-      }
-    }
-  })
-</script>
-
 @endsection
 
+@section('optional-js')
+<script>
+    $('.owl-carousel').owlCarousel({
+      dots: false,
+      margin: 10,
+      nav: true,
+      navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+@endsection

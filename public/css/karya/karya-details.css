@@ -66,7 +66,6 @@ form .form-control:focus{
 .image > img{
     width: 90px;
     height: auto;
-    margin: 0 10px;
 }
 
 .content-header-wrapper:after {
@@ -92,16 +91,16 @@ form .form-control:focus{
     line-height: 47px;
   }
 
-.inner {
-    overflow: hidden;
-    height: 446px;
-    width: 1068px;
-}
-.inner img {
-    max-width: 100%;
-    object-fit: cover;
-}
-
 .karya-desc {
     font-size: 1rem;
+}
+
+@media (max-width: 769px) {
+    .team-desc {
+        margin-top:24px;
+    }
+    .image > img{
+        padding: 10px 0;
+        margin: 0;
+    }
 }

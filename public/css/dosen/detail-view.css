@@ -69,6 +69,7 @@ form .form-control:focus{
 
 .card-image-profile img {
     width: 500px;
+    border-radius: 24px;
 }
 
 .card-wrapper-content-profile {
@@ -83,3 +84,30 @@ form .form-control:focus{
 .wrapper-content-profile {
     padding: 80px 0;
 }
+
+.card {
+    border: none;
+}
+
+@media (max-width: 990px) {
+    .profile-wrapper {
+        flex-direction: column;
+    }
+    .card-detail-mobile {
+        text-align: center
+    }
+    .card-image-profile {
+        margin-right: 0 !important;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width:768px) {
+    .card-image-profile > img {
+        width: 100%;
+    }
+    .wrapper-content-profile {
+        padding: 40px 0;
+    }
+}
+

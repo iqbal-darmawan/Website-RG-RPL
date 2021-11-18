@@ -71,9 +71,7 @@ form .form-control:focus{
     background: #463AD0;
     border-radius: 30px;
     border: 10px solid #463AD0;
-    bottom: 0;
-    top: -140px;
-    left: -40px;
+    bottom: 16px;
     content: "";
     display: block;
     position: relative;
@@ -104,6 +102,34 @@ form .form-control:focus{
 .card-contact {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+}
+
+@media (max-width:768px) {
+    .tim-card {
+        margin: 10px 10px;
+    }
+    .text-contact {
+        font-size: 12px;
+    }
+    .icon > svg {
+        width: 20px;
+    }
+    .text-contact {
+        margin: 0 !important;
+    }
+
+    .bg-dosen-header {
+        margin-bottom: 36px;
+    }
+    .contact-us-title {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 426px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+    }
 }
 
 

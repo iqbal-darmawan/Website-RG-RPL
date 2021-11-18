@@ -73,10 +73,10 @@ form .form-control:focus{
     background-color: #183B67;
     border-radius: 5px;
     margin: auto 0;
-    position: absolute;
+    position: relative;
+    display: block;
     right: 0;
-    bottom: 350px;
-    left: 10px;
+    bottom: 20px;
     width: 50%;
 }
 
@@ -143,3 +143,37 @@ border-radius: 20px;
     background: #E7E7E7;
 }
 
+.pagination {
+    flex-wrap: wrap;
+    justify-content: center!important;
+}
+
+@media (max-width: 990px) {
+    .owl-carousel .prev-slide{
+        display: none;
+    }
+    .owl-carousel .next-slide{
+        display:none
+    }
+}
+
+@media (max-width:768px) {
+    .card-body {
+        flex-direction: column;
+    }
+    .logo {
+        margin-right: 0 !important;
+        margin-bottom: 12px;
+    }
+    .text-tawaran-pa {
+        width: 100% !important;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 426px) {
+    .card-wrapper {
+        flex-direction: column;
+    }
+}
