@@ -6,7 +6,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Home | RG-RPL</title>
+    <title>RG-RPL</title>
+    <link rel="shortcut icon" href="{{ asset('img/logo_rg_rpl_white.png') }}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">

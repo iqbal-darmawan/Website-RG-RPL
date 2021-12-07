@@ -2,7 +2,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light p-0">
         <div class="container-fluid">
             <a class="navbar-brand py-0" href="/">
-                <img src="{{ asset('img/LogoPens.jpg') }}" alt="" class="d-inline-block align-text-top">
+                <img src="{{ asset('img/logo_rg_rpl.png') }}" alt="" class="d-inline-block align-text-top" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
