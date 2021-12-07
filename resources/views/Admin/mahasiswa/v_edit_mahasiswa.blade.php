@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="card-body">
-          <form action="/mahasiswa/update/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
+          <form action="/karya-mahasiswa/update/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             <h6 class="heading-small text-muted mb-4">Informasi Karya</h6>
                 <div class="pl-lg-4">

@@ -10,7 +10,7 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <h1 class="title-jumbotron">Profile Dosen</h1>
-            <form id="search-form" class="form-inline" role="form" method="post" action="//www.google.com/search"
+            {{-- <form id="search-form" class="form-inline" role="form" method="post" action="//www.google.com/search"
                 target="_blank">
                 <div class="input-group bg-input-group">
                     <input type="text" class="search-form form-control" placeholder="Search">
@@ -25,7 +25,7 @@
                         </button>
                     </span>
                 </div>
-            </form>
+            </form> --}}
         </div>
     </div>
 </div>
@@ -35,17 +35,17 @@
         <div class="d-flex align-items-center profile-wrapper mx-5">
             <div class="card-image-profile me-5">
                 {{-- {{dd($dosen)}} --}}
-                <img src="{{ asset('img/dosen/profil/'. $dosen->foto_dosen) }}" alt="" class="text-center ">
+                <img src="{{ asset('img/dosen/profil/'. $dosen->foto_dosen) }}" alt="" class="text-center detail-dosen-image">
             </div>
             <div class="">
-                <h3>Nama</h3>
-                <p class="text-secondary">{{$dosen->nama_lengkap}}</p>
-                <h3>NIP</h3>
-                <p class="text-secondary">{{$dosen->nip}}</p>
-                <h3>Tahun Bergabung</h3>
-                <p class="text-secondary">{{date("Y", strtotime($dosen->thn_bergabung))}}</p>
-                <h3>No. Telepon</h3>
-                <p class="text-secondary">{{$dosen->telefon}}</p>
+                <h3 class="fw-bold">Nama</h3>
+                <p class="fs-5 text-secondary">{{$dosen->nama_lengkap}}</p>
+                <h3 class="fw-bold">NIP</h3>
+                <p class="fs-5 text-secondary">{{$dosen->nip}}</p>
+                <h3 class="fw-bold">Tahun Bergabung</h3>
+                <p class="fs-5 text-secondary">{{$dosen->thn_bergabung}}</p>
+                <h3 class="fw-bold">No. Telepon</h3>
+                <p class="fs-5 text-secondary">{{$dosen->telefon}}</p>
             </div>
         </div>
     </div>
@@ -56,33 +56,33 @@
     <div class="card-wrapper-content-profile">
         <div class="card content-profile-card">
             <div class="card-body">
-                <h3>Penelitian</h3>
+                <h3 class="fw-bold">Penelitian</h3>
                 <hr class="w-100 text-secondary">
                 <ul>
                     @foreach ($penelitian as $item)
-                        <li>{{$item->nama_penelitian}}</li>
+                        <li class="fs-5">{{$item->nama_penelitian}}</li>
                     @endforeach
                 </ul>
             </div>
         </div>
         <div class="card content-profile-card">
             <div class="card-body">
-                <h3>Prestasi</h3>
+                <h3 class="fw-bold">Prestasi</h3>
                 <hr class="w- text-secondary">
                 <ul>
                     @foreach ($prestasi as $item)
-                        <li>{{$item->nama_prestasi}}</li>
+                        <li class="fs-5">{{$item->nama_prestasi}}</li>
                     @endforeach
                 </ul>
             </div>
         </div>
         <div class="card content-profile-card">
             <div class="card-body">
-                <h3>Pengabdian</h3>
+                <h3 class="fw-bold">Pengabdian</h3>
                 <hr class="w-100 text-secondary">
                 <ul>
                     @foreach ($pengabdian as $item)
-                        <li>{{$item->nama_pengabdian}}</li>
+                        <li class="fs-5">{{$item->nama_pengabdian}}</li>
                     @endforeach
                 </ul>
             </div>

@@ -69,39 +69,25 @@ form .form-control:focus{
     margin: 0 10px;
 }
 
-.content-header-wrapper:after {
-    background: #DAD210;
-    border: 6px solid #DAD210;
-    border-radius: 5px;
-    bottom: 0;
-    top: 10px;
-    content: "";
-    left: 0;
-    display: block;
-    position: relative;
-    right: 0;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .nama-karya {
     font-style: italic;
     font-weight: bold;
     font-size: 40px;
     line-height: 47px;
+    padding: 10px;
   }
 
 .inner {
     overflow: hidden;
     height: 446px;
-    width: 1068px;
+    padding: 10px;
 }
 .inner img {
-    max-width: 100%;
-    object-fit: cover;
+    max-width: 1048px;
+    object-fit: scale-down;
 }
 
 .karya-desc {
     font-size: 1rem;
+    padding: 10px;
 }

@@ -2,7 +2,7 @@
 @section('title','Karya Mahasiswa')
 @section('content')
 <div class="col-lg-6 col-5 text-right">
-      <a href="/mahasiswa/create" class="btn btn-sm btn-neutral">Add</a>
+      <a href="/karya-mahasiswa/create" class="btn btn-sm btn-neutral">Add</a>
       <a href="#" class="btn btn-sm btn-neutral">Filters</a>
     </div>
   </div>
@@ -50,9 +50,9 @@
                     <td>{{$data->nama_tim}}</td>
                     <td>26 mei 2021</td>
                     <td>
-                      <a href="/mahasiswa/show/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
-                      <a href="/mahasiswa/edit/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-                      <a href="/mahasiswa/destroy/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                      <a href="/karya-mahasiswa/show/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
+                      <a href="/karya-mahasiswa/edit/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="/karya-mahasiswa/destroy/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                   @php
