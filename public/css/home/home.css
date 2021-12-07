@@ -43,6 +43,18 @@ button.caraousel-button-indicators {
     margin-bottom: 120px;
 }
 
+.text-content-first {
+    font-size: 28px;;
+}
+
+.text-content-first-1 {
+    font-size: 40px;;
+}
+
+.description-content-first {
+    font-size: 20px;
+}
+
 .card-height {
     min-height: 500px;
 }
@@ -178,4 +190,60 @@ button.caraousel-button-indicators {
 .testimoni-name > p {
     font-size: 13px;
     color: #625E5E;
+}
+
+@media (max-width: 990px) {
+    .card-title {
+        font-size: 12px;
+    }
+    .text-content-first {
+        font-size: 22px;;
+    }
+    .text-content-first-1 {
+        font-size: 30px;;
+    }
+    .description-content-first {
+        font-size: 14px;
+    }
+    .card-height {
+        min-height: 350px;
+    }
+    .logo-kerjasama {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width:426px) {
+    .card-content-wrapper {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .content-wrapper {
+        margin-bottom: 24px ;
+    }
+    .content-wrapper-dosen {
+        flex-direction: column-reverse;
+    }
+    .card-content-wrapper-dosen {
+        margin-top: 60px;
+    }
+    .card {
+        width: auto;
+    }
+    .card-content-first {
+        margin: 10px 50px ;
+        align-self: center !important;
+    }
+    .card-height {
+        min-height: 100px;
+    }
+    .card-karya {
+        margin-bottom: 20px;
+        align-self: center !important;
+    }
+    .card-mb {
+        flex-direction: column;
+    }
+
 }

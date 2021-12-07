@@ -19,8 +19,14 @@
         <div class="card-body">
             <div class="content-header-wrapper ">
                 <div class="karya-img mb-3">
-                    <div class="inner">
-                        <img src="{{asset($foto[0]->foto_produk)}}" alt="#">
+                    <div class="owl-carousel owl-theme mt-5 ">
+                        @foreach ($foto as $item)
+                        <div class="item">
+                            <div class="image">
+                                <img src="{{$item->foto_produk}}" alt="#" class="">
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="content-header pt-4">
@@ -53,10 +59,30 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 @endsection
 
-@section('onclick-script')
-
+@section('optional-js')
+<script>
+    $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                dots:true,
+                loop:true,
+                margin:0,
+                nav:false,
+                responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:2
+                }
+                }
+            })
+            })
+</script>
 @endsection

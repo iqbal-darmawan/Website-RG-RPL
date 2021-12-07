@@ -54,15 +54,15 @@
     <div class="row justify-content-between">
         <div class="col-md-4 d-flex flex-column justify-content-center">
             <div class="">
-                <h5 style="font-size:24px; font-weight:bold;">Apa itu</h5>
-                <h2 style="font-size:36px; font-weight:bold;">Web RG RPL ?</h2>
-                <p style="font-size:18px; color: #978787;">Sebuah wadah untuk memberikan informasi mengenai profile dan kegiatan RG RPL. Meliputi profile dosen RG RPL terkait penelitian, prestasi dan pengabdian, kemudian dokumentasi karya, kerjasama industri, penawaran judul PA, rekomendasi materi dan pembahasan seputar RPL lainnya.</p>
+                <h5 class="text-content-first fw-bold">Apa itu</h5>
+                <h2 class="text-content-first-1 fw-bold">Web RG RPL ?</h2>
+                <p style="color: #978787;" class="description-content-first">Sebuah wadah untuk memberikan informasi mengenai profile dan kegiatan RG RPL. Meliputi profile dosen RG RPL terkait penelitian, prestasi dan pengabdian, kemudian dokumentasi karya, kerjasama industri, penawaran judul PA, rekomendasi materi dan pembahasan seputar RPL lainnya.</p>
             </div>
         </div>
         <div class="col-md-8">
-            <div class="d-flex card-height">
+            <div class="d-flex card-height card-mb">
                 <div class="card card-content-first bg-card1 mx-2 align-self-start">
-                    <div class="card-body px-2 py-4">
+                    <div class="card-body px-2 ">
                         <div class="text-center mb-5 mt-5">
                             <img src="{{ asset('img/item1.jpg') }}" alt="" class="text-center w-100">
                         </div>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="card card-content-first bg-card2 mx-2 align-self-end">
-                    <div class="card-body px-2 py-4">
+                    <div class="card-body px-2 ">
                         <div class="text-center mb-4 mt-3">
                             <img src="{{ asset('img/item2.png') }}" alt="" class="text-center w-100">
                         </div>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="card card-content-first bg-card3 mx-2 align-self-start">
-                    <div class="card-body px-2 py-4">
+                    <div class="card-body px-2 ">
                         <div class="text-center mb-4 mt-3">
                             <img src="{{ asset('img/item3.png') }}" alt="" class="text-center w-100">
                         </div>
@@ -94,20 +94,20 @@
 <div class="parallax">
     <div class="skill-bg area-padding-2">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center">
+            <div class="d-flex justify-content-between">
+                <div class="text-center">
                     <div class="progress-circular">
                         <h5 class="progress-h4">TIM RG RPL</h5>
                         <h2>{{ $dosen }}</h2>
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="text-center">
                     <div class="progress-circular">
                         <h5 class="progress-h4">Karya</h5>
                         <h2>{{ $karya }}</h2>
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="text-center">
                     <div class="progress-circular">
                         <h5 class="progress-h4">Kerja Sama</h5>
                         <h2>{{ $industri }}</h2>
@@ -121,7 +121,7 @@
 {{-- konten landing page-3-karya --}}
 <div class="container card-content-wrapper">
     <div class="row">
-        <div class="col-md-3 d-flex flex-column justify-content-center">
+        <div class="col-md-3 d-flex flex-column justify-content-center content-wrapper">
             <div>
                 <h2 style="font-size:36px; font-weight:bold;">Karya Mahasiswa</h2>
                 <p>Pada kegiatan pembelajaran mengenai rekayasa perangkat lunak, mahasiswa dengan bimbingan RG RPL membuat suatu karya berbasis software yang sangat bermanfaat kedepannya.</p>
@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div class="d-flex card-height">
+            <div class="d-flex card-height card-mb">
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
@@ -178,10 +178,10 @@
 </div>
 
 {{-- konten landing page-4-dosen --}}
-{{--<div class="container card-content-wrapper-dosen">
-    <div class="row">
+<div class="container card-content-wrapper-dosen">
+    <div class="row content-wrapper-dosen">
         <div class="col-md-9">
-            <div class="d-flex card-height">
+            <div class="d-flex card-height card-mb">
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
@@ -220,7 +220,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 d-flex flex-column justify-content-center">
+        <div class="col-md-3 d-flex flex-column justify-content-center content-wrapper">
             <div>
                 <h5 style="font-size:24px; font-weight:bold;">Dosen</h5>
                 <h2 style="font-size:36px; font-weight:bold;">Tim RG RPL</h2>
@@ -358,27 +358,28 @@
     </div>
 </div>
 
+@endsection
 
-<script>
-    jQuery(document).ready(function($){
-          $('.owl-carousel').owlCarousel({
-            dots:true,
-            loop:true,
-            margin:0,
-            nav:false,
-            responsive:{
-              0:{
-                items:1
-              },
-              600:{
-                items:2
-              },
-              1000:{
-                items:3
-              }
-            }
-          })
-        })
-</script>
-
+@section('optional-js')
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                dots:true,
+                loop:true,
+                margin:0,
+                nav:false,
+                responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+                }
+            })
+            })
+    </script>
 @endsection

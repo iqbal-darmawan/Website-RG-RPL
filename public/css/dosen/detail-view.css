@@ -69,6 +69,7 @@ form .form-control:focus{
 
 .card-image-profile img {
     width: 500px;
+    border-radius: 24px;
 }
 
 .card-wrapper-content-profile {
@@ -84,8 +85,29 @@ form .form-control:focus{
     padding: 80px 0;
 }
 
-.detail-dosen-image {
-	width: 100%;
-    height: 20vw;
-    object-fit: contain;
+.card {
+    border: none;
 }
+
+@media (max-width: 990px) {
+    .profile-wrapper {
+        flex-direction: column;
+    }
+    .card-detail-mobile {
+        text-align: center
+    }
+    .card-image-profile {
+        margin-right: 0 !important;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width:768px) {
+    .card-image-profile > img {
+        width: 100%;
+    }
+    .wrapper-content-profile {
+        padding: 40px 0;
+    }
+}
+

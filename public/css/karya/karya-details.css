@@ -66,7 +66,6 @@ form .form-control:focus{
 .image > img{
     width: 90px;
     height: auto;
-    margin: 0 10px;
 }
 
   .nama-karya {
@@ -77,17 +76,16 @@ form .form-control:focus{
     padding: 10px;
   }
 
-.inner {
-    overflow: hidden;
-    height: 446px;
-    padding: 10px;
-}
-.inner img {
-    max-width: 1048px;
-    object-fit: scale-down;
-}
-
 .karya-desc {
     font-size: 1rem;
-    padding: 10px;
+}
+
+@media (max-width: 769px) {
+    .team-desc {
+        margin-top:24px;
+    }
+    .image > img{
+        padding: 10px 0;
+        margin: 0;
+    }
 }
