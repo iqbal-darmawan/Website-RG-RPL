@@ -35,25 +35,25 @@
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon.png') }}" alt="" class="mb-3" />
-          <p class="fs-5 card-profile-text">Identitas</p>
+          <p class="fs-5">Identitas</p>
         </div>
       </div>
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon-1.png') }}" alt="" class="mb-3" />
-          <p class="fs-5 card-profile-text">Penelitian</p>
+          <p class="fs-5">Penelitian</p>
         </div>
       </div>
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon-2.png') }}" alt="" class="mb-3" />
-          <p class="fs-5 card-profile-text">Prestasi</p>
+          <p class="fs-5">Prestasi</p>
         </div>
       </div>
       <div class="card card-profile">
         <div class="card-body text-center p-5">
           <img src="{{ asset('img/dosen/profil/icon-3.png') }}" alt="" class="mb-3" />
-          <p class="fs-5 card-profile-text">Pengabdian</p>
+          <p class="fs-5">Pengabdian</p>
         </div>
       </div>
     </div>
@@ -67,17 +67,15 @@
     </div>
     <div class="dosen-tim-card-wrapper d-flex flex-wrap justify-content-center">
       @foreach ($dosen as $item)
-      <div class="card dosen-tim-card shadow m-3" >
-        <div class="card-header p-0">
+      <div class="card dosen-tim-card shadow m-3 " >
+        <div class="card-header p-0 text-center">
           <img src="{{asset('img/dosen/profil/' .$item->foto_dosen)}}" alt=""
-            class="text-center w-100 " />
+            class="text-center" height="200"/>
         </div>
         <div class="card-body px-3 ">
           <h4>{{$item->nama_lengkap}}</h4>
           <p class="my-3">NIP: {{$item->nip}}</p>
-        </div>
-        <div class="card-footer bg-white border-0">
-          <div class="see-more-karya d-block text-end mb-2">
+          <div class="see-more-karya mb-3 mt-5 d-block text-end">
             <a href="{{route('daftar-dosen-details', $item->id)}}">See profile</a>
           </div>
         </div>

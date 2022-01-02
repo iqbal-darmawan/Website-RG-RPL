@@ -235,7 +235,7 @@
             </div>
         </div>
     </div>
-</div>--}}
+</div>
 
 {{-- konten landing page-5-kerjasama --}}
 {{-- <div class="container card-content-wrapper-kerjasama-industri">
@@ -273,9 +273,9 @@
                         @foreach ($gallery as $item )
                         <div class="card-gallery card m-4">
                             <img class="card-img-top" src="{{ $item->foto }}" alt="Card image cap">
-                            <div class="card-body">
+                            {{-- <div class="card-body">
                                 <h5>{{ Str::limit($item->nama, 50, '...') }}</h5>
-                            </div>
+                            </div> --}}
                         </div>
                         @endforeach
                     </div>
@@ -290,7 +290,7 @@
 
 {{-- konten landing page-6-testimoni --}}
 
-<div class="bg-testimoni">
+{{-- <div class="bg-testimoni">
     <div class="container p-1">
         <div class="d-block">
             <div class="d-flex justify-content-between">
@@ -356,7 +356,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection
 
