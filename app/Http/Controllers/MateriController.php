@@ -13,8 +13,9 @@ class MateriController extends Controller
     public function index()
     {
         $data=[
-            'materi' => Materi::has('fileMateri')->get(),
-        ];
+            'materi_wppl' => Materi::where('category','wppl')->with('fileMateri')->get(),
+            'materi_rpl' => Materi::where('category','rpl')->with('fileMateri')->get(),
+        ];        
         return view('Admin.Materi.v_materi',$data);
     }
 
@@ -36,6 +37,7 @@ class MateriController extends Controller
         $materi->nama = $data['nama'];
         $materi->deskripsi = '-';
         $materi->created_at = now();
+        $materi->category = $request->category;
         $materi->save();
 
         if ($request->hasFile('file_materi')) {
@@ -45,8 +47,7 @@ class MateriController extends Controller
             $file->move(public_path('files/materi') , $fname);
             $data2 = array(
                 'materi_id' => $materi->id,
-                'nama_file' => $fname,
-                'category' => $data['category'],
+                'nama_file' => $fname,                
                 'created_at' => now(),
                 'updated_at' => now()
             );

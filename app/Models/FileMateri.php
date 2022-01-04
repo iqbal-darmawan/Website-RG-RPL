@@ -16,5 +16,10 @@ class FileMateri extends Model
         'created_at',
         'updated_at'
     ];
-    use HasFactory;
+    
+  
+    public function materi()
+    {
+        return $this->belongsTo(Materi::class, 'materi_id', 'id');
+    }
 }

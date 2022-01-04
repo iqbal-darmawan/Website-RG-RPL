@@ -21,31 +21,52 @@
             </div>
             <section>
               <div class="container">
-                <p>
-                  <a class="btn btn-primary" data-toggle="collapse" href="#rpl" role="button" aria-expanded="true" aria-controls="rpl">
-                    RPL
-                  </a>
-                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#wppl" aria-expanded="false" aria-controls="wppl">
-                    WPPL
-                  </button>
-                </p>       
-               
-                <div class="collapse" id="rpl">
-                  <div class="card card-body">
-                    <label for="">Materi RPL</label>
-                    <hr>
-                    @foreach ($materi as $item)
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Rekayasa Perangkat Lunak
+                        </button>
+                      </h2>
+                    </div>
+                
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <div class="media">
+                          <h5 class="mr-2">1.</h5>
+                          <div class="media-body">
+                            <h5 class="mt-0">Clean Code</h5>
+                            <p>Materi teruhuy.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Workshop Rekayasa Perangkat Lunak
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
                         
-                    @endforeach
-                   
-                  </div>
-                </div>
-                <div class="collapse" id="wppl">
-                  <div class="card card-body">
-                    <label for="">Materi WPPL</label>
-                  </div>
+                        <div class="media">
+                          <h5 class="mr-2">1.</h5>
+                          <div class="media-body">
+                            <h5 class="mt-0">Clean Code</h5>
+                            <p>Materi teruhuy.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                 
                 </div>
               </div>
+               
            </section>
           </div>
         </div>

@@ -22,7 +22,7 @@ class Materi extends Model
 
     public function fileMateri()
     {
-        return $this->hasOne(FileMateri::class);
+        return $this->hasOne(FileMateri::class,'materi_id');
     }
 }
 

@@ -16,8 +16,7 @@ class CreateFileMaterisTable extends Migration
         Schema::create('file_materi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('materi_id')->constrained('materi');
-            $table->string('nama_file');
-            $table->string('category');
+            $table->string('nama_file');            
             $table->timestamps();
         });
     }
