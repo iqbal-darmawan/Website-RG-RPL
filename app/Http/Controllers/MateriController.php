@@ -32,26 +32,26 @@ class MateriController extends Controller
     public function store(Request $request)
     {
         $materi = new Materi;
-        $data=$request->all();
-        // dd($data);
+        $data=$request->all();        
         $materi->nama = $data['nama'];
         $materi->deskripsi = '-';
         $materi->created_at = now();
         $materi->save();
+
         if ($request->hasFile('file_materi')) {
-            foreach($request->file('file_materi') as $key => $file)
-            {
-                    $fname = $file->getClientOriginalName();
-                    $file->move(public_path('files/materi') , $fname);
-                    $data2 = array(
-                        'materi_id' => $materi->id,
-                        'file_materi' => $fname,
-                        'category' => $data['category'],
-                        'created_at' => now(),
-                        'updated_at' => now()
-                    );
-                    FileMateri::insert($data2);
-            }
+           
+            $file = $request->file('file_materi');
+            $fname = $file->getClientOriginalName();
+            $file->move(public_path('files/materi') , $fname);
+            $data2 = array(
+                'materi_id' => $materi->id,
+                'nama_file' => $fname,
+                'category' => $data['category'],
+                'created_at' => now(),
+                'updated_at' => now()
+            );
+            FileMateri::insert($data2);
+            
         }
         session()->flash('success','data berhasil di tambahkan');
         return redirect()->route('materi');

@@ -42,9 +42,9 @@ class GalleryController extends Controller
         $data=$request->all();        
 
         $gallery->nama = $data['nama_kegiatan'];
-        $file = $data['foto_kegiatan'];
-        
+        $file = $data['foto_kegiatan'];        
         $fname = $file->getClientOriginalName();
+
         $file->move(public_path('img/gallery'), $fname);
         $gallery->foto=$fname;
         $gallery->created_at = now();
@@ -70,15 +70,22 @@ class GalleryController extends Controller
 
 
     public function update(Request $request, $id)
-    {
+    {        
         $data = [
-            'nama' => $request->nama,
-            'foto' => $request->foto,
+            'nama' => $request->nama,            
             'updated_at' => now(),
         ];
 
+        $file = $request->file('foto_kegiatan');
+
+        if ($request->hasFile('foto_kegiatan')) {
+            $fname = $file->getClientOriginalName();
+            $file->move(public_path('img/gallery'), $fname);
+            $data['foto']=$fname;
+        }
+
         Gallery::where('id', $id)->update($data);
-        return redirect()->route('dosen')->with('pesan', 'Data berhasil diupdate');
+        return redirect()->route('gallery')->with('pesan', 'Data berhasil diupdate');
     }
 
 

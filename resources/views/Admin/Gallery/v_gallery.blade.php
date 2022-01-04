@@ -38,9 +38,9 @@
                     <td>{{$no}}</td>
                     <td>{{$data->nama}}</td>
                     <td>{{$data->foto}}</td>
-                    <td>
-                      <button class="btn btn-danger btn-sm" onclick="deleteConfirmation({{$data->id}})"><i class="fas fa-trash"></i></button>
+                    <td>                      
                       <a href="/gallery/edit/{{$data->id}}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="/gallery/destroy/{{$data->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>                      
                     </td>
                   </tr>
                   @php
