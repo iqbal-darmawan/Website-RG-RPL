@@ -13,7 +13,7 @@ class MateriController extends Controller
     public function index()
     {
         $data=[
-            'materi' => Materi::find(1)->fileMateri,
+            'materi' => Materi::has('fileMateri')->get(),
         ];
         return view('Admin.Materi.v_materi',$data);
     }
@@ -33,8 +33,9 @@ class MateriController extends Controller
     {
         $materi = new Materi;
         $data=$request->all();
+        // dd($data);
         $materi->nama = $data['nama'];
-        $materi->deskripsi = $data['deskripsi'];
+        $materi->deskripsi = '-';
         $materi->created_at = now();
         $materi->save();
         if ($request->hasFile('file_materi')) {

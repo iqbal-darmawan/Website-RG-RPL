@@ -40,9 +40,11 @@ class GalleryController extends Controller
     {
         $gallery = new Gallery;
         $data=$request->all();
-
-        $gallery->nama = $data['nama'];
-        $gallery->foto = $data['foto'];
+        // dd($data);
+        
+        
+        $gallery->nama = $data['nama_kegiatan'];
+        $gallery->foto = $data['foto_kegiatan'];
 
         $fname = $gallery->foto->getClientOriginalName();
         $gallery->foto->move(public_path('img/gallery'), $fname);
