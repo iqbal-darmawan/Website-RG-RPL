@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FotoProduk;
+use App\Models\Mahasiswa;
 use App\Models\Produk;
 
 class MahasiswaController extends Controller
@@ -13,6 +14,7 @@ class MahasiswaController extends Controller
         $this->produk= new Produk();
         $this->fotoProduk= new FotoProduk();
     }
+
     public function index()
     {
         $data=[
@@ -32,7 +34,8 @@ class MahasiswaController extends Controller
     {
         //input to table produk
         $produk = new Produk;
-        $data = $request->all();
+        $data = $request->all();  
+        
         $produk->nama_produk = $data['nama_produk'];
         $produk->nama_tim = $data['nama_tim'];
         $produk->deskripsi_produk = $data['deskripsi_produk'];
@@ -52,6 +55,19 @@ class MahasiswaController extends Controller
                 FotoProduk::insert($data3);
             }
         }
+        $count=0;
+
+        foreach ($request->nama_mahasiswa as $key => $value) {
+            $dataMahasiswa=[
+                'produk_id' => $produk->id,
+                'nama' => $value,
+                'kelas' => $data['kelas'][$count],
+                'nrp' => $data['nrp_mahasiswa'][$count],
+            ];
+            Mahasiswa::create($dataMahasiswa);
+            $count++;
+        }
+
         session()->flash('success','data berhasil di tambahkan');
         return redirect()->route('mahasiswa');
     }
@@ -59,7 +75,7 @@ class MahasiswaController extends Controller
     public function show($id)
     {
         $data=[
-            'dataKarya' => $this->produk->detailData($id),
+            'dataKarya' => Produk::where('id',$id)->with('mahasiswa')->first(),
             'fotoKarya' => $this->fotoProduk->detailData($id),
         ];
         return view('Admin/mahasiswa/v_detail_mahasiswa',$data);
@@ -68,21 +84,24 @@ class MahasiswaController extends Controller
     public function edit($id)
     {
         $data=[
-            'dataKarya' => $this->produk->detailData($id),
+            'dataKarya' => Produk::where('id',$id)->with('mahasiswa')->first(),
             'fotoKarya' => $this->fotoProduk->detailData($id),
         ];
+
         return view('Admin/mahasiswa/v_edit_mahasiswa',$data);
     }
 
     public function update (Request $request, $id)
     {
-        $data = [
-            'nama_produk' => $request->nama_produk,
-            'nama_tim'  => $request -> nama_tim,
-            'deskripsi_produk' => $request -> deskripsi_produk
+        $data = $request->all();        
+        
+        $produk=[
+            'nama_produk' => $data['nama_produk'],
+            'nama_tim' => $data['nama_tim'],
+            'deskripsi_produk' => $data['deskripsi_produk'],
         ];
-        produk::where('id',$id)->update($data);
-            //input to table foto_produk
+        Produk::where('id',$id)->update($produk);     
+
             if($request->hasfile('foto_produk'))
             {
                 foreach($request->file('foto_produk') as $key => $file)
@@ -94,15 +113,26 @@ class MahasiswaController extends Controller
                     );
                     FotoProduk::where('produk_id',$id)->update($data3);
                 }
-            }
-            
+            }     
+
+        $count=0;        
+        foreach ($request->nama_mhs as $key => $value) {
+            $dataMahasiswa=[               
+                'nama' => $value,
+                'kelas' => $data['kelas_mhs'][$count],
+                'nrp' => $data['nrp_mhs'][$count],
+            ];
+            Mahasiswa::where('id',$data['id'][$count])->update($dataMahasiswa);
+            $count++;
+        }
         session()->flash('success','data berhasil diubah');
-       return redirect()->route('mahasiswa');      
+        return redirect()->route('mahasiswa');      
     }
     public function destroy($id)
     {
         $this->produk->deleteData($id);
         $this->fotoProduk->deleteData($id);
+        Mahasiswa::where('produk_id',$id)->delete();
         session()->flash('success','data berhasil dihapus');
         return redirect()->route('mahasiswa');
     }
@@ -128,7 +158,22 @@ class MahasiswaController extends Controller
                 FotoProduk::insert($data);
             
         }
+        return back();        
+    }
+
+    public function addMahasiswa(Request $request,$id)
+    {
+        $data=$request->all();
+        $data['produk_id']=$id;
+
+        Mahasiswa::create($data);
         return back();
-        
+    }
+    public function deleteMahasiswaById($id)
+    {
+        $data=Mahasiswa::findOrFail($id);
+
+        $data->delete();
+        return back();
     }
 }

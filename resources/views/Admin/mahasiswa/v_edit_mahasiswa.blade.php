@@ -1,19 +1,13 @@
 @extends('Admin/components/v_wrapperDetail')
 @section('title','Edit Karya')
 @section('content')
-<div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url({{asset('template')}}/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+<div class="header pb-6 d-flex align-items-center" style="min-height: 250px; background-size: cover; background-position: center top;">
   <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8"></span>
-  <!-- Header container -->
-  <div class="container-fluid d-flex align-items-center">
-    <div class="row">
-      <div class="col-lg-7 col-md-10">
-        <h1 class="display-2 text-white">Hello Jesse</h1>
-        <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-      </div>
-    </div>
-  </div>
+  <!-- Header container --> 
 </div>
+
+{{-- {{dd($dataKarya)}} --}}
 <!-- Page content -->
 <div class="container-fluid mt--8">
   <div class="row">
@@ -22,7 +16,10 @@
         <div class="card-header">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">@yield('title')</h3>
+              <a href="/karya-mahasiswa" class="d-flex align-items-center">  
+                <i class="fas fa-angle-left"></i>
+                <span class="ml-2"><strong>Edit Data</strong></span>                
+              </a>
             </div>
           </div>
         </div>
@@ -63,17 +60,56 @@
                       </div>
                   </div>
                   <div class="col-lg-4 mt-3">
-                    <a href="/mahasiswa/hapusFoto/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                    <a href="/karya-mahasiswa/hapusFoto/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                   </div>
               </div>
                 @endforeach
-                <div class="form-group">
+                <div class="form-group mt-4 ml--2">
                   <a href="#"  class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal" >Tambah foto</a>
                 </div>
             <hr class="my-4" />
-            <h6 class="heading-small text-muted mb-4">Informasi Pengembang</h6>
-            <div class="pl-lg-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h6 class="heading-small text-muted ">Informasi Pengembang</h6>
+              <a href="#" data-toggle="modal" data-target="#addModalMahasiswa" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Tambah Data</a>
+            </div>
             
+            @forelse ($dataKarya->mahasiswa as $item)
+              <div class="row">
+                <div class="col-md-3">
+                  
+                  <input type="hidden" name="id[]" value="{{$item->id}}">
+
+                  <div class="form-group">
+                    <label for="">Nama Pengembang</label>
+                    <input type="text" class="form-control" name="nama_mhs[]" value="{{$item->nama}}">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="">Kelas Pengembang</label>
+                    <input type="text" class="form-control" name="kelas_mhs[]" value="{{$item->kelas}}">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="">NRP Pengembang</label>
+                    <input type="text" class="form-control" name="nrp_mhs[]" value="{{$item->nrp}}">
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <a href="/karya-mahasiswa/hapusMahasiswa/{{$item->id}}" class="btn btn-danger btn-sm mt-4"><i class="fas fa-trash"></i></a>
+                  </div>
+                </div>
+              </div>
+            @empty
+                <div class="col-md-12">
+                  <div class="alert alert-primary text-center"><span class="text center"><strong>Data tidak ditemukan</strong></span></div>                  
+                </div>
+            @endforelse
+           
+            <div class="pl-lg-4">            
               </div>
               <div class="container">
                 <div class="form-group">
@@ -100,7 +136,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="/mahasiswa/addFotoProduk/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
+          <form action="/karya-mahasiswa/addFotoProduk/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <label >Foto Produk</label>
@@ -129,19 +165,19 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="/mahasiswa/tambahMahasiswa/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
+          <form action="/karya-mahasiswa/tambahMahasiswa/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <label >Nama Anggota</label>
-              <input class="form-control" type="text" name="nama_mahasiswa" >
+              <input class="form-control" type="text" name="nama" >
             </div>
             <div class="form-group">
               <label >Kelas</label>
               <input class="form-control" type="text" name="kelas" >
             </div>
             <div class="form-group">
-              <label >Foto anggota</label>
-              <input class="form-control" type="file" name="foto_mahasiswa" >
+              <label >Nrp Mahasiswa</label>
+              <input class="form-control" type="text" name="nrp" >
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -1,28 +1,25 @@
 @extends('Admin/components/v_wrapperDetail')
 @section('title','Detail Dosen')
 @section('content')
-<div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url({{asset('template')}}/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+<div class="header pb-6 d-flex align-items-center" style="min-height: 250px; background-size: cover; background-position: center top;">
   <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8"></span>
   <!-- Header container -->
-  <div class="container-fluid d-flex align-items-center">
-    <div class="row">
-      <div class="col-lg-7 col-md-10">
-        <h1 class="display-2 text-white">Hello Jesse</h1>
-        <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-      </div>
-    </div>
+  <div class="container-fluid d-flex align-items-center">  
   </div>
 </div>
 <!-- Page content -->
 <div class="container-fluid mt--8">
     <div class="row">
-      <div class="col-xl-8 order-xl-1">
+      <div class="col-xl-12 order-xl-1">
         <div class="card">
           <div class="card-header">
             <div class="row align-items-center">
               <div class="col-8">
-                <h3 class="mb-0">@yield('title')</h3>
+                <a href="/judulpa" class="d-flex align-items-center">  
+                  <i class="fas fa-angle-left"></i>
+                  <span class="ml-2"><strong>Edit Data</strong></span>                
+                </a>
               </div>
             </div>
           </div>

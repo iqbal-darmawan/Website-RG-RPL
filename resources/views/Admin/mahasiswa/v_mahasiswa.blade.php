@@ -2,8 +2,7 @@
 @section('title','Karya Mahasiswa')
 @section('content')
 <div class="col-lg-6 col-5 text-right">
-      <a href="/karya-mahasiswa/create" class="btn btn-sm btn-neutral">Add</a>
-      <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+      <a href="/karya-mahasiswa/create" class="btn btn-sm btn-neutral"><i class="fas fa-plus mr-2"></i>Tambah Data</a>     
     </div>
   </div>
 </div>
@@ -36,7 +35,7 @@
                   
                   @php
                       $no=1;
-                  @endphp
+                  @endphp                  
                   @foreach ($dataKarya as $data)
                   <tr>
                     <td>{{$no}}</td>
@@ -48,7 +47,7 @@
                       </div> 
                     </th>
                     <td>{{$data->nama_tim}}</td>
-                    <td>26 mei 2021</td>
+                    <td>{{date('Y',strtotime($data->created_at))}}</td>
                     <td>
                       <a href="/karya-mahasiswa/show/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
                       <a href="/karya-mahasiswa/edit/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>

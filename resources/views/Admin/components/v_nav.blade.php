@@ -55,6 +55,20 @@
                 <span class="nav-link-text">Industri</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link{{request()->is('gallery-editor') ? ' active' : ''}}" href="{{route('gallery')}}">
+                <i class="ni ni-image text-danger"></i>
+                <span class="nav-link-text">Gallery</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link{{request()->is('materi') ? ' active' : ''}}" href="{{route('materi')}}">
+                <i class="ni ni-folder-17 text-success"></i>
+                <span class="nav-link-text">Materi</span>
+              </a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link{{request()->is('logout') ? ' active' : ''}}" href="{{ route('logout') }}" 
                 onclick="event.preventDefault();

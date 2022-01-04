@@ -16,8 +16,9 @@ class JudulpaController extends Controller
     public function index()
     {
         $data = [
-            'judulpa' => $this->Judulpa->getAllData(),
+            'judulpa' => JudulPA::orderBy('tahun_penawaran','DESC')->get(),
         ];
+        
         return view('Admin/judulpa/v_judulpa',$data);
     }
 
@@ -26,6 +27,7 @@ class JudulpaController extends Controller
         
 
     }
+
     public function create()
     {
         return view('Admin/judulpa/v_add_judulpa');
@@ -44,13 +46,15 @@ class JudulpaController extends Controller
             'kualifikasi_judul.required' => 'masukan kualifikasi judul',
             'deskripsi_judul.required' => 'masukan deskripsi judul'
         ]);
+
         $data = [
-            'nama_judul' => $request-> nama_judul,
+            'nama_judul' => $request->nama_judul,
             'nama_pembimbing' => $request-> nama_pembimbing,
             'kualifikasi_judul' => $request-> kualifikasi_judul,
             'tahun_penawaran' => $request-> tahun_penawaran,
             'deskripsi_judul' => $request->deskripsi_judul
         ];
+
         session()->flash('success','data berhasil di tambahkan');
         $this->Judulpa->addData($data);
         return redirect()->route('judulpa')->with('pesan','data berhasil di tambahkan');
@@ -64,6 +68,7 @@ class JudulpaController extends Controller
         $data=[
             'judulpa' => $this->Judulpa->detailData($id)
         ];
+        
         return view('Admin/judulpa/v_detail_judulpa',$data);
     }
 
