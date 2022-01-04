@@ -4,8 +4,7 @@
 
 @include('Admin.components.sweetalert')
   <div class="col-lg-6 col-5 text-right">
-      <button class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal" >Add</button>
-      <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+      <button class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addModal" ><i class="fas fa-plus mr-2"></i>Tambah Data</button>      
     </div>
   </div>
 </div>
@@ -150,11 +149,11 @@
             </div>
             <div class="form-group">
               <label >Logo Industri</label>
-              <input class="form-control" type="file"  name="foto_industri">
+              <input type="file"  name="foto_industri" class="form-control" >
             </div>
             <div class="form-group">
               <label>Deskripsi Industri</label>
-              <textarea name="deskripsi_industri" value="{{$data->deskripsi_industri}}" style="overflow: hidden" class="form-control" cols="30" rows="3"></textarea>
+              <textarea name="deskripsi_industri"  class="form-control" cols="30" rows="3">{{$data->deskripsi_industri}}</textarea>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

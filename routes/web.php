@@ -69,7 +69,7 @@ Route::group(['prefix' => '/karya-mahasiswa', 'middleware' => 'auth'], function 
     Route::get('/hapusFoto/{id}', [MahasiswaController::class, 'deleteFotoById']);
     Route::get('/hapusMahasiswa/{id}', [MahasiswaController::class, 'deleteMahasiswaById']);
     Route::post('/addFotoProduk/{id}', [MahasiswaController::class, 'addFotoProduk']);
-    Route::post('/tambahMahasiswa/{id}', [MahasiswaController::class, 'addMahasiswabyId']);
+    Route::post('/tambahMahasiswa/{id}', [MahasiswaController::class, 'addMahasiswa']);
 });
 
 // ======================JUDUL PA=======================

@@ -39,16 +39,16 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $gallery = new Gallery;
-        $data=$request->all();
-        // dd($data);
-        
-        
-        $gallery->nama = $data['nama_kegiatan'];
-        $gallery->foto = $data['foto_kegiatan'];
+        $data=$request->all();        
 
-        $fname = $gallery->foto->getClientOriginalName();
-        $gallery->foto->move(public_path('img/gallery'), $fname);
+        $gallery->nama = $data['nama_kegiatan'];
+        $file = $data['foto_kegiatan'];
+        
+        $fname = $file->getClientOriginalName();
+        $file->move(public_path('img/gallery'), $fname);
+        $gallery->foto=$fname;
         $gallery->created_at = now();
+        $gallery->updated_at = now();
         $gallery->save();
 
         session()->flash('success','data berhasil di tambahkan');

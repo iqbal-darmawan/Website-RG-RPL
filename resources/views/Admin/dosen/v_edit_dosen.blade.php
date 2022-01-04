@@ -8,8 +8,7 @@
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-lg-7 col-md-10">
-        <h1 class="display-2 text-white">Hello Jesse</h1>
-        <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+        <h1 class="display-2 text-white"></h1>        
       </div>
     </div>
   </div>
@@ -22,7 +21,10 @@
         <div class="card-header">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">Edit</h3>
+              <a href="/dosen" class="d-flex align-items-center">  
+                <i class="fas fa-angle-left"></i>
+                <span class="ml-2"><strong>Edit Data</strong></span>                
+              </a>
             </div>
           </div>
         </div>
@@ -87,128 +89,134 @@
                 </div>
               </div>
                 
-              </div>
-            <hr class="my-4" />
-            <!-- Description -->
-            <h6 class="heading-small text-muted mb-4">Tentang Dosen</h6>
+              </div>            
             
-            <div class="pl-lg-4">
-              <div class="form-group">
-                <label class="form-control-label">Prestasi</label>
-                  <div class="form-group" style="float: right">
-                    <a class="btn btn-primary btn-sm" style="color: white" data-toggle="modal" data-target="#addPrestasi">Tambah data</a>
-                  </div>
-                  <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Nama Prestasi</th>
-                          <th>Deskripsi Prestasi</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @php
-                        $no=1;
-                          @endphp
-                          @foreach ($prestasi as $data)
-                          <tr>
-                            <td>{{$no}}</td>
-                            <td><textarea name="nama_prestasi[]" id="" cols="30" rows="3">{{$data->nama_prestasi}}</textarea></td>
-                            <td><textarea name="deskripsi_prestasi[]" id="" cols="70" rows="3">{{$data->deskripsi_prestasi}}</textarea></td>
-                            <td class="text-right">
-                              <a href="/dosen/deletePrestasiById/{{$data->id}}" class="btn btn-danger btn-sm mt-3"><i class="fas fa-trash"></i></a>
-                            </td>
-                          </tr>
-                          @endforeach
-                          @php
-                              $no++;
-                          @endphp
-                      </tbody>
-
-                  </table>
-                
-              </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-sm">Simpan</button>              
             </div>
-            <div class="pl-lg-4">
-              <div class="form-group">
-                <label class="form-control-label">Penelitian</label>
-                  <div class="form-group" style="float: right">
-                    <a class="btn btn-primary btn-sm" style="color: white" data-toggle="modal" data-target="#addPenelitian">Tambah data</a>
-                  </div>
-                  <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Nama Penelitian</th>
-                          <th>Deskripsi Penelitian</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @php
-                        $no=1;
-                        @endphp
-                        @foreach ($penelitian as $data)
-                        <tr>
-                          <td>{{$no}}</td>
-                          <td><textarea name="nama_penelitian[]" id="" cols="30" rows="3">{{$data->nama_penelitian}}</textarea></td>
-                          <td><textarea name="deskripsi_penelitian[]" id="" cols="70" rows="3">{{$data->deskripsi_penelitian}}</textarea></td>
-                          <td class="text-right">
-                            <a href="/dosen/deletePenelitianById/{{$data->id}}" class="btn btn-danger btn-sm mt-3"><i class="fas fa-trash"></i></a>
-                          </td>
-                        </tr>
-                        @endforeach
-                        @php
-                            $no++;
-                        @endphp
-                      </tbody>
-
-                  </table>
-                
-              </div>
-            </div>
-            <div class="pl-lg-4">
-              <div class="form-group">
-                <label class="form-control-label">Pengabdian</label>
-                  <div class="form-group" style="float: right">
-                    <a class="btn btn-primary btn-sm" style="color: white" data-toggle="modal" data-target="#addPengabdian">Tambah data</a>
-                  </div>
-                  <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Nama Pengabdian</th>
-                          <th>Deskripsi Pengabdian</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @php
-                            $no=1;
-                        @endphp
-                        @foreach ($pengabdian as $data)
-                        <tr>
-                          <td>{{$no}}</td>
-                          <td><textarea name="nama_pengabdian[]" id="" cols="30" rows="3">{{$data->nama_pengabdian}}</textarea></td>
-                          <td><textarea name="deskripsi_pengabdian[]" id="" cols="70" rows="3">{{$data->deskripsi_pengabdian}}</textarea></td>
-                          <td class="text-right">
-                            <a href="/dosen/deletePengabdianById/{{$data->id}}" class="btn btn-danger btn-sm mt-3"><i class="fas fa-trash"></i></a>
-                          </td>
-                        </tr>
-                        @endforeach
-                        @php
-                            $no++;
-                        @endphp
-                      </tbody>
-
-                  </table>
-                
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
-            <button type="reset" class="btn btn-neutral btn-sm">Cancel</button>
+            <!-- Description -->                   
           </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Tentang Dosen</div>
+        <div class="card-body">
+          <h6 class="heading-small text-muted mb-4">Tentang Dosen</h6>            
+          <div class="pl-lg-4">
+            <div class="form-group">
+              <label class="form-control-label">Prestasi</label>
+                <div class="form-group" style="float: right">
+                  <a class="btn btn-primary btn-sm" style="color: white" data-toggle="modal" data-target="#addPrestasi">Tambah data</a>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Prestasi</th>
+                        <th>Deskripsi Prestasi</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @php
+                      $no=1;
+                        @endphp
+                        @foreach ($prestasi as $data)
+                        <tr>
+                          <td>{{$no}}</td>
+                          <td><textarea name="nama_prestasi[]" id="" cols="30" rows="3">{{$data->nama_prestasi}}</textarea></td>
+                          <td><textarea name="deskripsi_prestasi[]" id="" cols="70" rows="3">{{$data->deskripsi_prestasi}}</textarea></td>
+                          <td class="text-right">
+                            <a href="/dosen/deletePrestasiById/{{$data->id}}" class="btn btn-danger btn-sm mt-3"><i class="fas fa-trash"></i></a>
+                          </td>
+                        </tr>
+                        @endforeach
+                        @php
+                            $no++;
+                        @endphp
+                    </tbody>
+
+                </table>
+              
+            </div>
+          </div>
+          <div class="pl-lg-4">
+            <div class="form-group">
+              <label class="form-control-label">Penelitian</label>
+                <div class="form-group" style="float: right">
+                  <a class="btn btn-primary btn-sm" style="color: white" data-toggle="modal" data-target="#addPenelitian">Tambah data</a>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Penelitian</th>
+                        <th>Deskripsi Penelitian</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @php
+                      $no=1;
+                      @endphp
+                      @foreach ($penelitian as $data)
+                      <tr>
+                        <td>{{$no}}</td>
+                        <td><textarea name="nama_penelitian[]" id="" cols="30" rows="3">{{$data->nama_penelitian}}</textarea></td>
+                        <td><textarea name="deskripsi_penelitian[]" id="" cols="70" rows="3">{{$data->deskripsi_penelitian}}</textarea></td>
+                        <td class="text-right">
+                          <a href="/dosen/deletePenelitianById/{{$data->id}}" class="btn btn-danger btn-sm mt-3"><i class="fas fa-trash"></i></a>
+                        </td>
+                      </tr>
+                      @endforeach
+                      @php
+                          $no++;
+                      @endphp
+                    </tbody>
+
+                </table>
+              
+            </div>
+          </div>
+          <div class="pl-lg-4">
+            <div class="form-group">
+              <label class="form-control-label">Pengabdian</label>
+                <div class="form-group" style="float: right">
+                  <a class="btn btn-primary btn-sm" style="color: white" data-toggle="modal" data-target="#addPengabdian">Tambah data</a>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Pengabdian</th>
+                        <th>Deskripsi Pengabdian</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @php
+                          $no=1;
+                      @endphp
+                      @foreach ($pengabdian as $data)
+                      <tr>
+                        <td>{{$no}}</td>
+                        <td><textarea name="nama_pengabdian[]" id="" cols="30" rows="3">{{$data->nama_pengabdian}}</textarea></td>
+                        <td><textarea name="deskripsi_pengabdian[]" id="" cols="70" rows="3">{{$data->deskripsi_pengabdian}}</textarea></td>
+                        <td class="text-right">
+                          <a href="/dosen/deletePengabdianById/{{$data->id}}" class="btn btn-danger btn-sm mt-3"><i class="fas fa-trash"></i></a>
+                        </td>
+                      </tr>
+                      @endforeach
+                      @php
+                          $no++;
+                      @endphp
+                    </tbody>
+
+                </table>
+              
+            </div>
+          </div>   
         </div>
       </div>
     </div>

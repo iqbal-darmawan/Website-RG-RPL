@@ -3,9 +3,8 @@
 @section('content')
 
 @include('Admin.components.sweetalert')
-  <div class="col-lg-6 col-5 text-right">
-      <a href="/judulpa/create" class="btn btn-sm btn-neutral">Add</a>
-      <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+  <div class="col-lg-6 col-5 text-right">     
+      <a href="/judulpa/create" class="btn btn-sm btn-neutral"><i class="fas fa-plus mr-2"></i>Tambah Data</a>     
     </div>
   </div>
 </div>
@@ -41,11 +40,12 @@
                     <td>{{$no}}</td>
                     <td>{{$data->nama_judul}}</td>
                     <td>{{$data->nama_pembimbing}}</td>
-                    <td>{{$data->tahun_penawaran}}</td>
+                    <td>{{date('Y',strtotime($data->tahun_penawaran))}}</td>
                     <td>
                       <a href="/judulpa/show/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Detail" class="btn btn-primary btn-sm"><i class="fas fa-book"></i></a>
                       <a href="/judulpa/edit/{{$data->id}}" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-                      <button  class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$data->id}}"><i class="fas fa-trash"></i></button>
+                      
+                      <a href="/judulpa/destroy/{{$data->id}}"  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                   @php
@@ -88,35 +88,7 @@
         </div>
       </div>
 
-      @foreach ($judulpa as $data)
-      <div class="modal fade" id="deleteModal{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
-        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-            <div class="modal-content bg-gradient-danger">
-              
-                <div class="modal-header">
-                    <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                
-                <div class="modal-body">
-                    <div class="py-3 text-center">
-                        <i class="ni ni-bell-55 ni-3x"></i>
-                        <h4 class="heading mt-4">You should read this!</h4>
-                        <p>Are you sure for delete this item ?</p>
-                    </div>
-                    
-                </div>
-                
-                <div class="modal-footer">
-                  <a href="/judulpa/destroy/{{$data->id}}"  class="btn btn-white">Ok</button>
-                  <a class="text-white ml-auto" data-dismiss="modal">Close</button>
-                </div>
-                
-            </div>
-        </div>
-        @endforeach
+     
       {{-- close modal delete --}}
     
         

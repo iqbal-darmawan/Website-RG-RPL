@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 class Produk extends Model
 {
     public $table = "produk";
+    protected $guard=[];
+    
     use HasFactory;
 
     public function getAllData()
@@ -31,5 +33,10 @@ class Produk extends Model
     public function fotoproduk()
     {
         return $this->hasMany(FotoProduk::class);
+    }
+    
+    public function mahasiswa()
+    {
+        return $this->hasMany(Mahasiswa::class, 'produk_id');
     }
 }

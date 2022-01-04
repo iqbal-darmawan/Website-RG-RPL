@@ -1,7 +1,7 @@
 @extends('Admin/components/v_wrapperDetail')
 @section('title','Tambah Gallery')
 @section('content')
-<div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url({{asset('template')}}/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+<div class="header pb-6 d-flex align-items-center" style="min-height: 250px; background-size: cover; background-position: center top;">
   <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8"></span>
   <!-- Header container -->
@@ -15,7 +15,10 @@
         <div class="card-header">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">Tambah Gallery</h3>
+              <a href="/gallery" class="d-flex align-items-center">  
+                <i class="fas fa-angle-left"></i>
+                <span class="ml-2"><strong>Tambah Data</strong></span>                
+              </a>
             </div>
           </div>
         </div>

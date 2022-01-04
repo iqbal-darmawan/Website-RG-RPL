@@ -16,9 +16,11 @@
         <div class="card-header">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">Tambah Gallery</h3>
-            </div>
-           
+              <a href="/gallery" class="d-flex align-items-center">  
+                <i class="fas fa-angle-left"></i>
+                <span class="ml-2"><strong>Edit Data</strong></span>                
+              </a>
+            </div>           
           </div>
         </div>
         <div class="card-body">

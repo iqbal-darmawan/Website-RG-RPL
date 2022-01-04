@@ -50,10 +50,10 @@ class IndustriController extends Controller
             'nama_industri.required' =>'masukan nama industri',
             'deskripsi_industri.required' => 'masukan deskripsi industri',
         ]);
-        
-        if ($request->foto_industri <> " ") {
-            $file = Request()->foto_industri;
-            $filename = Request()->nama_industri. '.' . $file->extension();
+        // dd($request->all());
+        if ($request->foto_industri) {
+            $file = $request->foto_industri;
+            $filename = $file->getClientOriginalName();
             $file->move(public_path('img/industri'),$filename);
             $data = [
                 'nama_industri' => $request -> nama_industri,
