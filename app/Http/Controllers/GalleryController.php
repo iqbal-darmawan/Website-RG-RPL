@@ -22,10 +22,11 @@ class GalleryController extends Controller
     public function indexFront()
     {
         $data=[
-            'gallery' => Gallery::latest()->paginate(6),
+            'gallery' => Gallery::get(),
             'dosen' => DosenRpl::count(),
             'karya' => Produk::count(),
             'industri' => Industri::count(),
+            'kerjasama' => Industri::get(),
         ];
 
         return view('home.home-view',$data);
@@ -39,7 +40,7 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $gallery = new Gallery;
-        $data=$request->all();        
+        $data=$request->all();
 
         $gallery->nama = $data['nama_kegiatan'];
         $file = $data['foto_kegiatan'];        
