@@ -21,7 +21,7 @@ class MateriController extends Controller
 
     public function download($filename)
     {
-        $file = public_path() . "/files/". $filename;
+        $file = public_path() . "/files/materi". $filename;
         return Response::download($file, $filename);
     }
 
@@ -61,12 +61,13 @@ class MateriController extends Controller
     public function edit($id)
     {
         $data = Materi::find($id);
+
         if (!$data) {
             abort(404);
         }else{
             $file = [
-                'materi' => Materi::find($id),
-                'file_materi' => FileMateri::where('materi_id',$id)->get()
+                'materi' => Materi::with('fileMateri')->find($id),
+                
             ];
 
             return view('Admin.Materi.v_edit_materi',$file);
@@ -74,24 +75,37 @@ class MateriController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
+    {        
         $data=[
-            'nama' => $request->nama
+            'nama' => $request->nama,
+            'category' => $request->category,
+            'deskripsi' => $request->deskripsi,
         ];
-        Materi::insert($data);
+        $findData=Materi::where('id',$id)->with('fileMateri')->first();
+
+        $findData->update($data);
+
         if ($request->hasfile('file_materi')) {
-            foreach($request->file('file_materi') as $key => $file)
-            {
+                $file = $request->file('file_materi');
                 $fname = $file->getClientOriginalName();
                 $file->move(public_path('files/materi') , $fname);
+
                 $data2 = array(
                     'materi_id' => $id,
-                    'file_materi' => $fname,
+                    'nama_file' => $fname,
                     'created_at' => now(),
                     'updated_at' => now()
-                );
-                FileMateri::where('materi_id',$id)->update($data2);
-            }
+                );  
+
+                if ($findData->fileMateri) {
+                    dd('ada');
+                    FileMateri::where('materi_id',$id)->update($data2);                    
+                } else {
+                    FileMateri::insert($data2);
+                }
+                
+
+            
         }
         session()->flash('success','data berhasil di tambahkan');
         return redirect()->route('materi');

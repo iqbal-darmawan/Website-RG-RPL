@@ -1,7 +1,7 @@
 @extends('Admin/components/v_wrapperDetail')
 @section('title','Edit Materi')
 @section('content')
-<div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url({{asset('template')}}/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+<div class="header pb-6 d-flex align-items-center" style="min-height: 250px; background-size: cover; background-position: center top;">
   <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8"></span>
   <!-- Header container -->
@@ -32,44 +32,52 @@
                     <label class="form-control-label" for="input-last-name">Nama Materi</label>
                     <input type="text" name="nama" id="input-last-name" class="form-control" value="{{$materi->nama}}">
                   </div>
-                </div>
-                 
+                </div>                 
               </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Category</label>
+                    <select name="category" class="form-control" >
+                      <option value="rpl">Rpl</option>
+                      <option value="wppl">Wppl</option>
+                    </select>
+                  </div>
+                </div>                 
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">deskripsi</label>
+                    <textarea name="deskripsi" id="" cols="30" rows="5" class="form-control">{{$materi->deskripsi}}</textarea>
+                  </div>
+                </div>                 
+              </div>
+              
               
               <div class="row">
                 <div class="col-sm-10">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-username">File Materi</label><br>
-                  </div>
-                  
-                </div>
-                <div class="row">
-                  <div class="col-sm-2">
-                  <div class="form-group">
-                    <a  data-toggle="modal" data-target="#addModal"  class="btn btn-primary btn-sm" style="color: white">Tambah Foto</a>
-                  </div>
-                </div>
-                </div>
-                
+                    <label class="form-control-label" for="input-username">File Materi</label><br>  
+                    <a href="{{route('download', $materi->fileMateri->nama_file ?? '')}}" class="btn btn-primary btn-sm"><i class="fas fa-cloud-download-alt mr-2"></i>{{$materi->fileMateri->nama_file ?? ' File Tidak Ditemukan'}} </a>                 
+                    
+                  </div>                  
+                </div>                                
               </div>
               
-              @foreach ($file_materi as $data)
+            
               <div class="row">
                 <div class="col-md-10">
                   <div class="form-group">
-                    <label class="form-control-label" >{{$data->file_materi}}
+                    <label class="form-control-label" >
                       </label>
-                    <input type="file" name="file_materi[]" id="input-username" class="form-control">  
+                    <input type="file" name="file_materi" id="input-username" class="form-control">  
                   </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="form-group" style="float: right">
-                    <a href="{{ asset('/img/materi/' . $data->file_materi) }}"  class="btn btn-primary btn-sm" style="color: white"><i class="fas fa-cloud-download-alt"></i></a>
-                    <a href="/materi/destroyById/{{$data->id}}"  class="btn btn-danger btn-sm" style="color: white"><i class="fas fa-trash"></i></a>
-                  </div>
-                </div>
+                </div>                
               </div>
-              @endforeach
+             
             </div>
             <hr class="my-4" />
             <div class="form-group">

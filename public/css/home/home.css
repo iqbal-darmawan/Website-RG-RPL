@@ -119,7 +119,7 @@ button.caraousel-button-indicators {
 }
 
 
-  .section-headline h2 {
+  .section-headline h4 {
     display: inline-block;
     font-size: 40px;
     font-weight: 600;
@@ -128,7 +128,7 @@ button.caraousel-button-indicators {
     text-transform: capitalize;
   }
 
-  .section-headline h2::after {
+  .section-headline h4::after {
     border: 5px solid #F2C808;
     bottom: -20px;
     content: "";
@@ -142,7 +142,7 @@ button.caraousel-button-indicators {
   .logo-kerjasama {
       margin-left: 60px;
       margin-right: 60px;
-      max-width: 200px;
+      max-width: 135px;
       -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
       filter: grayscale(100%);
       opacity: 0.3;
@@ -158,7 +158,7 @@ button.caraousel-button-indicators {
 }
 
 .galerry {
-    max-width: 300px;
+    max-width: 250px;
     /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
     /* filter: grayscale(100%);
     opacity: 0.3;
@@ -241,9 +241,9 @@ button.caraousel-button-indicators {
         min-height: 350px;
     }
     .logo-kerjasama {
-        margin-left: 0;
-        margin-right: 0;
-        max-width: 150px;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: 80px;
     }
 }
 

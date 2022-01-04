@@ -3,7 +3,7 @@
 @section('content')
   
      <div class="col-lg-6 col-5 text-right">
-      <a href="/materi/create" class="btn btn-sm btn-neutral">Tambah Data</a>
+      <a href="/materi/create" class="btn btn-sm btn-neutral"><i class="fas fa-plus mr-2"></i>Tambah Data</a>
     </div>
   </div>
 </div>
@@ -33,13 +33,33 @@
                 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
-                        <div class="media">
-                          <h5 class="mr-2">1.</h5>
-                          <div class="media-body">
-                            <h5 class="mt-0">Clean Code</h5>
-                            <p>Materi teruhuy.</p>
-                          </div>
-                        </div>
+                        @php
+                            $no=1;
+                        @endphp
+                        @foreach ($materi_rpl as $item)
+                        <div class="media">           
+                          <h5 class="mr-2">{{$no}}.</h5>               
+                              <div class="media-body">                                
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <h5 class="mt-0">{{$item->nama}}</h5>
+                                    <p>{{$item->deskripsi}}</p>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <a href="/materi/edit/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                                    @if ($item->fileMateri)
+                                    <a href="files/materi/{{$item->fileMateri->nama_file ?? ''}}" download class="btn btn-info btn-sm"><i class="fas fa-cloud-download-alt"></i></a>                                         
+                                    @endif                                   
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>                                    
+                                  </div>
+                               </div>                                
+                              </div>                                                                                                                                   
+                        </div> 
+                        @php
+                            $no++;
+                        @endphp
+                        @endforeach
+                                         
                       </div>
                     </div>
                   </div>
@@ -54,13 +74,33 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                       <div class="card-body">
                         
-                        <div class="media">
-                          <h5 class="mr-2">1.</h5>
-                          <div class="media-body">
-                            <h5 class="mt-0">Clean Code</h5>
-                            <p>Materi teruhuy.</p>
-                          </div>
-                        </div>
+                        @php
+                            $no=1;
+                        @endphp
+                        {{-- {{dd($materi_wppl)}} --}}
+                        @foreach ($materi_wppl as $item)
+                        <div class="media">           
+                          <h5 class="mr-2">{{$no}}.</h5>               
+                              <div class="media-body">                                
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <h5 class="mt-0">{{$item->nama}}</h5>
+                                    <p>{{$item->deskripsi}}</p>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <a href="/materi/edit/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                                    @if ($item->fileMateri)
+                                    <a href="files/materi/{{$item->fileMateri->nama_file ?? ''}}" download class="btn btn-info btn-sm "><i class="fas fa-cloud-download-alt"></i></a>                                         
+                                    @endif                                   
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>                                    
+                                  </div>
+                               </div>                                
+                              </div>                                                                                                                                   
+                        </div> 
+                        @php
+                            $no++;
+                        @endphp
+                        @endforeach
                       </div>
                     </div>
                   </div>                 

@@ -21,27 +21,21 @@
             <img src="{{ asset('img/bg1.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2 class="carousel-caption-title">Rekayasa Perangkat Lunak</h2>
-                <p>Pengubahan perangkat lunak itu sendiri guna mengembangkan, memelihara, dan membangun kembali dengan
-                    menggunakan prinsip rekayasa untuk menghasilkan perangkat lunak yang dapat bekerja lebih efisien dan
-                    efektif untuk pengguna.</p>
+                <p>Pengubahan perangkat lunak itu sendiri guna mengembangkan, memelihara, dan membangun kembali dengan menggunakan prinsip rekayasa untuk menghasilkan perangkat lunak yang dapat bekerja lebih efisien dan efektif untuk pengguna.</p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="{{ asset('img/bg1.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2 class="carousel-caption-title">Workshop Produksi Perangkat Lunak</h2>
-                <p>Workshop Produksi perangkat lunak merupakan mata kuliah yang mana membahas mengenai materi rekayasa
-                    perangkat lunak dengan mempelajari bagaimana cara memproduksi, serta membuat output karya rekayasa
-                    perangkat lunak tertentu yang dapat bermanfaat. </p>
+                <p>Workshop Produksi perangkat lunak merupakan mata kuliah yang mana membahas mengenai materi rekayasa perangkat lunak dengan mempelajari bagaimana cara memproduksi, serta membuat output karya rekayasa perangkat lunak tertentu yang dapat bermanfaat. </p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="{{ asset('img/bg1.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2 class="carousel-caption-title">RG RPL</h2>
-                <p>Research Group RPL adalah sebuah grup penelitian dari program studi teknik informatika,
-                    berspesialisasi pada subjek rekayasa perangkat lunak dan bekerja bersama dalam masalah atau topik
-                    seputar RPL.</p>
+                <p>Research Group RPL adalah sebuah grup penelitian dari program studi teknik informatika, berspesialisasi pada subjek rekayasa perangkat lunak dan bekerja bersama dalam masalah atau topik seputar RPL.</p>
             </div>
         </div>
     </div>
@@ -62,10 +56,7 @@
             <div class="">
                 <h5 class="text-content-first fw-bold">Apa itu</h5>
                 <h2 class="text-content-first-1 fw-bold">Web RG RPL ?</h2>
-                <p style="color: #978787;" class="description-content-first">Sebuah wadah untuk memberikan informasi
-                    mengenai profile dan kegiatan RG RPL. Meliputi profile dosen RG RPL terkait penelitian, prestasi dan
-                    pengabdian, kemudian dokumentasi karya, kerjasama industri, penawaran judul PA, rekomendasi materi
-                    dan pembahasan seputar RPL lainnya.</p>
+                <p style="color: #978787;" class="description-content-first">Sebuah wadah untuk memberikan informasi mengenai profile dan kegiatan RG RPL. Meliputi profile dosen RG RPL terkait penelitian, prestasi dan pengabdian, kemudian dokumentasi karya, kerjasama industri, penawaran judul PA, rekomendasi materi dan pembahasan seputar RPL lainnya.</p>
             </div>
         </div>
         <div class="col-md-8">
@@ -133,8 +124,7 @@
         <div class="col-md-3 d-flex flex-column justify-content-center content-wrapper">
             <div>
                 <h2 style="font-size:36px; font-weight:bold;">Karya Mahasiswa</h2>
-                <p>Pada kegiatan pembelajaran mengenai rekayasa perangkat lunak, mahasiswa dengan bimbingan RG RPL
-                    membuat suatu karya berbasis software yang sangat bermanfaat kedepannya.</p>
+                <p>Pada kegiatan pembelajaran mengenai rekayasa perangkat lunak, mahasiswa dengan bimbingan RG RPL membuat suatu karya berbasis software yang sangat bermanfaat kedepannya.</p>
                 <a href="{{route('karya')}}">
                     <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -189,8 +179,8 @@
 
 
 
-
-
+                            
+                            
 {{-- konten landing page-4-dosen --}}
 <div class="container card-content-wrapper-dosen">
     <div class="row content-wrapper-dosen">
@@ -203,9 +193,7 @@
                         </div>
                     </div>
                     <div class="card-body px-3 mt-2">
-                        <h4>
-                            <h5>{{ Str::limit('Desy Intan Permatasari, S.Kom., M.Kom.', 20, '...') }}</h5>
-                        </h4>
+                        <h4> <h5>{{ Str::limit('Desy Intan Permatasari, S.Kom., M.Kom.', 20, '...') }}</h5></h4>
                         <p>NIP: 198603232015042004</p>
                         <a href="{{route('dosen')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
@@ -225,8 +213,7 @@
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/profil/Andhik Ampuh Yunanto, S.Kom, M.Kom.jpg') }}" alt=""
-                                class="text-center w-75">
+                            <img src="{{ asset('img/dosen/profil/Andhik Ampuh Yunanto, S.Kom, M.Kom.jpg') }}" alt="" class="text-center w-75">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
@@ -241,8 +228,7 @@
             <div>
                 <h5 style="font-size:24px; font-weight:bold;">Dosen</h5>
                 <h2 style="font-size:36px; font-weight:bold;">Tim RG RPL</h2>
-                <p>Detail profile dari dosen yang tergabung dalam Research Group Rekayasa Perangkat Lunak Teknik
-                    Informatika PENS.</p>
+                <p>Detail profile dari dosen yang tergabung dalam Research Group Rekayasa Perangkat Lunak Teknik Informatika PENS.</p>
                 <a href="#">
                     <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -260,7 +246,7 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-                <h2>Kerjasama Industri</h2>
+                <h4>Kerjasama Industri</h4>
                 <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center flex-wrap">
                     {{-- {{ dd($kerjasama) }} --}}
                     @foreach ($kerjasama as $kerjasamas )
@@ -273,17 +259,21 @@
     </div>
 </div>
 
+
+{{-- konten-galery page-6 --}}
 {{-- konten-galery page-6 --}}
 <div class="container card-content-wrapper-kerjasama-industri">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-                <h2>Gallery</h2>
+                <h4>Gallery</h4>
                 <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center">
                     <div class="d-flex flex-wrap justify-content-center">
                         {{-- {{dd($gallery)}} --}}
                         @foreach ($gallery as $item )
-                        <img class="card-img-top galerry" src="/img/gallery/{{ $item->foto }}">
+                        <div class="col-md-3">
+                            <img class="card-img-top galerry" src="/img/gallery/{{ $item->foto }}">
+                        </div>
 
                         {{-- <div class="card-gallery card">
 
@@ -302,6 +292,7 @@
     </div>
 </div>
 
+
 {{-- konten landing page-6-testimoni --}}
 
 {{-- <div class="bg-testimoni">
@@ -310,9 +301,7 @@
             <div class="d-flex justify-content-between">
                 <div>
                     <h2 style="font-size:36px; font-weight:bold;">Apa Kata Mereka?</h2>
-                    <p style="color:#888888;">Berikut merupakan beberapa tanggapan dan masukan dari user website RG RPL
-                        mengenai suguhan konten serta informasi yang ada pada halaman website Research Group Rekayasa
-                        Perangkat Lunak.</p>
+                    <p style="color:#888888;">Berikut merupakan beberapa tanggapan dan masukan dari user website RG RPL mengenai suguhan konten serta informasi yang ada pada halaman website Research Group Rekayasa Perangkat Lunak.</p>
                 </div>
             </div>
             <div class="carousel-testimoni-wrapper">
@@ -321,14 +310,10 @@
                         <div class="card card-testimoni">
                             <div class="card-body card-body-testimoni">
                                 <h5 class="mb-4">Sangat Informatif dan Menarik</h5>
-                                <p>Data yang disajikan pada website ini sangat bermanfaat, sebelumnya saya adalah
-                                    mahasiswa teknik informatika PENS 2019. Saya mendapatkan beberapa rekomendasi materi
-                                    yang ada di website ini dan juga dapat melihat karya karya menarik dari mahasiswa IT
-                                    PENS.</p>
+                                <p>Data yang disajikan pada website ini sangat bermanfaat, sebelumnya saya adalah mahasiswa teknik informatika PENS 2019. Saya mendapatkan beberapa rekomendasi materi yang ada di website ini dan juga dapat melihat karya karya menarik dari mahasiswa IT PENS.</p>
                                 <div class="d-flex align-items-center mt-5">
                                     <div class="testimoni-img">
-                                        <img src="{{ asset(" img/testimoni/profil resize.png") }}" alt="Avatar"
-                                            style="width:50px">
+                                        <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
                                     </div>
                                     <div class="testimoni-name ms-3">
                                         <h4 class="m-0">Iqbal Darmawan</h4>
@@ -342,19 +327,16 @@
                         <div class="card card-testimoni">
                             <div class="card-body card-body-testimoni">
                                 <h5 class="mb-4">Bermanfaat dan Solutif</h5>
-                                <p>Berkat website RG RPL, saya mengetahui kegiatan dari mahasiswa dan RG RPL. Kemudian
-                                    data yang disajikan sangat jelas dan terbuka. Saya juga telah terbantu karena
-                                    mendapat rekomendasi judul PA di website ini. Terimakasih website RG RPL!<3< /p>
-                                        <div class="d-flex align-items-center mt-5">
-                                            <div class="testimoni-img">
-                                                <img src="{{ asset(" img/testimoni/profil resize.png") }}" alt="Avatar"
-                                                    style="width:50px">
-                                            </div>
-                                            <div class="testimoni-name ms-3">
-                                                <h4 class="m-0">Luly</h4>
-                                                <p class="m-0">Mahasiswa</p>
-                                            </div>
-                                        </div>
+                                <p>Berkat website RG RPL, saya mengetahui kegiatan dari mahasiswa dan RG RPL. Kemudian data yang disajikan sangat jelas dan terbuka. Saya juga telah terbantu karena mendapat rekomendasi judul PA di website ini. Terimakasih website RG RPL!<3</p>
+                                <div class="d-flex align-items-center mt-5">
+                                <div class="testimoni-img">
+                                <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
+                                    </div>
+                                    <div class="testimoni-name ms-3">
+                                        <h4 class="m-0">Luly</h4>
+                                        <p class="m-0">Mahasiswa</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -362,13 +344,10 @@
                         <div class="card card-testimoni">
                             <div class="card-body card-body-testimoni">
                                 <h5 class="mb-4">Wadah yang Detail dan Update</h5>
-                                <p>Saya merupakan dosen yang tergabung dalam RG RPL, dimana sebelum ada website ini saya
-                                    harus menjelaskan secara manual dan kurang efektif. Namun sekarang sangat terbantu
-                                    karena adanya website ini update, detail dan informatif.</p>
-                                <div class="d-flex align-items-center mt-5">
+                                <p>Saya merupakan dosen yang tergabung dalam RG RPL, dimana sebelum ada website ini saya harus menjelaskan secara manual dan kurang efektif. Namun sekarang sangat terbantu karena adanya website ini update, detail dan informatif.</p>
+                                    <div class="d-flex align-items-center mt-5">
                                     <div class="testimoni-img">
-                                        <img src="{{ asset(" img/testimoni/profil resize.png") }}" alt="Avatar"
-                                            style="width:50px">
+                                        <img src="{{ asset("img/testimoni/profil resize.png") }}" alt="Avatar" style="width:50px">
                                     </div>
                                     <div class="testimoni-name ms-3">
                                         <h4 class="m-0">Erwin Sutisna</h4>
@@ -387,8 +366,8 @@
 @endsection
 
 @section('optional-js')
-<script>
-    $(document).ready(function(){
+    <script>
+        $(document).ready(function(){
             $('.owl-carousel').owlCarousel({
                 dots:true,
                 loop:true,
@@ -407,5 +386,5 @@
                 }
             })
             })
-</script>
+    </script>
 @endsection
