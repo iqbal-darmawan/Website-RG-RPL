@@ -67,10 +67,10 @@
     </div>
     <div class="dosen-tim-card-wrapper d-flex flex-wrap justify-content-center">
       @foreach ($dosen as $item)
-      <div class="card dosen-tim-card shadow m-3" >
-        <div class="card-header p-0">
+      <div class="card dosen-tim-card shadow m-3 " >
+        <div class="card-header p-0 text-center">
           <img src="{{asset('img/dosen/profil/' .$item->foto_dosen)}}" alt=""
-            class="text-center w-100 " />
+            class="text-center" height="200"/>
         </div>
         <div class="card-body px-3 ">
           <h4>{{$item->nama_lengkap}}</h4>
