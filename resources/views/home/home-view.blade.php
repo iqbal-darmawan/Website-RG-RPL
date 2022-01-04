@@ -283,19 +283,20 @@
                     <div class="d-flex flex-wrap justify-content-center">
                         {{-- {{dd($gallery)}} --}}
                         @foreach ($gallery as $item )
-                        <div class="card-gallery card m-4">
-                            <img class="card-img-top" src="{{ $item->foto }}">
+                        <img class="card-img-top galerry" src="/img/gallery/{{ $item->foto }}">
+
+                        {{-- <div class="card-gallery card">
 
                             <div class="card-body">
                                 <h5>{{ Str::limit($item->nama, 50, '...') }}</h5>
                             </div>
-                        </div>
+                        </div> --}}
                         @endforeach
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
+                {{-- <div class="d-flex justify-content-center">
                     {{ $gallery->links() }}
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            IndustriSeeder::class,
+            // IndustriSeeder::class,
+            GallerySeeder::class,
         ]);
         // Produk::factory()
         //     ->has(FotoProduk::factory()->count(3), 'fotoproduk')
