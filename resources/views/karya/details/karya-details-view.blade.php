@@ -20,10 +20,11 @@
             <div class="content-header-wrapper ">
                 <div class="karya-img mb-3">
                     <div class="owl-carousel owl-theme mt-5 ">
+                        
                         @foreach ($foto as $item)
                         <div class="item">
                             <div class="image">
-                                <img src="{{$item->foto_produk}}" alt="#" class="">
+                                <img src="/img/produk/{{$item->foto_produk}}" alt="#" class="">
                             </div>
                         </div>
                         @endforeach
@@ -35,7 +36,7 @@
                             <div class="option-image d-flex">
                                 @foreach ($foto as $item)
                                 <div class="image">
-                                    <img src="{{asset($item->foto_produk)}}" alt="#" class="">
+                                    <img src="/img/produk/{{$item->foto_produk}}" alt="#" class="">
                                 </div>
                                 @endforeach
                             </div>
@@ -44,7 +45,7 @@
                             <div class="team-desc">
                                 <h3 class="fw-bold">Nama Team</h3>
                                 <p class="fs-5">{{$karya->nama_tim}}</p>
-                              	<a href="http://{{$karya->link}}" class="fs-6">Website Karya</a>
+                              	<a href="https://ition.pusproset.com/" class="fs-6">Website Karya</a>
                             </div>
                         </div>
                     </div>

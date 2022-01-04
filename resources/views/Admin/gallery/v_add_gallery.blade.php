@@ -37,15 +37,13 @@
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Foto Kegiatan</label>
-                    <div class="form-group" style="float: right">
+                    {{-- <div class="form-group" style="float: right">
                       <a class="addGallery btn btn-primary btn-sm" style="color: white">Tambah data</a>
-                    </div>
-                    <input type="file" name="foto_kegiatan[]" id="input-username" class=" form-control">
+                    </div> --}}
+                    <input type="file" class="form-control" name="foto_kegiatan">
                   </div>
                 </div>
-              </div>
-              <div class="gallery">
-
+              </div>              
               </div>
             </div>
             <hr class="my-4" />

@@ -73,7 +73,7 @@
             class="text-center" height="200"/>
         </div>
         <div class="card-body px-3 ">
-          <h4>{{$item->nama_lengkap}}</h4>
+          <h4>{{ Str::limit($item->nama_lengkap, 20, '...') }}</h4>
           <p class="my-3">NIP: {{$item->nip}}</p>
           <div class="see-more-karya mb-3 mt-5 d-block text-end">
             <a href="{{route('daftar-dosen-details', $item->id)}}">See profile</a>

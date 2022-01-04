@@ -36,8 +36,8 @@
               </div>
               <div class="form-group" style="float: right">
                 <a  data-toggle="modal" data-target="#addModal"  class="btn btn-primary btn-sm" style="color: white">Tambah Foto</a>
-              </div>
-              @foreach ($gallery_foto as $data)
+              </div>                           
+              @foreach ($gallery as $data)
               <div class="row">
                 <div class="col-sm-10">
                   <div class="form-group">

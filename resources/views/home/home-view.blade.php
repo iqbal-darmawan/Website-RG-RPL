@@ -177,6 +177,10 @@
     </div>
 </div>
 
+
+
+                            
+                            
 {{-- konten landing page-4-dosen --}}
 <div class="container card-content-wrapper-dosen">
     <div class="row content-wrapper-dosen">
@@ -185,37 +189,37 @@
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/dosen/profil/Bu Desy.jpg') }}" alt="" class="text-center w-75">
                         </div>
                     </div>
-                    <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                    <div class="card-body px-3 mt-2">
+                        <h4> <h5>{{ Str::limit('Desy Intan Permatasari, S.Kom., M.Kom.', 20, '...') }}</h5></h4>
+                        <p>NIP: 198603232015042004</p>
+                        <a href="{{route('dosen')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/dosen-2.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/dosen/profil/Bu Umi.jpg') }}" alt="" class="text-center w-75">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                        <h4>Umi Sa'adah, S.Kom, M.Kom</h4>
+                        <p>NIP: 197404162000032003</p>
+                        <a href="{{route('dosen')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/dosen-3.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/dosen/profil/Andhik Ampuh Yunanto, S.Kom, M.Kom.jpg') }}" alt="" class="text-center w-75">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                        <h4>Andhik Ampuh Yunanto, S.Kom, M.Kom</h4>
+                        <p>NIP: 199208022019031013</p>
+                        <a href="{{route('dosen')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
             </div>
@@ -263,20 +267,22 @@
 </div> --}}
 
 {{-- konten-galery page-6 --}}
-<div class="container card-content-wrapper-kerjasama-industri">
+{{-- <div class="container card-content-wrapper-kerjasama-industri">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
                 <h2>Gallery</h2>
                 <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center">
                     <div class="logo-kerjasama d-flex flex-wrap justify-content-center">
+                        {{dd($gallery)}}
                         @foreach ($gallery as $item )
                         <div class="card-gallery card m-4">
-                            <img class="card-img-top" src="{{ $item->foto }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ $item->foto }}" >
+
                             {{-- <div class="card-body">
                                 <h5>{{ Str::limit($item->nama, 50, '...') }}</h5>
                             </div> --}}
-                        </div>
+                        {{-- </div>
                         @endforeach
                     </div>
                 </div>
@@ -286,7 +292,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>  --}}
 
 {{-- konten landing page-6-testimoni --}}
 

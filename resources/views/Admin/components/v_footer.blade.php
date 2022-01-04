@@ -16,14 +16,7 @@
       var addFile ='<div class="row"><div class="col-lg-12"><div class="form-group"><label class="form-control-label" for="input-username">File Materi</label><input type="file" name="file_materi[]" id="input-username" class=" form-control"></div></div></div>';
       $('.materi').append(addFile);
     };
-      //gallery
-    $('.addGallery').on('click',function(){
-      addGallery();
-    });
-    function addGallery(){
-      var addGallery ='<div class="row"><div class="col-lg-12"><div class="form-group"><label class="form-control-label" for="input-username">Foto Kegiatan</label><input type="file" name="foto_kegiatan[]" id="input-username" class=" form-control"></div></div></div>';
-      $('.gallery').append(addGallery);
-    };
+   
     
       //prestasi
       $('.addPrestasi').on('click',function(){
