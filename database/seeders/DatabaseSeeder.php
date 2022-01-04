@@ -21,22 +21,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Produk::factory()
-            ->has(FotoProduk::factory()->count(3), 'fotoproduk')
-            ->count(12)
-            ->create();
-        Industri::factory()
-            ->has(JudulPA::factory()->count(3), 'judulpa')
-            ->count(5)
-            ->create();
-        DosenRpl::factory()
-            ->has(JudulPA::factory()->count(5), 'judulpa')
-            ->count(9)
-            ->create();
-        Gallery::factory()->count(10)->create();
-        Materi::factory()
-            ->has(FileMateri::factory()->count(1), 'fileMateri')
-            ->count(6)
-            ->create();
+        $this->call([
+            IndustriSeeder::class,
+        ]);
+        // Produk::factory()
+        //     ->has(FotoProduk::factory()->count(3), 'fotoproduk')
+        //     ->count(12)
+        //     ->create();
+        // Industri::factory()
+        //     ->has(JudulPA::factory()->count(3), 'judulpa')
+        //     ->count(5)
+        //     ->create();
+        // DosenRpl::factory()
+        //     ->has(JudulPA::factory()->count(5), 'judulpa')
+        //     ->count(9)
+        //     ->create();
+        // Gallery::factory()->count(10)->create();
+        // Materi::factory()
+        //     ->has(FileMateri::factory()->count(1), 'fileMateri')
+        //     ->count(6)
+        //     ->create();
     }
 }

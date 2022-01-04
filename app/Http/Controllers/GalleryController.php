@@ -26,6 +26,7 @@ class GalleryController extends Controller
             'dosen' => DosenRpl::count(),
             'karya' => Produk::count(),
             'industri' => Industri::count(),
+            'kerjasama' => Industri::get(),
         ];
 
         return view('home.home-view',$data);
@@ -41,8 +42,8 @@ class GalleryController extends Controller
         $gallery = new Gallery;
         $data=$request->all();
         // dd($data);
-        
-        
+
+
         $gallery->nama = $data['nama_kegiatan'];
         $gallery->foto = $data['foto_kegiatan'];
 

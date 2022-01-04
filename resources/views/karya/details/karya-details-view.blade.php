@@ -20,7 +20,6 @@
             <div class="content-header-wrapper ">
                 <div class="karya-img mb-3">
                     <div class="owl-carousel owl-theme mt-5 ">
-                        
                         @foreach ($foto as $item)
                         <div class="item">
                             <div class="image">

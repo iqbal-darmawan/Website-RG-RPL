@@ -39,8 +39,8 @@ button.caraousel-button-indicators {
 }
 
 .card-content-wrapper-kerjasama-industri {
-    padding-top: 50px;
-    margin-bottom: 120px;
+    padding-top: 70px;
+    margin-bottom: 80px;
 }
 
 .text-content-first {
@@ -139,9 +139,22 @@ button.caraousel-button-indicators {
   }
 
   .logo-kerjasama {
-      padding-left: 60px;
-      padding-right: 60px;
+      margin-left: 60px;
+      margin-right: 60px;
+      max-width: 200px;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+      opacity: 0.3;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
   }
+
+  .logo-kerjasama:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0);
+    opacity: 1;
+}
 
   .bg-testimoni {
     background: rgba(236, 236, 236, 0.36);
@@ -192,6 +205,8 @@ button.caraousel-button-indicators {
     color: #625E5E;
 }
 
+
+
 @media (max-width: 990px) {
     .card-title {
         font-size: 12px;
@@ -209,8 +224,9 @@ button.caraousel-button-indicators {
         min-height: 350px;
     }
     .logo-kerjasama {
-        padding-left: 0;
-        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 150px;
     }
 }
 
