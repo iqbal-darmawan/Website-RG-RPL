@@ -17,42 +17,46 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <div class="content-header-wrapper mb-5">
+            <div class="content-header-wrapper ">
                 <div class="karya-img mb-3">
                     <div class="owl-carousel owl-theme mt-5 ">
+                        
                         @foreach ($foto as $item)
                         <div class="item">
                             <div class="image">
-                                <img src="{{$item->foto_produk}}" alt="#" class="">
+                                <img src="/img/produk/{{$item->foto_produk}}" alt="#" class="">
                             </div>
                         </div>
                         @endforeach
                     </div>
                 </div>
-                <div class="content-header">
+                <div class="content-header pt-4">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="option-image d-flex">
                                 @foreach ($foto as $item)
                                 <div class="image">
-                                    <img src="{{$item->foto_produk}}" alt="#" class="">
+                                    <img src="/img/produk/{{$item->foto_produk}}" alt="#" class="">
                                 </div>
                                 @endforeach
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="team-desc">
-                                <h3>Nama Team</h3>
-                                {{-- TODO : Konek ke backend--}}
-                                <p>{{$karya->nama_tim}}</p>
+                                <h3 class="fw-bold">Nama Team</h3>
+                                <p class="fs-5">{{$karya->nama_tim}}</p>
+                              	<a href="https://ition.pusproset.com/" class="fs-6">Website Karya</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+          	<br>
+            <hr>
+            <br>
             <div class="main-content">
-                <h1 class="nama-karya">{{$karya->nama_produk}}</h1>
-                <p class="karya-desc">{{$karya->deskripsi_produk}}</p>
+                <h1 class="fw-bold nama-karya">{{$karya->nama_produk}}</h1>
+                <p class="fs-5 karya-desc">{{$karya->deskripsi_produk}}</p>
             </div>
         </div>
     </div>

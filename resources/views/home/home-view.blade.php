@@ -125,7 +125,7 @@
             <div>
                 <h2 style="font-size:36px; font-weight:bold;">Karya Mahasiswa</h2>
                 <p>Pada kegiatan pembelajaran mengenai rekayasa perangkat lunak, mahasiswa dengan bimbingan RG RPL membuat suatu karya berbasis software yang sangat bermanfaat kedepannya.</p>
-                <a href="#">
+                <a href="{{route('karya')}}">
                     <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0.5 17C0.5 20.2881 1.52636 23.5024 3.44928 26.2364C5.37221 28.9703 8.10533 31.1012 11.303 32.3595C14.5007 33.6178 18.0194 33.947 21.4141 33.3056C24.8087 32.6641 27.9269 31.0807 30.3744 28.7556C32.8218 26.4306 34.4885 23.4683 35.1637 20.2434C35.839 17.0184 35.4924 13.6757 34.1679 10.6379C32.8434 7.60007 30.6003 5.0036 27.7225 3.17682C24.8446 1.35004 21.4612 0.375 18 0.375C13.3587 0.375 8.90752 2.12656 5.62563 5.24435C2.34374 8.36214 0.5 12.5908 0.5 17ZM8 15.8125H23.1875L16.2125 9.15419L18 7.5L28 17L18 26.5L16.2125 24.8054L23.1875 18.1875H8V15.8125Z"
@@ -139,37 +139,37 @@
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/karya/karya-1.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/karya/dtik.PNG') }}" alt="" class="text-center w-100">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                        <h4>DTIK FEST</h4>
+                        <p>Sebuah website yang mana menampilkan sistem informasi mengenai DTIK FEST</p>
+                        <a href="{{route('karya')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/karya/karya-2.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/karya/si-ukm.png') }}" alt="" class="text-center w-100">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                        <h4>Si UKM</h4>
+                        <p>Sebuah website yang mana menampilkan seluruh UKM di PENS</p>
+                        <a href="{{route('karya')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/karya/karya-3.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/karya/ition.PNG') }}" alt="" class="text-center w-100">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                        <h4>ITION</h4>
+                        <p>Sebuah website yang menampilkan berbagai lomba tentang IT</p>
+                        <a href="{{route('karya')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
             </div>
@@ -177,6 +177,10 @@
     </div>
 </div>
 
+
+
+                            
+                            
 {{-- konten landing page-4-dosen --}}
 <div class="container card-content-wrapper-dosen">
     <div class="row content-wrapper-dosen">
@@ -185,37 +189,37 @@
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/dosen-1.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/dosen/profil/Bu Desy.jpg') }}" alt="" class="text-center w-75">
                         </div>
                     </div>
-                    <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                    <div class="card-body px-3 mt-2">
+                        <h4> <h5>{{ Str::limit('Desy Intan Permatasari, S.Kom., M.Kom.', 20, '...') }}</h5></h4>
+                        <p>NIP: 198603232015042004</p>
+                        <a href="{{route('dosen')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/dosen-2.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/dosen/profil/Bu Umi.jpg') }}" alt="" class="text-center w-75">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                        <h4>Umi Sa'adah, S.Kom, M.Kom</h4>
+                        <p>NIP: 197404162000032003</p>
+                        <a href="{{route('dosen')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/dosen-3.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/dosen/profil/Andhik Ampuh Yunanto, S.Kom, M.Kom.jpg') }}" alt="" class="text-center w-75">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor, sit amet....</p>
-                        <a href="#" class="d-block text-end read-more-text">Read more..</a>
+                        <h4>Andhik Ampuh Yunanto, S.Kom, M.Kom</h4>
+                        <p>NIP: 199208022019031013</p>
+                        <a href="{{route('dosen')}}" class="d-block text-end read-more-text">Read more..</a>
                     </div>
                 </div>
             </div>
@@ -263,20 +267,22 @@
 </div> --}}
 
 {{-- konten-galery page-6 --}}
-<div class="container card-content-wrapper-kerjasama-industri">
+{{-- <div class="container card-content-wrapper-kerjasama-industri">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-                <h2>Galerry</h2>
+                <h2>Gallery</h2>
                 <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center">
                     <div class="logo-kerjasama d-flex flex-wrap justify-content-center">
+                        {{dd($gallery)}}
                         @foreach ($gallery as $item )
                         <div class="card-gallery card m-4">
-                            <img class="card-img-top" src="{{ $item->foto }}" alt="Card image cap">
-                            <div class="card-body">
+                            <img class="card-img-top" src="{{ $item->foto }}" >
+
+                            {{-- <div class="card-body">
                                 <h5>{{ Str::limit($item->nama, 50, '...') }}</h5>
-                            </div>
-                        </div>
+                            </div> --}}
+                        {{-- </div>
                         @endforeach
                     </div>
                 </div>
@@ -286,11 +292,11 @@
             </div>
         </div>
     </div>
-</div>
+</div>  --}}
 
 {{-- konten landing page-6-testimoni --}}
 
-<div class="bg-testimoni">
+{{-- <div class="bg-testimoni">
     <div class="container p-1">
         <div class="d-block">
             <div class="d-flex justify-content-between">
@@ -356,7 +362,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection
 

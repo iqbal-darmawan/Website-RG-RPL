@@ -41,36 +41,36 @@
         <div class="mt-5 d-flex flex-wrap justify-content-center">
             <div class="card tim-card">
                 <div class="card-body text-center">
-                    <img src="{{ asset('img/tentangkami/vector.png') }}" alt="">
+                    <img src="{{ asset('img/tentangkami/bella.jpeg') }}" alt="">
                    {{-- <h5 style="font-size:18px; font-weight:bold;">{{Auth::user()->names}} Salsabilla</h5> --}}
-                    <h5 class="text-bold mt-4">Salsabilla</h5>
+                    <h5 class="text-bold mt-4">Lula Rania Salsabilla</h5>
                     <p class="text-secondary mt-4">Product Owner</p>
                 </div>
             </div>
             <div class="card tim-card">
                 <div class="card-body text-center">
-                    <img src="{{ asset('img/tentangkami/Vector(5).png') }}" alt="">
+                    <img src="{{ asset('img/tentangkami/iqbal.jpeg') }}" alt="">
                     <h5 class="text-bold mt-4">Iqbal Darmawan</h5>
                     <p class="text-secondary mt-4">Frontend Developer</p>
                 </div>
             </div>
             <div class="card tim-card">
                 <div class="card-body text-center">
-                    <img src="{{ asset('img/tentangkami/Vector (1).png') }}" alt="">
+                    <img src="{{ asset('img/tentangkami/zudha.jpeg') }}" alt="">
                     <h5 class="text-bold mt-4">Zudha Pratama</h5>
                     <p class="text-secondary mt-4">Backend Developer</p>
                 </div>
             </div>
             <div class="card tim-card">
                 <div class="card-body text-center">
-                    <img src="{{ asset('img/tentangkami/Vector (2).png') }}" alt="">
+                    <img src="{{ asset('img/tentangkami/ifhan.jpeg') }}" alt="">
                     <h5 class="text-bold mt-4">Arief Graifhan Ramadhani</h5>
                     <p class="text-secondary mt-4">Full Stack Developer</p>
                 </div>
             </div>
             <div class="card tim-card">
                 <div class="card-body text-center">
-                    <img src="{{ asset('img/tentangkami/Vector (3).png') }}" alt="">
+                    <img src="{{ asset('img/tentangkami/nadia.jpeg') }}" alt="">
                     <h5 class="text-bold mt-4">Nadia Indah Fania Suhariyanti</h5>
                     <p class="text-secondary mt-4">Frontend Developer</p>
                 </div>

@@ -4,8 +4,8 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-        <a class="navbar-brand" href="javascript:void(0)">
-          <img src="{{asset('template/')}}/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand" href="javascript:void(0)">          
+          <img src="{{ asset('img/logo_rg_rpl_white.png') }}" class="navbar-brand-img" alt="...">
         </a>
       </div>
       <div class="navbar-inner">
@@ -53,18 +53,6 @@
               <a class="nav-link{{request()->is('industri') ? ' active' : ''}}" href="{{route('industri')}}">
                 <i class="ni ni-building text-info"></i>
                 <span class="nav-link-text">Industri</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link{{request()->is('gallery-editor') ? ' active' : ''}}" href="{{route('gallery')}}">
-                <i class="ni ni-image text-danger"></i>
-                <span class="nav-link-text">Gallery</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link{{request()->is('materi') ? ' active' : ''}}" href="{{route('materi')}}">
-                <i class="ni ni-folder-17 text-success"></i>
-                <span class="nav-link-text">Materi</span>
               </a>
             </li>
             <li class="nav-item">

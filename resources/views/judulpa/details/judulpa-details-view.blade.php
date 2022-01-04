@@ -13,25 +13,30 @@
         </div>
     </div>
 </div>
-{{-- {{dd($judul)}} --}}
+{{--{{dd($judul)}}--}}
 
 <div class="container">
     <div class="card-wrapper-content-detail">
         <div class="card content-detail-card">
             <div class="card-body">
-                <h3>Judul Project Akhir</h3>
+                <h3 class="fw-bold">Judul Project Akhir</h3>
                 <hr class="w-100 text-secondary">
-                <h4>{{$judul->nama_judul}}</h4>
+                <p class="fs-5">{{$judul->nama_judul}}</p>
                 <br>
                 <br>
-                <h3>Deskripsi Project Akhir</h3>
+              	<h3 class="fw-bold">Dosen Pembimbing</h3>
+                <hr class="w-100 text-secondary">
+                <p class="fs-5">{{$judul->nama_pembimbing}}</p>
+                <br>
+                <br>
+                <h3 class="fw-bold">Deskripsi Project Akhir</h3>
                 <hr class="w- text-secondary">
-                <p>{{$judul->deskripsi_judul}}</p>
+                <p class="fs-5">{{$judul->deskripsi_judul}}</p>
                 <br>
                 <br>
-                <h3>Kualifikasi Judul</h3>
+                <h3 class="fw-bold">Kualifikasi Judul</h3>
                 <hr class="w-100 text-secondary">
-                <h4>{{$judul->kualifikasi_judul}}</h4>
+                <p class="fs-5">{{$judul->kualifikasi_judul}}</p>
             </div>
         </div>
     </div>

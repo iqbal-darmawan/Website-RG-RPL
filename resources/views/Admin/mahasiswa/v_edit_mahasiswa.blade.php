@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="card-body">
-          <form action="/mahasiswa/update/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
+          <form action="/karya-mahasiswa/update/{{$dataKarya->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             <h6 class="heading-small text-muted mb-4">Informasi Karya</h6>
                 <div class="pl-lg-4">
@@ -68,37 +68,12 @@
               </div>
                 @endforeach
                 <div class="form-group">
-                  <a  class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal" >Tambah foto</a>
+                  <a href="#"  class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal" >Tambah foto</a>
                 </div>
             <hr class="my-4" />
             <h6 class="heading-small text-muted mb-4">Informasi Pengembang</h6>
             <div class="pl-lg-4">
-              <a  class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModalMahasiswa" >Tambah foto</a>
-              @foreach ($mahasiswa as $mahasiswa)
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label >Nama</label>
-                    <input type="text" class="form-control" name="nama_mahasiswa[]" value="{{$mahasiswa->nama_mahasiswa}}">
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label >Kelas</label>
-                      <input type="text" class="form-control" name="kelas[]" value="{{$mahasiswa->kelas}}">
-                    </div>
-                  </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label >Foto</label>
-                        <input type="file" class="form-control" name="foto_mahasiswa[]" value="{{$mahasiswa->foto_mahasiswa}}">
-                      </div>
-                   </div>
-                   <div class="col-md-3">
-                      <a href="/mahasiswa/hapusMahasiswa/{{$mahasiswa->id}}" class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></a>
-                   </div>
-              </div>
-              @endforeach
+            
               </div>
               <div class="container">
                 <div class="form-group">
