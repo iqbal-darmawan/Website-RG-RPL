@@ -21,7 +21,7 @@ class MateriController extends Controller
 
     public function download($filename)
     {
-        $file = public_path() . "/files/materi". $filename;
+        $file = public_path() . "/files/materi/". $filename;
         return Response::download($file, $filename);
     }
 

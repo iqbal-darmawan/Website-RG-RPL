@@ -52,7 +52,7 @@ button.caraousel-button-indicators {
 }
 
 .description-content-first {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .card-height {
@@ -121,7 +121,7 @@ button.caraousel-button-indicators {
 
   .section-headline h4 {
     display: inline-block;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 600;
     margin-bottom: 50px;
     position: relative;
@@ -157,14 +157,18 @@ button.caraousel-button-indicators {
     opacity: 1;
 }
 
-.galerry {
+/* .galerry {
     max-width: 250px;
-    /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
-    /* filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     opacity: 0.3;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms; */
+    transition-duration: 150ms;
+} */
+
+.img-object{
+    object-fit: contain;
 }
 
 .galerry:hover {
@@ -222,7 +226,33 @@ button.caraousel-button-indicators {
     color: #625E5E;
 }
 
+.swiper {
+    width: 300px;
+    height: 400px;
+  }
 
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    box-shadow: 13px 13px 20px 6px rgba(0,0,0,0.1);
+  }
+
+  .swiper-slide:nth-child(1n) {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .swiper-slide:nth-child(2n) {
+    background-color: #8FAEFD;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    background-color: #F6FFBC;
+  }
 
 @media (max-width: 990px) {
     .card-title {

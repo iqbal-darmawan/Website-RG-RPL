@@ -22,9 +22,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            // IndustriSeeder::class,
+            IndustriSeeder::class,
             GallerySeeder::class,
         ]);
+
         // Produk::factory()
         //     ->has(FotoProduk::factory()->count(3), 'fotoproduk')
         //     ->count(12)
@@ -42,5 +43,7 @@ class DatabaseSeeder extends Seeder
         //     ->has(FileMateri::factory()->count(1), 'fileMateri')
         //     ->count(6)
         //     ->create();
+
+        
     }
 }

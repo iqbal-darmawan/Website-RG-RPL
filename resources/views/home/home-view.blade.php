@@ -2,6 +2,10 @@
 
 @section('optional-css')
 <link rel="stylesheet" href="{{ asset('css/home/home.css') }}">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+/>
 @endsection
 
 @section('content')
@@ -51,41 +55,44 @@
 
 {{-- konten landing page-1 --}}
 <div class="container card-content-wrapper">
-    <div class="row justify-content-between">
-        <div class="col-md-4 d-flex flex-column justify-content-center">
-            <div class="">
+    <div class="row justify-content-center align-items-center">
+        <div class=" col-md-6 ">
+            <div class="d-flex flex-column justify-content-center">
                 <h5 class="text-content-first fw-bold">Apa itu</h5>
                 <h2 class="text-content-first-1 fw-bold">Web RG RPL ?</h2>
                 <p style="color: #978787;" class="description-content-first">Sebuah wadah untuk memberikan informasi mengenai profile dan kegiatan RG RPL. Meliputi profile dosen RG RPL terkait penelitian, prestasi dan pengabdian, kemudian dokumentasi karya, kerjasama industri, penawaran judul PA, rekomendasi materi dan pembahasan seputar RPL lainnya.</p>
             </div>
+            
         </div>
-        <div class="col-md-8">
-            <div class="d-flex card-height card-mb">
-                <div class="card card-content-first bg-card1 mx-2 align-self-start">
-                    <div class="card-body px-2 ">
+        <div class="col-md-6 justify-content-center">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                    <div class="flex-column">
                         <div class="text-center mb-5 mt-5">
-                            <img src="{{ asset('img/item1.jpg') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/item1.jpg') }}" alt="" class="text-center w-50">
                         </div>
-                        <h5 class="card-title mb-3 px-4">Memberikan informasi karya</h5>
+                        <h5 class="card-title mb-3 px-4 text-center">Memberikan informasi karya</h5>
                     </div>
-                </div>
-                <div class="card card-content-first bg-card2 mx-2 align-self-end">
-                    <div class="card-body px-2 ">
+                    </div>
+                  <div class="swiper-slide">
+                    <div class="flex-column">
                         <div class="text-center mb-4 mt-3">
-                            <img src="{{ asset('img/item2.png') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/item2.png') }}" alt="" class="text-center w-50">
                         </div>
-                        <h5 class="card-title mb-3 px-4">Memberikan referensi judul PA</h5>
+                        <h5 class="card-title mb-3 px-4 text-center">Memberikan referensi judul PA</h5>
                     </div>
-                </div>
-                <div class="card card-content-first bg-card3 mx-2 align-self-start">
-                    <div class="card-body px-2 ">
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="flex-column">
                         <div class="text-center mb-4 mt-3">
-                            <img src="{{ asset('img/item3.png') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/item3.png') }}" alt="" class="text-center w-50">
                         </div>
-                        <h5 class="card-title mb-3 px-4">Memberikan informasi dosen</h5>
+                        <h5 class="card-title mb-3 px-4 text-center">Memberikan informasi dosen</h5>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
     </div>
 </div>
@@ -139,7 +146,7 @@
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/karya/dtik.PNG') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/karya/dtik.PNG') }}" alt="" class="text-center w-100 p-2 rounded">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
@@ -151,7 +158,7 @@
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/karya/si-ukm.png') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/karya/si-ukm.png') }}" alt="" class="text-center w-100 p-2">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
@@ -163,7 +170,7 @@
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/karya/ition.PNG') }}" alt="" class="text-center w-100">
+                            <img src="{{ asset('img/karya/ition.PNG') }}" alt="" class="text-center w-100 p-2 rounded">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
@@ -176,11 +183,7 @@
         </div>
     </div>
 </div>
-
-
-
-                            
-                            
+                                                        
 {{-- konten landing page-4-dosen --}}
 <div class="container card-content-wrapper-dosen">
     <div class="row content-wrapper-dosen">
@@ -189,7 +192,7 @@
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/profil/Bu Desy.jpg') }}" alt="" class="text-center w-75">
+                            <img src="{{ asset('img/dosen/profil/Bu Desy.jpg') }}" alt="" class="text-center w-75 h-75 p-2 img-object">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-2">
@@ -201,7 +204,7 @@
                 <div class="card card-karya mx-4 align-self-end">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/profil/Bu Umi.jpg') }}" alt="" class="text-center w-75">
+                            <img src="{{ asset('img/dosen/profil/Bu Umi.jpg') }}" alt="" class="text-center w-75 h-75 p-2">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
@@ -213,7 +216,7 @@
                 <div class="card card-karya mx-4 align-self-start">
                     <div class="card-header card-header-padding">
                         <div class="text-center">
-                            <img src="{{ asset('img/dosen/profil/Andhik Ampuh Yunanto, S.Kom, M.Kom.jpg') }}" alt="" class="text-center w-75">
+                            <img src="{{ asset('img/dosen/profil/Andhik Ampuh Yunanto, S.Kom, M.Kom.jpg') }}" alt="" class="text-center w-75 h-75 p-2">
                         </div>
                     </div>
                     <div class="card-body px-3 mt-3">
@@ -242,17 +245,19 @@
 </div>
 
 {{-- konten landing page-5-kerjasama --}}
-<div class="container card-content-wrapper-kerjasama-industri">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-                <h4>Kerjasama Industri</h4>
-                <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center flex-wrap">
-                    {{-- {{ dd($kerjasama) }} --}}
-                    @foreach ($kerjasama as $kerjasamas )
-                    <img src="/img/industri/{{$kerjasamas->foto_industri}}" alt=""
-                        class="img-responsive logo-kerjasama">
-                    @endforeach
+<div data-aos="fade-up-rigth">
+    <div class="container card-content-wrapper-kerjasama-industri">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline text-center">
+                    <h4>Kerjasama Industri</h4>
+                    <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center flex-wrap">
+                        {{-- {{ dd($kerjasama) }} --}}
+                        @foreach ($kerjasama as $kerjasamas )
+                        <img src="/img/industri/{{$kerjasamas->foto_industri}}" alt=""
+                            class="img-responsive logo-kerjasama">
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,31 +267,33 @@
 
 {{-- konten-galery page-6 --}}
 {{-- konten-galery page-6 --}}
-<div class="container card-content-wrapper-kerjasama-industri">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-                <h4>Gallery</h4>
-                <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center">
-                    <div class="d-flex flex-wrap justify-content-center">
-                        {{-- {{dd($gallery)}} --}}
-                        @foreach ($gallery as $item )
-                        <div class="col-md-3">
-                            <img class="card-img-top galerry" src="/img/gallery/{{ $item->foto }}">
-                        </div>
-
-                        {{-- <div class="card-gallery card">
-
-                            <div class="card-body">
-                                <h5>{{ Str::limit($item->nama, 50, '...') }}</h5>
+<div data-aos="zoom-in-up"  data-aos-duration="3000">
+    <div class="container card-content-wrapper-kerjasama-industri">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline text-center">
+                    <h4>Gallery</h4>
+                    <div class="logo-kerjasama-industri-wrapper d-flex justify-content-center align-items-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            {{-- {{dd($gallery)}} --}}
+                            @foreach ($gallery as $item )
+                            <div class="col-md-3">
+                                <img class="card-img-top galerry" src="/img/gallery/{{ $item->foto }}">
                             </div>
-                        </div> --}}
-                        @endforeach
+
+                            {{-- <div class="card-gallery card">
+
+                                <div class="card-body">
+                                    <h5>{{ Str::limit($item->nama, 50, '...') }}</h5>
+                                </div>
+                            </div> --}}
+                            @endforeach
+                        </div>
                     </div>
+                    {{-- <div class="d-flex justify-content-center">
+                        {{ $gallery->links() }}
+                    </div> --}}
                 </div>
-                {{-- <div class="d-flex justify-content-center">
-                    {{ $gallery->links() }}
-                </div> --}}
             </div>
         </div>
     </div>
@@ -386,5 +393,12 @@
                 }
             })
             })
+    </script>
+    <script>
+        AOS.init();
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
+        });
     </script>
 @endsection

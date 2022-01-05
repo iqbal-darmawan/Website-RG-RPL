@@ -91,7 +91,7 @@
         <div class="item">
           <div class="mx-3 card card-download-karya">
             <div class="card-body">
-              <h4>{{$item->nama}}</h4>
+              <h5>{{ Str::limit($item->nama, 25, '...') }}</h5>
               <div class="d-flex align-items-center mb-4">
                 <div class="icon-tanggal me-2 d-flex align-items-center">
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
                   </svg>
                 </div>
                 <div class="text-tanggal">
-                  <span>{{$item->updated_at}}</span>
+                  <span>{{date('d F Y',strtotime($item->updated_at)) }}</span>
                 </div>
               </div>
               <p>{{ Str::limit($item->deskripsi, 75, '...') }}</p>
