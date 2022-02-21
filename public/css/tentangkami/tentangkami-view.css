@@ -1,0 +1,137 @@
+.jumbotron {
+    background-image: url('/img/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    padding: 20rem 10rem;
+    margin-bottom: 2rem;
+}
+
+.title-jumbotron {
+    color: #fff;
+    font-weight:bold;
+}
+
+/*SEARCH FORM*/
+.search-form {
+    background-color: initial;
+    background-image: none;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-position: initial;
+    border: 2px solid #fff;
+    border-radius: 30px 0px 0px 30px;
+    /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+}
+
+.input-group>.form-control{
+    width: 300px;
+    height: 50px;
+}
+
+form .form-control:focus{
+    background-color: initial;
+    background-image: none;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-position: initial;
+    border-color: #ced4da;
+    box-shadow: none;
+    color: #fff;
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+/*to cange only one form and not all give unique class name like  class="search-form" */
+ .search-btn {
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 0px 30px 30px 0px;
+    cursor:pointer;
+    height:100%;
+}
+
+.tentangkami1-wrapper {
+    margin: 70px 0;
+}
+
+.wrapper-content-title h2:before {
+    background: #463AD0;
+    border-radius: 30px;
+    border: 10px solid #463AD0;
+    bottom: 16px;
+    content: "";
+    display: block;
+    position: relative;
+    width: 30%;
+}
+
+.tim-title h2:after {
+    background: #DDF640;
+    border-radius: 30px;
+    border: 6px solid #DDF640;
+    bottom: 0;
+    top: 10px;
+    content: "";
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    width: 15%;
+}
+
+.tim-card {
+    width: 220px;
+    margin: 40px 72px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+}
+
+.card-contact {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+@media (max-width:768px) {
+    .tim-card {
+        margin: 10px 10px;
+    }
+    .text-contact {
+        font-size: 12px;
+    }
+    .icon > svg {
+        width: 20px;
+    }
+    .text-contact {
+        margin: 0 !important;
+    }
+
+    .bg-dosen-header {
+        margin-bottom: 36px;
+    }
+    .contact-us-title {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 426px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+    }
+}
+
+
+
+

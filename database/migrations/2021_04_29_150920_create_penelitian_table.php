@@ -6,26 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePenelitianTable extends Migration{
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('penelitian', function (Blueprint $table) {
             $table->id('id');
+            $table->foreignId('dosen_id')->nullable()->constrained('dosen_rpl')->onDelete('cascade');
             $table->string('nama_penelitian');
-            $table->string('deskripsi_penelitian');
+            $table->string('deskripsi_penelitian')->nullable();
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('penelitian');

@@ -3,6 +3,14 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\DosenRpl;
+use App\Models\FileMateri;
+use App\Models\Produk;
+use App\Models\FotoProduk;
+use App\Models\Gallery;
+use App\Models\Industri;
+use App\Models\JudulPA;
+use App\Models\Materi;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +21,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            IndustriSeeder::class,
+            GallerySeeder::class,
+            DosenRplSeeder::class,
+            ProdukSeeder::class,
+            FotoProdukSeeder::class,
+            JudulPaSeeder::class,
+            MateriSeeder::class,
+            FileMateriSeeder::class,
+        ]);
     }
 }

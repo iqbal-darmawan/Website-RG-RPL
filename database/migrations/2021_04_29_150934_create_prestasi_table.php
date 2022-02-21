@@ -15,8 +15,9 @@ class CreatePrestasiTable extends Migration
     {
         Schema::create('prestasi', function (Blueprint $table) {
             $table->id('id');
+            $table->foreignId('dosen_id')->nullable()->constrained('dosen_rpl')->onDelete('cascade');
             $table->string('nama_prestasi');
-            $table->string('pencapaian_prestasi');
+            $table->string('deskripsi_prestasi')->nullable();
             $table->timestamps();
         });
     }

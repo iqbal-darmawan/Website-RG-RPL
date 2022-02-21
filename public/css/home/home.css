@@ -17,6 +17,14 @@ button.caraousel-button-indicators {
     bottom: 15%;
 }
 
+.carousel-item {
+	transition: -webkit-transform 0.5s ease;
+	transition: transform 0.5s ease;
+	transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+	-webkit-backface-visibility: visible;
+	        backface-visibility: visible;
+}
+
 .card-header-padding {
     padding: 0;
 }
@@ -31,8 +39,20 @@ button.caraousel-button-indicators {
 }
 
 .card-content-wrapper-kerjasama-industri {
-    padding-top: 150px;
-    margin-bottom: 120px;
+    padding-top: 70px;
+    margin-bottom: 80px;
+}
+
+.text-content-first {
+    font-size: 28px;;
+}
+
+.text-content-first-1 {
+    font-size: 40px;;
+}
+
+.description-content-first {
+    font-size: 16px;
 }
 
 .card-height {
@@ -91,32 +111,24 @@ button.caraousel-button-indicators {
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    max-width: 250px;
 }
 
 .read-more-text {
     color: black;
 }
 
-/* .background-kerjasama-industri {
-    background-image: url("/img/bg-kerjasama-industri.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 650px;
-    background-position-x: center;
-    background-position-y: bottom 10px;
-} */
 
-  .section-headline h2 {
+  .section-headline h4 {
     display: inline-block;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 600;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     position: relative;
     text-transform: capitalize;
   }
 
-  .section-headline h2::after {
+  .section-headline h4::after {
     border: 5px solid #F2C808;
     bottom: -20px;
     content: "";
@@ -128,9 +140,42 @@ button.caraousel-button-indicators {
   }
 
   .logo-kerjasama {
-      padding-left: 60px;
-      padding-right: 60px;
+      margin-left: 60px;
+      margin-right: 60px;
+      max-width: 135px;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+      opacity: 0.3;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
   }
+
+  .logo-kerjasama:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* .galerry {
+    max-width: 250px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+} */
+
+.img-object{
+    object-fit: contain;
+}
+
+.galerry:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0);
+    opacity: 1;
+}
 
   .bg-testimoni {
     background: rgba(236, 236, 236, 0.36);
@@ -141,10 +186,27 @@ button.caraousel-button-indicators {
 }
 
 .card-testimoni {
+    border: none;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.18);
     border-radius: 0;
     width: 350px;
     margin: 0;
     background: #FFFFFF;
+}
+
+.owl-stage-outer {
+    overflow: visible;
+}
+
+.owl-item {
+    opacity: 0;
+    transition: opacity 500ms;
+}
+.owl-item.active {
+    opacity: 1;
+}
+.owl-stage{
+    margin: 50px;
 }
 
 .card-body-testimoni {
@@ -155,6 +217,96 @@ button.caraousel-button-indicators {
     border-radius: 50%;
 }
 
-  /* .title-testimoni {
-      margin
-  } */
+.testimoni-name > h4 {
+    font-size:14px;
+}
+
+.testimoni-name > p {
+    font-size: 13px;
+    color: #625E5E;
+}
+
+.swiper {
+    width: 300px;
+    height: 400px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    box-shadow: 13px 13px 20px 6px rgba(0,0,0,0.1);
+  }
+
+  .swiper-slide:nth-child(1n) {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .swiper-slide:nth-child(2n) {
+    background-color: #8FAEFD;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    background-color: #F6FFBC;
+  }
+
+@media (max-width: 990px) {
+    .card-title {
+        font-size: 12px;
+    }
+    .text-content-first {
+        font-size: 22px;;
+    }
+    .text-content-first-1 {
+        font-size: 30px;;
+    }
+    .description-content-first {
+        font-size: 14px;
+    }
+    .card-height {
+        min-height: 350px;
+    }
+    .logo-kerjasama {
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: 80px;
+    }
+}
+
+@media (max-width:426px) {
+    .card-content-wrapper {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .content-wrapper {
+        margin-bottom: 24px ;
+    }
+    .content-wrapper-dosen {
+        flex-direction: column-reverse;
+    }
+    .card-content-wrapper-dosen {
+        margin-top: 60px;
+    }
+    .card {
+        width: auto;
+    }
+    .card-content-first {
+        margin: 10px 50px ;
+        align-self: center !important;
+    }
+    .card-height {
+        min-height: 100px;
+    }
+    .card-karya {
+        margin-bottom: 20px;
+        align-self: center !important;
+    }
+    .card-mb {
+        flex-direction: column;
+    }
+
+}
