@@ -31,6 +31,8 @@ how to install for laravel website RG RPL project:
 
 	> **create a new file with .env format in the Website-RG-RPL folder to perform database settings**
 - copy the contents of the `.env.example` file into `.env`
+
+    > **make sure the database name on your local machine has been created based on DB_DATABASE in .env**
 - enter command `php artisan key:generate` to fill in `APP_KEY`
 - migrate the table to the database with the command `php artisan migrate`
 - run `php artisan db:seed` command to insert some data to database
